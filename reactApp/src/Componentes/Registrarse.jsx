@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Inicio_Seccion = () => {
+const Registrarse = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Inicio_Seccion = () => {
   )
 }
 
-export default Inicio_Seccion
+export default Registrarse
