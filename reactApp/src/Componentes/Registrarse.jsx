@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Registrarse = () => {
+  const navigate = useNavigate()
   return (
     <div>
     <h1>REGISTER</h1>
@@ -20,9 +22,9 @@ const Registrarse = () => {
 
       <label>Password confirmation </label>
       <input placeholder="Password confirmation" type="password"/> <br/>
-      <button>Back</button> 
       <button>Sign Up</button>
       </form>
+      <button onClick={()=>navigate('/')}>Back</button> 
     </div>
   )
 }
