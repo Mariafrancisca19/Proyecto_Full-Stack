@@ -1,4 +1,5 @@
 import React from 'react'
+import Atras from './Atras'
 
 const QuienesSomos = () => {
     return (
@@ -8,7 +9,8 @@ const QuienesSomos = () => {
                 Ofrecemos una experiencia única de compra. Todo nuestro catálogo está certificado y trabajamos diariamente para garantizar un proceso seguro, transparente y puntual.
                 Trabajamos junto a nuetros clientes para ofrecer el cuidado de sus autos en todo momento con nuestro servicio </p>
             <h2>Nuestro objetivo </h2>
-            <p>Es transformar la industria automotriz , haciendo de la experiencia de tener un auto algo increíble y memorable para nuestros clientes.</p>
+            <p>Es transformar la industria automotriz , haciendo de la experiencia de tener un auto en algo increíble y memorable para nuestros clientes.</p>
+            <Atras/>
 
         </div>
     )
