@@ -2,6 +2,7 @@ import React from 'react'
 import Pagination from 'react-bootstrap/Pagination';
 import { useNavigate } from 'react-router-dom';
 
+
 const Atras = () => {
     const navigate = useNavigate()
     const rutas = ["/home","/quiensomos",'/destacados','/info']

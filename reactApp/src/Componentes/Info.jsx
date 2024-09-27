@@ -1,6 +1,7 @@
 import React from 'react'
 import Atras from './Atras'
 
+
 const Info = () => {
   return (
     <div>
