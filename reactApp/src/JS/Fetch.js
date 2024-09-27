@@ -13,8 +13,8 @@ const obtenerDatos = async (enpoint) => {
             }
         });
 
-        const responsa = await responsa.json();
-        return peticion;
+        const responsa = await peticion.json();
+        return responsa;
     } catch (error) {
         console.log(error)
     }
@@ -24,7 +24,7 @@ export { obtenerDatos }
 
 // metodo post para guardar datos
 
-const guardarDatos = async () => {
+const guardarDatos = async (enpoint) => {
     try {
 
         const response = await fetch(`${url}${enpoint}`, {
@@ -89,6 +89,7 @@ const deleteDatos = async (enpoint, id) => {
 
 }
 
+export {deleteDatos}
 
 
 

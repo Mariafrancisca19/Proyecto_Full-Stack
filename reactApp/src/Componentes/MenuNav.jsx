@@ -26,7 +26,7 @@ const MenuNav = () => {
             <Navbar expand="lg" className="bg-body-tertiary">
                 <Container>
                     <Navbar.Brand href="#home" >
-                        <img style={{ width: '75px' }} src='/src/Imagenes/logo.webp' alt='logo' />
+                        <img style={{ width: '75px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -81,15 +81,6 @@ const MenuNav = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-
-
-
-
-
-
-
-
 
         </div>
     )

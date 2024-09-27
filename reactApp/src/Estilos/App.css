@@ -29,3 +29,10 @@
 .colored-toast .swal2-html-container {
   color: white;
 }
+
+.logo{
+clip-path: circle(50%);
+opacity: 0.7;
+transform: scalez(-1);
+/* filter: brightness(100%); para darle brillo a la imagen */
+}
