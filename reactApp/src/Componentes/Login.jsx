@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mostrarAlerta } from '../JS/SweetAlert';
+// import '../Estilos/Inicio.css'
 
 const Login = () => {
   const navigate = useNavigate()   
@@ -25,7 +26,7 @@ const Login = () => {
       <input placeholder="Correo Electrronico"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
       </form>
 
-      <button onClick={espaciosVacios}>REGISTRARSE</button>
+      <button onClick={espaciosVacios}>REGISTRARSE</button><br/>
       <a onClick={()=>{navigate("/Registrarse")}}>NO TENGO CUENTA</a>
     </div>
   )

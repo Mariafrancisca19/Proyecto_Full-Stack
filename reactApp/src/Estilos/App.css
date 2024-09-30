@@ -1,3 +1,5 @@
+
+/* Estilos del sweetAlert*/
 .colored-toast.swal2-icon-success {
   background-color: #a5dc86 !important;
 }
@@ -30,9 +32,31 @@
   color: white;
 }
 
+/*Navbar*/
+
 .logo{
 clip-path: circle(50%);
 opacity: 0.7;
 transform: scalez(-1);
-/* filter: brightness(100%); para darle brillo a la imagen */
+filter: brightness(100%); /*para darle brillo a la imagen */
+} 
+
+.navbar {
+  background-color: black;
 }
+
+.navbar .nav-link,
+.navbar .dropdown-item {
+  color: white !important;
+}
+
+.navbar .form-control {
+  background-color: black;
+  color: white;
+}
+
+.navbar .btn {
+  background-color: white;
+  color: black;
+} 
+

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mostrarAlerta } from '../JS/SweetAlert';
-
+import '../Estilos/index.css'
 
 const Registrarse = () => {
   const navigate = useNavigate()
@@ -26,19 +26,19 @@ const Registrarse = () => {
       <form>
       <label>Name </label>
       <input placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
-      <label>Last Name </label>
+      <label>Last Name </label><br/>
       <input placeholder="Last Name" value={apellido} type="last_name" onChange={(e)=>setApellido(e.target.value)}/>
       <br/>
-      <label>Birthdate </label>
+      <label>Birthdate </label><br/>
       <input placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
 
-      <label>Email </label>
+      <label>Email </label><br/>
       <input placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
 
-      <label>Password </label>
+      <label>Password </label><br/>
       <input placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
 
-      <label>Password confirmation </label>
+      <label>Password confirmation </label><br/>
       <input placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
       <button onClick={espacioVacio}>Sign Up</button>
       </form>

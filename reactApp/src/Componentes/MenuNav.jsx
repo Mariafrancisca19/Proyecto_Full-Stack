@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import '../Estilos/App.css'
 import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useNavigate } from 'react-router-dom';
@@ -19,43 +19,49 @@ const MenuNav = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para la búsqueda
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // Aquí puedes manejar la búsqueda con searchTerm
+        console.log("Buscar:", searchTerm);
+    };
+
     return (
         <div>
 
 
-            <Navbar expand="lg" className="bg-body-tertiary">
-                <Container>
-                    <Navbar.Brand href="#home" >
-                        <img style={{ width: '75px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home" onClick={()=>{navigate("/home")}}>HOME</Nav.Link>
-                            <Nav.Link href="#link" onClick={()=>{navigate("/destacado")}}>DESTACADO</Nav.Link>
-                            <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1" onClick={()=>{navigate("/quiensomos")}}>MISION</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    UBICACION
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3" onClick={()=>{navigate("/info")}}>CONTACTO</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4"onClick={()=>{navigate("/")}}>
-                                    CERRAR SECCION
-                                </NavDropdown.Item>
-                            </NavDropdown>
+<Navbar className="navbar" expand="lg" >
+    <Container>
+        <Navbar.Brand href="#home">
+            <img style={{ width: '75px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+                <Nav.Link  onClick={() => navigate("/home")}>HOME</Nav.Link>
+                <Nav.Link  onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
+                <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown"  >
+                    <NavDropdown.Item  onClick={() => navigate("/quiensomos")}>MISION</NavDropdown.Item>
+                    <NavDropdown.Item >UBICACION</NavDropdown.Item>
+                    <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item  onClick={() => navigate("/")}>CERRAR SECCION</NavDropdown.Item>
+                </NavDropdown>
 
-                            <Form inline>
+                            <Form inline onSubmit={handleSearch}>
                                 <Row>
                                     <Col xs="auto">
                                         <Form.Control
                                             type="text"
                                             placeholder="SEARCH"
                                             className=" mr-sm-2"
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            
                                         />
                                     </Col>
                                     <Col xs="auto">
-                                        <Button type="submit">🔍</Button>
+                                        <Button type="submit" >🔍</Button>
                                     </Col>
                                 </Row>
                             </Form>

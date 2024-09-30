@@ -1,10 +1,12 @@
 import React from 'react'
-import Atras from './Atras'
+import Atras from '../Componentes/Atras'
+import MenuNav from './MenuNav'
 
 
 const Info = () => {
   return (
     <div>
+     <MenuNav/>
       <h1>Necesitas ayuda?</h1>
       <h2>Contáctanos</h2>
       <h3>Dar seguimiento a mi proceso</h3>
