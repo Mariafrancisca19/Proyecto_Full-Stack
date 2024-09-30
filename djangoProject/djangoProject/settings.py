@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    'Cuentas'
+    'Cuentas',
+    'automoviles'
 ]
 
 CORS_ALLOWES_ALL_ORIGINS = True
