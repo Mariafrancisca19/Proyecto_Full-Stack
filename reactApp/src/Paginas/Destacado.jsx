@@ -1,6 +1,7 @@
 import React from 'react'
 import Atras from '../Componentes/Atras'
 import MenuNav from '../Componentes/MenuNav'
+import Formulario from '../Componentes/Formulario'
 
 
 const Destacado = () => {
@@ -8,6 +9,12 @@ const Destacado = () => {
     
     <div>
       <MenuNav/>
+      <Formulario/>
+
+
+
+
+
       <Atras/>
     </div>
 
