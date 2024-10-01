@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'Cuentas',
-    'automoviles'
+    'automoviles',
+    'servicio',
+    'calificacion'
 ]
 
 CORS_ALLOWES_ALL_ORIGINS = True

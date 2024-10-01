@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/"
+const url = "http://localhost:8000/api/"
 
 // CRUD
 // metodo get extraer los datos
@@ -24,7 +24,7 @@ export { obtenerDatos }
 
 // metodo post para guardar datos
 
-const guardarDatos = async (enpoint) => {
+const guardarDatos = async (obj,enpoint) => {
     try {
 
         const response = await fetch(`${url}${enpoint}`, {
@@ -32,7 +32,7 @@ const guardarDatos = async (enpoint) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify()
+            body: JSON.stringify(obj)
         });
 
         return await response.json();
