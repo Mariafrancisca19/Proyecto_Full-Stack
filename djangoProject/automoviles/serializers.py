@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from .models import Automovil,Especificaciones
 
-# estructura
+# estructura 
+# los serializers son una herramienta esencial en Django REST Framework
+# que facilita la interacción entre los datos de los modelos de Django y 
+# las representaciones JSON que se envían o reciben a través de APIs
 
 class AutomovilSerializer(serializers.ModelSerializer):
     class Meta:

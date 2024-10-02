@@ -24,12 +24,89 @@ const Formulario = () => {
       <form>
       <label>Mantenimiento</label>
     <div>
-    <label>Marca</label>
-    <input placeholder='Marca' type='marca'value={marca} onChange={(e)=>setMarca(e.target.value)}></input><br/>
+    <label> Marca</label>
+    <select name = 'marca' value={marca} onChange={(e)=>setMarca(e.target.value)}>
+    <option value="seleccione">Seleccione Marca</option>
+    <option value="toyota">Toyota</option>
+    <option value="honda">Honda</option>
+    <option value="ford">Ford</option>
+    <option value="chevrolet">Chevrolet</option>
+    <option value="bmw">BMW</option>
+    <option value="mercedes-benz">Mercedes-Benz</option>
+    <option value="nissan">Nissan</option>
+    <option value="audi">Audi</option>
+    <option value="hyundai"> Hyundai </option>
+    <option value="volkswagen">Volkswagen</option>
+    <option value="kia">Kia</option>
+    <option value="mazda">Mazda</option>
+    <option value="subaru">Subaru</option>
+    <option value="jeep">Jeep</option>
+    <option value="lexus">Lexus</option>
+    <option value="porsche">Porsche</option>
+    <option value="tesla">Tesla</option>
+    <option value="land_rover">Land Rover</option>
+    <option value="volvo">Volvo</option>
+    <option value="alfa_romeo">Alfa Romeo</option>
+    <option value="ferrari">Ferrari</option>
+    <option value="lamborghini">Lamborghini</option>
+    <option value="peugeot">Peugeot</option>
+    <option value="renault">Renault</option>
+    <option value="mitsubishi">Mitsubishi</option>
+    </select><br/>
     <label>Modelo</label>
-    <input placeholder='Modelo' type='modelo' value={modelo} onChange={(e)=>setModelo(e.target.value)}></input><br/>
+    <select name = 'modelo' value={modelo} onChange={(e)=>setModelo(e.target.value)}>
+    <option value="seleccione">Seleccione Modelo</option>
+    <option value="corolla">Corolla</option>
+    <option value="rav4">RAV4</option>
+    <option value="camry">Camry</option>
+    <option value="accord">Accord</option>
+    <option value="cr-v">CR-V</option>
+    <option value="mustang">Mustang</option>
+    <option value="f-150">F-150</option>
+    <option value="camaro">Camaro</option>
+    <option value="">Silverado</option>
+    <option value="">Serie 3</option>
+    <option value="">Serie 7</option>
+    <option value="">Clase C </option>
+    <option value="">Clase E</option>
+    <option value="">Rogue</option>
+    <option value="">Sentra</option>
+    <option value="">Q7</option>
+    <option value="">A6</option>
+    <option value="">Sonata</option>
+    <option value="">Tucson</option>
+    <option value="">Golf</option>
+    <option value="">Tiguan</option>
+    <option value="">Optima</option>
+    <option value="">Sportage</option>
+    <option value="">CX-5</option>
+    <option value="">3</option>
+    <option value="">Outback</option>
+    <option value="">Forester</option>
+    <option value="">Grand Cherokee</option>
+    <option value="">Compass</option>
+    <option value="">UX 250h</option>
+    <option value="">GX 460</option>
+    <option value="">Cayenne</option>
+    <option value="">Model X</option>
+    <option value=""> Defender</option>
+    <option value=""> XC90</option>
+    <option value="">Tonale</option>
+    <option value="">F8 Tributo</option>
+    <option value=""> Urus </option>
+    <option value=""> 5008 </option>
+    <option value="">  Captur </option>
+    <option value=""> Outlander </option>
+
+    </select><br/>
     <label >Año</label>
-    <input placeholder='Año'type='number' value={año} onChange={(e)=>setAño(e.target.value)}></input>
+    <select name='año' value={año} onChange={(e)=>setAño(e.target.value)}>
+    <option value="">Seleccione Año</option>
+    <option value="">2019</option>
+    <option value="">2020</option>
+    <option value="">2021</option>
+    <option value="">2022</option>
+    </select>
     <label>Servicio</label>
     <select name="servicio" required value={servicio} onChange={(e)=>setServicio(e.target.value)}>
             <option value="">Seleccione un servicio</option>

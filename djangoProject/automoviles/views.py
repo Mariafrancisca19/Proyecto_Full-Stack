@@ -3,7 +3,7 @@ from rest_framework import generics
 from .models import Automovil,Especificaciones
 from .serializers import AutomovilSerializer,EspecificacionesSerializer
 
-# logica
+# logica 
 # Create your views here.
 
 class AutomovilView(generics.ListCreateAPIView):
