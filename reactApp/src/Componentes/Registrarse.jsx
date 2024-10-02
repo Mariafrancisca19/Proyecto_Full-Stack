@@ -21,28 +21,28 @@ const Registrarse = () => {
 
 
   return (
-    <div>
-    <h1>REGISTER</h1>
-      <form>
+    <div className='container-form'>
+      <form className='form2'>
+      <h1>REGISTER</h1>
       <label>Name </label>
-      <input placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
+      <input  className='input-login' placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
       <label>Last Name </label><br/>
-      <input placeholder="Last Name" value={apellido} type="last_name" onChange={(e)=>setApellido(e.target.value)}/>
+      <input  className='input-login' placeholder="Last Name" value={apellido} type="last_name" onChange={(e)=>setApellido(e.target.value)}/>
       <br/>
       <label>Birthdate </label><br/>
-      <input placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
+      <input  className='input-login' placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
 
       <label>Email </label><br/>
-      <input placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
+      <input  className='input-login' placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
 
       <label>Password </label><br/>
-      <input placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
+      <input  className='input-login' placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
 
       <label>Password confirmation </label><br/>
-      <input placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
-      <button onClick={espacioVacio}>Sign Up</button>
+      <input  className='input-login' placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
+      <button className='btn-login' onClick={espacioVacio}>Sign Up</button><br/>
+      <button className='btn-login' onClick={()=>navigate('/')}>Back</button> 
       </form>
-      <button onClick={()=>navigate('/')}>Back</button> 
     </div>
   )
 }

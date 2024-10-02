@@ -9,25 +9,7 @@ div {
     
   }
   
-   /* Estilo para inputs y botones */
-  input {
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 10px 0; /* Espacio entre inputs */
-  }
-  
-  button {
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #ffeb89;
-    color: rgb(6, 5, 5);
-    cursor: pointer;
-    margin-top: 10px; /*Espacio encima del botón */
-  }
+
   
   button:hover {
     background-color: #758495;

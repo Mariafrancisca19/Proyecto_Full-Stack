@@ -29,30 +29,30 @@
 }
 
 .colored-toast .swal2-html-container {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 /*Navbar*/
 
 .logo{
 clip-path: circle(50%);
-opacity: 0.7;
+opacity: 0.9;
 transform: scalez(-1);
 filter: brightness(100%); /*para darle brillo a la imagen */
 } 
 
 .navbar {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 .navbar .nav-link,
 .navbar .dropdown-item {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .navbar .form-control {
-  background-color: black;
-  color: white;
+  background-color: rgb(251, 249, 249);
+  color: rgb(7, 7, 7);
 }
 
 .navbar .btn {

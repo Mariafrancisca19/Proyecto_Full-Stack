@@ -1,8 +1,9 @@
 import React from 'react'
 import MenuNav from '../Componentes/MenuNav'
-
+import Maps from '../Componentes/Maps'
 import Atras from '../Componentes/Atras'
 import CarouselMostrar from '../Componentes/CarouselMostrar'
+import Footer from '../Componentes/Footer'
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       <MenuNav/>
       <CarouselMostrar/>
       <Atras/>
-
+      <Maps/>
+      <Footer/>
     </div>
   )
 }

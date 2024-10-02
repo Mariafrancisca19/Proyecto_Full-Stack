@@ -1,10 +1,62 @@
-body {
-  font-family: 'Georgia', serif;
-  font-size: 18px;
-  line-height: 0.6;
+
+
+.container-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
+.form{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(198, 191, 254);
+  margin-top: 200px;
+  color: white;
+}
+.input-login{
+  border-radius: 20px;
+  border: transparent;
+  padding: 5px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: rgb(155, 155, 235);
+  color: white;
+}
+.btn-login{
+  border-radius: 25px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffffff;
+  color: rgb(6, 5, 5);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form2{
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 30px;
+  background-color: rgb(198, 191, 254);
+  margin-top: 10px;
+  color: white;
+
+}
+
+.form3{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 60px;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  cursor:pointer;
 
 
+}
+.input-services{
+  margin: 10px; 
+  border-radius: 10px;
+  padding: 5px;
 
+}

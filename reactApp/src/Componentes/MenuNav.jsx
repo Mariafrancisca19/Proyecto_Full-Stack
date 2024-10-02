@@ -33,7 +33,7 @@ const MenuNav = () => {
 <Navbar className="navbar" expand="lg" >
     <Container>
         <Navbar.Brand href="#home">
-            <img style={{ width: '75px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
+            <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -46,9 +46,30 @@ const MenuNav = () => {
                     <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item  onClick={() => navigate("/")}>CERRAR SECCION</NavDropdown.Item>
+                    
                 </NavDropdown>
+                <Button variant="primary" onClick={handleShow}>
+                                servicios
+                            </Button>
+                            <Offcanvas show={show} onHide={handleClose}>
+                                <Offcanvas.Header closeButton>
+                                    <Offcanvas.Title>TODOS LOS SERVICIOS</Offcanvas.Title>
+                                </Offcanvas.Header>
+                                <Offcanvas.Body>
+                                    <ul>
+                                    <li>Freno</li>
+                                    <li>Aceite</li>
+                                    </ul>
+                                    
+                                    
+                                </Offcanvas.Body>
+                            </Offcanvas>
 
-                            <Form inline onSubmit={handleSearch}>
+                           
+
+
+                        </Nav>
+                        <Form inline onSubmit={handleSearch}>
                                 <Row>
                                     <Col xs="auto">
                                         <Form.Control
@@ -65,25 +86,6 @@ const MenuNav = () => {
                                     </Col>
                                 </Row>
                             </Form>
-
-
-                        </Nav>
-                            <Button variant="primary" onClick={handleShow}>
-                                servicios
-                            </Button>
-                            <Offcanvas show={show} onHide={handleClose}>
-                                <Offcanvas.Header closeButton>
-                                    <Offcanvas.Title>TODOS LOS SERVICIOS</Offcanvas.Title>
-                                </Offcanvas.Header>
-                                <Offcanvas.Body>
-                                    <ul>
-                                    <li>Freno</li>
-                                    <li>Aceite</li>
-                                    </ul>
-                                    
-                                    
-                                </Offcanvas.Body>
-                            </Offcanvas>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

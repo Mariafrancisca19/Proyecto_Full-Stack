@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mostrarAlerta } from '../JS/SweetAlert';
-// import '../Estilos/Inicio.css'
+import '../Estilos/Inicio.css'
 
 const Login = () => {
   const navigate = useNavigate()   
@@ -19,15 +19,17 @@ const Login = () => {
 
   
   return (
-    <div>
-      <h1>BIENVENIDOS</h1>
-      <form>
-      <input placeholder="Correo Electrronico" value={correo} type="email" onChange={(e)=>setCorreo(e.target.value)}/> <br/>
-      <input placeholder="Correo Electrronico"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
-      </form>
+    <div className='container-form'>
+      <form className='form'>
+        <h1>BIENVENIDOS</h1>
+        <form>
+        <input className='input-login' placeholder="Correo Electrronico" value={correo} type="email" onChange={(e)=>setCorreo(e.target.value)}/> <br/>
+        <input className='input-login' placeholder="Clave"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
+        </form>
 
-      <button onClick={espaciosVacios}>REGISTRARSE</button><br/>
-      <a onClick={()=>{navigate("/Registrarse")}}>NO TENGO CUENTA</a>
+        <button className='btn-login' onClick={espaciosVacios}>REGISTRARSE</button><br/>
+        <a onClick={()=>{navigate("/Registrarse")}}>NO TENGO CUENTA</a>
+      </form>
     </div>
   )
 }

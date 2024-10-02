@@ -1,0 +1,18 @@
+.carousel-image-container {
+    width: 100%; /* Ajusta el ancho del contenedor */
+    height: 300px; /* Ajusta la altura deseada */
+    overflow: hidden; /* Oculta el desbordamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-image-container img {
+    width: auto; /* O ajusta a 100% según tus necesidades */
+    height: 100%; /* Asegúrate de que la imagen ocupe la altura completa del contenedor */
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  }
+  .container-carousel{
+    margin-top: 25px;
+  }
+  

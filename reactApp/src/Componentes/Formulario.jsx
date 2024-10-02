@@ -20,12 +20,12 @@ const Formulario = () => {
  }
 
   return (
-    <div>
-      <form>
+    <div className='container-form'>
+      <form className='form3'>
       <label>Mantenimiento</label>
     <div>
-    <label> Marca</label>
-    <select name = 'marca' value={marca} onChange={(e)=>setMarca(e.target.value)}>
+    <label  className='input-services'> Marca</label>
+    <select name = 'marca' value={marca} onChange={(e)=>setMarca(e.target.value)}><br/>
     <option value="seleccione">Seleccione Marca</option>
     <option value="toyota">Toyota</option>
     <option value="honda">Honda</option>
@@ -53,8 +53,8 @@ const Formulario = () => {
     <option value="renault">Renault</option>
     <option value="mitsubishi">Mitsubishi</option>
     </select><br/>
-    <label>Modelo</label>
-    <select name = 'modelo' value={modelo} onChange={(e)=>setModelo(e.target.value)}>
+    <label className='input-services'>Modelo</label>
+    <select name = 'modelo' value={modelo} onChange={(e)=>setModelo(e.target.value)}><br/>
     <option value="seleccione">Seleccione Modelo</option>
     <option value="corolla">Corolla</option>
     <option value="rav4">RAV4</option>
@@ -97,18 +97,17 @@ const Formulario = () => {
     <option value=""> 5008 </option>
     <option value="">  Captur </option>
     <option value=""> Outlander </option>
-
     </select><br/>
-    <label >Año</label>
-    <select name='año' value={año} onChange={(e)=>setAño(e.target.value)}>
+    <label  className='input-services' >Año</label>
+    <select name='año' value={año} onChange={(e)=>setAño(e.target.value)}><br/>
     <option value="">Seleccione Año</option>
     <option value="">2019</option>
     <option value="">2020</option>
     <option value="">2021</option>
     <option value="">2022</option>
-    </select>
-    <label>Servicio</label>
-    <select name="servicio" required value={servicio} onChange={(e)=>setServicio(e.target.value)}>
+    </select><br/>
+    <label className='input-services'>Servicio</label>
+    <select name="servicio" required value={servicio} onChange={(e)=>setServicio(e.target.value)}><br/>
             <option value="">Seleccione un servicio</option>
             <option value="mantenimiento_general">Mantenimiento General</option>
             <option value="cambio_aceite">Cambio de Aceite y sustitucion del filtro</option>
@@ -118,14 +117,18 @@ const Formulario = () => {
             <option value="filtro_motor">Filtro de aire del motor</option>
             <option value="otros">Otros</option>
     </select><br/>
-    <label>Descripcion</label>
+    <label className='input-services'>Descripcion</label>
     <input placeholder='Descripcion del servicio' type='text'value={descripcion} onChange={(e)=>setDescripcion(e.target.value)}></input><br/>
-    <label >Imagen</label>
+    <label className='input-services' >Imagen</label>
     <input  type='file' name="imagen" value={imagen} onChange={(e)=>setImagen(e.target.value)} ></input><br/>
-    <button type='submit' onClick={espacioVacio}>Enviar</button>
-    <button type='button' ></button>
+    <button  className='input-services'type='submit' onClick={espacioVacio}>Enviar</button><br/>
+    <button className='input-services' type='button' >Reiniciar</button>
     </div>
       </form>
+
+
+
+      
     </div>
   )
 }
