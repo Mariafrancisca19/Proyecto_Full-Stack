@@ -8,6 +8,7 @@ import QuienesSomos from "../Componentes/QuienesSomos";
 import Info from "../Componentes/Info";
 import Contacto from "../Componentes/Contacto";
 import SobreNosotros from "../Paginas/SobreNosotros";
+import Ubicacion from "../Paginas/Ubicacion";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
     {
         path:"/sobrenosotros",
         element:<SobreNosotros/>
+    },
+
+    {
+        path:"/ubicacion",
+        element:<Ubicacion/>
     }
 
 ]);

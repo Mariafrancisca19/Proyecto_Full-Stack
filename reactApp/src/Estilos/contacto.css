@@ -1,0 +1,81 @@
+/* Estilos generales */
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+   */
+  /* Contenedor del formulario */
+.form-contacto{
+    background-color: #e3dfe5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(186, 6, 6, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    
+  }
+  
+  /* Estilos para los labels */
+  .label-contacto{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Estilos para los inputs */
+  /* form input[type="text"],
+  form input[type="email"], */
+
+   .text-contacto{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo específico para el textarea */
+  .text-contacto {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  /* Estilo para el botón de envío */
+  .input-contacto [type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Efecto hover para el botón */
+  .input-contacto[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos responsivos para móviles */
+  /* @media (max-width: 480px) {
+    form {
+      padding: 15px;
+    }
+  
+    form input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+   */

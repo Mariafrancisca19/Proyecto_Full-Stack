@@ -13,6 +13,8 @@ const Login = () => {
     if (correo.trim() === "" || password.trim() === ""){
       mostrarAlerta("error","LLENE TODOS LOS CAMPOS")
     }
+   
+  
   }
 
   

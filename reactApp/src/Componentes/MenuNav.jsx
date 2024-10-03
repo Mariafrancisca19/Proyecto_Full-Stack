@@ -33,7 +33,7 @@ const MenuNav = () => {
 <Navbar className="navbar" expand="lg" >
     <Container>
         <Navbar.Brand href="#home">
-            <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' />
+            <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' onClick={()=>navigate("/home")} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -42,7 +42,7 @@ const MenuNav = () => {
                 <Nav.Link  onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
                 <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown"  >
                     <NavDropdown.Item  onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
-                    <NavDropdown.Item >UBICACION</NavDropdown.Item>
+                    <NavDropdown.Item  onClick={()=>navigate("/ubicacion")}>UBICACION</NavDropdown.Item>
                     <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item  onClick={() => navigate("/")}>CERRAR SECCION</NavDropdown.Item>
