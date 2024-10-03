@@ -6,6 +6,8 @@ import Home from "../Paginas/Home";
 import Destacado from "../Paginas/Destacado";
 import QuienesSomos from "../Componentes/QuienesSomos";
 import Info from "../Componentes/Info";
+import Contacto from "../Componentes/Contacto";
+import SobreNosotros from "../Paginas/SobreNosotros";
 
 const router = createBrowserRouter([
     {
@@ -34,18 +36,21 @@ const router = createBrowserRouter([
         element: <Destacado/>
 
     },
-
-    {
-        path: "/quiensomos",
-        element: <QuienesSomos/>
-
-    },
-
     {
         path: "/info",
         element: <Info/>
 
     },
+
+    {
+        path: "/contacto",
+        element: <Contacto/>
+    },
+
+    {
+        path:"/sobrenosotros",
+        element:<SobreNosotros/>
+    }
 
 ]);
 const Rutas = () => {

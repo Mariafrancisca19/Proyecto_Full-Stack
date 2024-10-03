@@ -60,3 +60,18 @@ filter: brightness(100%); /*para darle brillo a la imagen */
   color: black;
 } 
 
+.container-footer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0%;
+}
+
+.footer{
+  width: 100%;
+  margin: 0%;
+}
+.container-home{
+  margin: 0%;
+  padding: 0%;
+}

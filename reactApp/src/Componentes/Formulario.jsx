@@ -22,7 +22,7 @@ const Formulario = () => {
   return (
     <div className='container-form'>
       <form className='form3'>
-      <label>Mantenimiento</label>
+      <label> SOLICITUD MANTENIMIENTO</label>
     <div>
     <label  className='input-services'> Marca</label>
     <select name = 'marca' value={marca} onChange={(e)=>setMarca(e.target.value)}><br/>

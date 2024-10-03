@@ -41,7 +41,7 @@ const MenuNav = () => {
                 <Nav.Link  onClick={() => navigate("/home")}>HOME</Nav.Link>
                 <Nav.Link  onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
                 <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown"  >
-                    <NavDropdown.Item  onClick={() => navigate("/quiensomos")}>MISION</NavDropdown.Item>
+                    <NavDropdown.Item  onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
                     <NavDropdown.Item >UBICACION</NavDropdown.Item>
                     <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
                     <NavDropdown.Divider />

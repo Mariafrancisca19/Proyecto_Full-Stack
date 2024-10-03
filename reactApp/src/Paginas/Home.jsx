@@ -4,14 +4,14 @@ import Maps from '../Componentes/Maps'
 import Atras from '../Componentes/Atras'
 import CarouselMostrar from '../Componentes/CarouselMostrar'
 import Footer from '../Componentes/Footer'
+import '../Estilos/App.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className='container-home'>
       <MenuNav/>
       <CarouselMostrar/>
       <Atras/>
-      <Maps/>
       <Footer/>
     </div>
   )

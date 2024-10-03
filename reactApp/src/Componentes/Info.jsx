@@ -1,6 +1,7 @@
 import React from 'react'
 import Atras from '../Componentes/Atras'
 import MenuNav from './MenuNav'
+import Footer from './Footer'
 
 
 const Info = () => {
@@ -13,6 +14,7 @@ const Info = () => {
       <a href="https://www.whatsapp.com/">WhatsApp (Contacta a tu asesor)</a>
 
       <Atras/>
+      <Footer/>
     </div>
   )
 }
