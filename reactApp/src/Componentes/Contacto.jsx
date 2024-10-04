@@ -40,6 +40,7 @@ const Contacto = () => {
     <div>
     <MenuNav/>
     <form ref={form} onSubmit={sendEmail} className='form-contacto'>
+      <label>CONTACTANOS</label>
       <label className='label-contacto'>Name</label>
       <input className='input-contacto' type="text" name="user_name" />
       <label className='label-contacto'>Email</label>

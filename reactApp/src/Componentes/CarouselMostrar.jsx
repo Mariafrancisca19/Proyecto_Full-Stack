@@ -9,8 +9,9 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen.jpg"} />
         </div>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Nuestros Servicios</h3>
+          <p>Contamos con múltiples servicios según la necesidad de su vehículo</p>
+          <button>VER MAS</button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -18,8 +19,9 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen2.webp"} />
         </div>
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Contamos con años de servicio</h3>
+          <p>Nos permite decir que somos su mejor garantía </p>
+          <button>VER MAS</button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -27,10 +29,9 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen3.webp"} />
         </div>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>Solicitar Mantenimiento</h3>
+          <p> Saca tu cita con nosotros</p>
+          <button>Solicitar Mantenimiento</button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -38,10 +39,8 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen4.jpg"} />
         </div>
         <Carousel.Caption>
-          <h3>Fourth slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3></h3>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -49,10 +48,8 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen5.jpg"} />
         </div>
         <Carousel.Caption>
-          <h3>Fifth slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3></h3>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>  
     </Carousel>

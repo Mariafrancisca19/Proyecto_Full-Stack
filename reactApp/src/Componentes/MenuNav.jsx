@@ -40,9 +40,9 @@ const MenuNav = () => {
             <Nav className="me-auto">
                 <Nav.Link  onClick={() => navigate("/home")}>HOME</Nav.Link>
                 <Nav.Link  onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
-                <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown"  >
+                <NavDropdown title="NUESTRA EMPRESA" id="basic-nav-dropdown"  >
                     <NavDropdown.Item  onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
-                    <NavDropdown.Item  onClick={()=>navigate("#footer")}>UBICACION</NavDropdown.Item>
+                    <NavDropdown.Item  onClick={()=>navigate("/ubicacion")}>UBICACION</NavDropdown.Item>
                     <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item  onClick={() => navigate("/")}>CERRAR SECCION</NavDropdown.Item>
@@ -82,9 +82,11 @@ const MenuNav = () => {
                                         />
                                     </Col>
                                     <Col xs="auto">
-                                        <Button type="submit" >🔍</Button>
+                                        <Button type="submit" ><i class="bi bi-search"></i><br/>
+                                        </Button> <i class="bi bi-cart3"></i>
                                     </Col>
                                 </Row>
+                                
                             </Form>
                     </Navbar.Collapse>
                 </Container>
