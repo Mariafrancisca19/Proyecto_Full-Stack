@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mostrarAlerta } from '../JS/SweetAlert';
+import {guardarDatos} from '../JS/Fetch';
 import '../Estilos/index.css'
 
 const Registrarse = () => {
@@ -13,16 +14,60 @@ const Registrarse = () => {
   const [contrasena, setContrasena] = useState("")
   const [okContrasena, setOkContrasena] = useState("")
 
+  // funcion para validar que no han espacios vacios
   const espacioVacio=()=>{
-    if (nombre.trim() === "" || apellido.trim() === "" || bithdate.trim() === "" || correoR.trim() === "" || contrasena.trim() === "" || okContrasena.trim() === ""){
-      mostrarAlerta("error","LLENE TODOS LOS CAMPOS")
+    if (nombre.trim() === "" || apellido.trim() === "" || bithdate.trim() === "" || correoR.trim() === "" || contrasena.trim() === "" || okContrasena.trim() === "")
+    {
+      mostrarAlerta("error","LLENE TODOS LOS CAMPOS");
+      return false;
     }
+
+    if (contrasena !== okContrasena) {   
+      mostrarAlerta("error","Las contraseñas no coinciden");
+      return false
+    }
+    return true;
+  };
+
+
+  // eenviar los datos al servidor usando mi guardarDatos 
+  const handleSubmit = async (e) => {
+    e.preventDefault();  /*evita que la pagina se recargue*/
+
+    if (!espacioVacio()){  //si la contrasena o loscampos estan vacios se detiene
+      return;
+    }
+
+    // se cree el objeto que contiene todos los datos del formulario
+    const datosRegistro = {
+      username : nombre,
+      last_name : apellido,
+      fecha_nacimiento : bithdate,
+      email:correoR,
+      password:contrasena,
+    };
+
+    try {
+      const respuesta = await guardarDatos(datosRegistro,"registro/"); /*llamar a mi metodo rara guargar los datos */
+      if(respuesta.success){  /* respuesta exitosa*/
+        mostrarAlerta("success","Registro exitoso");
+        navigate("/"); /*  redireccionar a la pagina principal*/
+      } else {
+        mostrarAlerta("error","Error en el registro");
+      }
+    } catch (error) {
+      console.error("Error al enviar los datos:", error);
+      mostrarAlerta("error","Error en la conexion con el servidor")
+    }
+
   }
+
+
 
 
   return (
     <div className='container-form'>
-      <form className='form2'>
+      <form className='form2'onSubmit={handleSubmit}>
       <h1>REGISTER</h1>
       <label>Name </label>
       <input  className='input-login' placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
@@ -40,7 +85,7 @@ const Registrarse = () => {
 
       <label>Password confirmation </label><br/>
       <input  className='input-login' placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
-      <button className='btn-login' onClick={espacioVacio}>Sign Up</button><br/>
+      <button className='btn-login' type='submit' onClick={espacioVacio}>Sign Up</button><br/>
       <button className='btn-login' onClick={()=>navigate('/')}>Back</button> 
       </form>
     </div>
