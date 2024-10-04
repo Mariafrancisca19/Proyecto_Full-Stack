@@ -5,7 +5,7 @@ const Card = () => {
         <div>
             <h1>Servicios</h1>
             {/* Contenedor de tarjetas con flexbox */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <div className="card" style={{ width: '18rem', margin: '10px' }}>
                     <img src="src/Imagenes/imagen3.webp" className="card-img-top" alt="Card image" />
                     <div className="card-body">

@@ -1,11 +1,11 @@
 import React from 'react'
 import '../Estilos/App.css'
 import { useNavigate } from 'react-router-dom'
-const Footer = () => {
+const Footer = ({id}) => {
   const navigate = useNavigate()
 
   return (
-    <div className='container-footer' style={{ backgroundColor: '#3e4551' }}>
+    <div id={id} className='container-footer' style={{ backgroundColor: '#3e4551' }}>
     <div className="container my-5 footer">
       {/* Footer */}
       <footer className="text-center text-lg-start text-white pie-pagina" >

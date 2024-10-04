@@ -30,11 +30,11 @@ const Registrarse = () => {
   };
 
 
-  // eenviar los datos al servidor usando mi guardarDatos 
+  // enviar los datos al servidor usando mi guardarDatos 
   const handleSubmit = async (e) => {
     e.preventDefault();  /*evita que la pagina se recargue*/
 
-    if (!espacioVacio()){  //si la contrasena o loscampos estan vacios se detiene
+    if (!espacioVacio()){  //si la contrasena o los campos estan vacios se detiene
       return;
     }
 

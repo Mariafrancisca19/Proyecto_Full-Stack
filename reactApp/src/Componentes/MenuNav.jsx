@@ -42,7 +42,7 @@ const MenuNav = () => {
                 <Nav.Link  onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
                 <NavDropdown title="QUIENES SOMOS" id="basic-nav-dropdown"  >
                     <NavDropdown.Item  onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
-                    <NavDropdown.Item  onClick={()=>navigate("/ubicacion")}>UBICACION</NavDropdown.Item>
+                    <NavDropdown.Item  onClick={()=>navigate("#footer")}>UBICACION</NavDropdown.Item>
                     <NavDropdown.Item  onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item  onClick={() => navigate("/")}>CERRAR SECCION</NavDropdown.Item>

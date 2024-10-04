@@ -13,7 +13,7 @@ const Home = () => {
       <CarouselMostrar/>
       <Card/>
       <Atras/>
-      <Footer/>
+      <Footer id={"#footer"}/>
     </div>
   )
 }
