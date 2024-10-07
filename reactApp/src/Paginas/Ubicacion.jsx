@@ -1,12 +1,17 @@
 import React from 'react'
-import Card from '../Componentes/Card'
-import Premium from '../Componentes/Premium'
+import MenuNav from '../Componentes/MenuNav'
+import Footer from '../Componentes/Footer'
+import Maps from '../Componentes/Maps'
+import FormServicio from '../Componentes/FormServicio'
 
 const Ubicacion = () => {
   return (
     <div>
-      
-    <Premium/>
+      <MenuNav/>
+      <h3>NOS PUEDES ENCONTRAR EN </h3>
+      <Maps/>
+      <FormServicio/>
+      <Footer/>
     </div>
   )
 }

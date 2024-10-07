@@ -1,9 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Imagenes from './Imagenes';
 import '../Estilos/carousel.css'
-
+import { useNavigate } from 'react-router-dom';
 
 function CarouselMostrar() {
+  const navigate = useNavigate()
   return (
     <Carousel className='container-carousel' fade>
       <Carousel.Item>
@@ -13,7 +14,7 @@ function CarouselMostrar() {
         <Carousel.Caption>
           <h3>Nuestros Servicios</h3>
           <p>Contamos con múltiples servicios según la necesidad de su vehículo</p>
-          <button>
+          <button onClick={()=>navigate("/destacado")}>
              VER MAS
           </button>
         </Carousel.Caption>
@@ -25,7 +26,9 @@ function CarouselMostrar() {
         <Carousel.Caption>
           <h3>Contamos con años de servicio</h3>
           <p>Nos permite decir que somos su mejor garantía </p>
-          <button>VER MAS</button>
+          <button onClick={()=>navigate("/sobrenosotros")}>
+          VER MAS
+          </button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -35,7 +38,9 @@ function CarouselMostrar() {
         <Carousel.Caption>
           <h3>Solicitar Mantenimiento</h3>
           <p> Saca tu cita con nosotros</p>
-          <button>Solicitar Mantenimiento</button>
+          <button onClick={()=>navigate("/info")}>
+          Solicitar Mantenimiento
+          </button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

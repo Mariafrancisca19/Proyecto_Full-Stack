@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Inicio_Seccion = () => {
+const Inicio_Sesion = () => {
   
 
 
@@ -11,4 +11,4 @@ const Inicio_Seccion = () => {
   )
 }
 
-export default Inicio_Seccion
+export default Inicio_Sesion
