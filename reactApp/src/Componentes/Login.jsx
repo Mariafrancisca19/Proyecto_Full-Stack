@@ -50,8 +50,8 @@ const Login = () => {
       <form className='form'>
         <h1>BIENVENIDOS</h1>
         <form>
-        <input className='input-login' placeholder="Correo Electrronico" value={nombre} type="email" onChange={(e)=>setNombre(e.target.value)}/> <br/>
-        <input className='input-login' placeholder="Clave"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
+        <input className='input-login' placeholder="Username" value={nombre} type="email" onChange={(e)=>setNombre(e.target.value)}/> <br/>
+        <input className='input-login' placeholder="Password"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
         </form>
 
         <button className='btn-login' onClick={inicioSesion}>INICIAR</button><br/>

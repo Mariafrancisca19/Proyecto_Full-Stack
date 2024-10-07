@@ -1,6 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Imagenes from './Imagenes';
 import '../Estilos/carousel.css'
+
+
 function CarouselMostrar() {
   return (
     <Carousel className='container-carousel' fade>
@@ -11,7 +13,9 @@ function CarouselMostrar() {
         <Carousel.Caption>
           <h3>Nuestros Servicios</h3>
           <p>Contamos con múltiples servicios según la necesidad de su vehículo</p>
-          <button>VER MAS</button>
+          <button>
+             VER MAS
+          </button>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

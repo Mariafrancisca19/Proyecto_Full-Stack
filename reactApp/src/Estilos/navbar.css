@@ -1,0 +1,70 @@
+/* Custom Navbar Styles */
+.navbar-custom {
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-custom .navbar-brand img {
+    width: 50px;
+    cursor: pointer;
+  }
+  
+  .navbar-custom .nav-link {
+    color: #fff;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #1abc9c;
+  }
+  
+  .navbar-custom .nav-button {
+    border: 1px solid #fff;
+    color: #000000;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-custom .nav-button:hover {
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+  }
+  
+  .search-bar {
+    align-items: center;
+  }
+  
+  .search-input {
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    color: #000000;
+    width: 200px;
+  }
+  
+  .search-button {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .search-button i {
+    font-size: 1.2rem;
+  }
+  
+  .cart-button {
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .cart-button i {
+    font-size: 1.5rem;
+  }
+  
