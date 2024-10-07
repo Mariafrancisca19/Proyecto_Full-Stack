@@ -12,7 +12,6 @@ const Home = () => {
       <MenuNav/>
       <CarouselMostrar/>
       <Card/>
-    
       <Footer id={"#footer"}/>
     </div>
   )

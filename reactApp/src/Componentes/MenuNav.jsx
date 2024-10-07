@@ -62,7 +62,7 @@ const MenuNav = () => {
             <Button type="submit" className="search-button">
               <i className="bi bi-search"></i>
             </Button>
-            <Button className="cart-button" variant="outline-light">
+            <Button className="cart-button" variant="outline-light" onClick={() => navigate("/carrito")}>
               <i className="bi bi-cart3"></i>
             </Button>
           </Form>

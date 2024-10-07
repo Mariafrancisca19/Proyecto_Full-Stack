@@ -9,6 +9,7 @@ import Info from "../Componentes/Info";
 import Contacto from "../Componentes/Contacto";
 import SobreNosotros from "../Paginas/SobreNosotros";
 import Ubicacion from "../Paginas/Ubicacion";
+import Carrito from "../Componentes/Carrito";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
     {
         path:"/ubicacion",
         element:<Ubicacion/>
+    },
+
+    {
+        path:"/carrito",
+        element:<Carrito/>
     }
 
 ]);
