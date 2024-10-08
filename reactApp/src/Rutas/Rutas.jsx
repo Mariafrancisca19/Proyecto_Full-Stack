@@ -31,7 +31,8 @@ const router = createBrowserRouter([
 
     {
         path: "/home",
-        element: <RutaPrivada route={<Home/>}/> /*prueba de ruta privada*/
+        element: <Home/>
+        // element: <RutaPrivada route={<Home/>}/> prueba de ruta privada
     },
 
     {

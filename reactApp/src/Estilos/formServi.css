@@ -1,0 +1,100 @@
+.container-formServi {
+    background-color: rgb(234, 132, 132);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .label-formServi {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+  }
+  
+  /* Estilo de los Inputs */
+  .input-formServi {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+
+  /* Efecto al interactuar con los inputs */
+.input-formServi:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  /* boton enviar formulario */
+  .boton-enviar{
+    width: 100%;
+    padding: 12px;
+    background-color: hsl(53, 92%, 71%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+
+  /* Efecto hover en el botón */
+.boton-enviar:hover {
+    background-color: #bdd1e6;
+  }
+
+  /* formulario de contacto de emailjs  */
+  
+
+  .form-contacto{
+    background-color: rgb(234, 132, 132);
+    padding: 70px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+
+
+  }
+
+
+  .label-contacto{
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #02070a;
+    font-weight: 500;
+
+  }
+
+.input-contacto{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+
+}
+
+ /* Efecto al interactuar con los inputs */
+ .input-contacto:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+

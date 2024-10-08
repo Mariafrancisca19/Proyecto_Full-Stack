@@ -4,6 +4,7 @@ import MenuNav from '../Componentes/MenuNav'
 import Footer from '../Componentes/Footer'
 // import { Card } from 'react-bootstrap'
 import Card from '../Componentes/Card'
+import FormServicio from '../Componentes/FormServicio'
 
 
 const Destacado = () => {
@@ -11,7 +12,8 @@ const Destacado = () => {
     
     <div>
       <MenuNav/>
-      <Card/>
+      {/* <Card/> */}
+      <FormServicio/>
       <Atras/>
       <Footer/>
     </div>

@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'login',
+        'NAME': 'arreglosya_db',
         'USER': 'root',
         'PASSWORD': 'MFCHS',
         'HOST': 'localhost',

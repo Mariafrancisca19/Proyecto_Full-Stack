@@ -29,7 +29,7 @@ const Login = () => {
   
     try {
       const respuesta = await guardarDatos(datosLogin,"login/");
-      if (respuesta){
+      if (respuesta.token){
         mostrarAlerta("success"," BIENVENIDA ")
         navigate("/home")
       } else{ 
@@ -50,7 +50,7 @@ const Login = () => {
       <form className='form'>
         <h1>BIENVENIDOS</h1>
         <form>
-        <input className='input-login' placeholder="Username" value={nombre} type="email" onChange={(e)=>setNombre(e.target.value)}/> <br/>
+        <input className='input-login' placeholder="Username" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/> <br/>
         <input className='input-login' placeholder="Password"  value={password}type="password" onChange={(e)=>setPassword(e.target.value)}/>
         </form>
 

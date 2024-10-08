@@ -5,9 +5,9 @@ from Cuentas.views import LoginView
 
 urlpatterns = [
     path('api/registro/', RegistroView.as_view()),
-    path('api/',include('automoviles.urls')),
+    path('api/automoviles',include('automoviles.urls')),
     path('api/',include('servicio.urls')),
-    path('api/',include('calificacion.urls')),  
+    path('api/calificacion',include('calificacion.urls')),  
     path('api/login/', LoginView.as_view())
       
 ]

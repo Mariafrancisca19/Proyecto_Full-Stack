@@ -6,19 +6,21 @@ from .models import Taller,Servicio,Mantenimiento
 class TallerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Taller
-        fields = ["id_servicio","nombre_taller","direccion","telefono"]
+        fields = "__all__"
         
         
 class ServicioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Servicio
-        fields = ["id_taller","tipo","fecha_inicio_mantenimiento","fecha_fin_mantenimiento"]
+        fields = "__all__"
+
         
         
 class MantenimientoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mantenimiento
-        fields = ["id_automovil","nombre_taller","id_tipo","descripcion"]
+        fields = "__all__"
+
     
     
 

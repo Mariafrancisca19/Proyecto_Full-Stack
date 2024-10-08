@@ -1,4 +1,4 @@
-import '../Estilos/contacto.css'
+import '../Estilos/formServi.css'
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import MenuNav from './MenuNav';
@@ -40,14 +40,14 @@ const Contacto = () => {
     <div>
     <MenuNav/>
     <form ref={form} onSubmit={sendEmail} className='form-contacto'>
-      <label>CONTACTANOS</label>
-      <label className='label-contacto'>Name</label>
+      <label style={{fontFamily:'fantasy', fontSize:" 35px"}}>CONTACTANOS</label>
+      <label className='label-contacto '>Name</label>
       <input className='input-contacto' type="text" name="user_name" />
       <label className='label-contacto'>Email</label>
       <input className='input-contacto' type="email" name="user_email" value={"franciscasaborio19@gmail.com"} disabled />
       <label className='label-contacto'>Message</label>
       <textarea className='text-contacto' name="message" />
-      <input className='input=contacto' type="submit" value="Send" />
+      <input className='input-sutmit' type="submit" value="Send" />
     </form>
     <Footer/>
     </div>
