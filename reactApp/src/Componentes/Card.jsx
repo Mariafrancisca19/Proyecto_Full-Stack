@@ -3,7 +3,7 @@ import React from 'react'
 const Card = () => {
     return (
         <div>
-            <h1 style={{fontFamily:'-moz-initial'}}>Servicios</h1>
+            <h1 style={{fontFamily:'-moz-initial', marginTop:'20px'}}>Servicios</h1>
             {/* Contenedor de tarjetas con flexbox */}
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <div className="card" style={{ width: '18rem', margin: '10px' }}>

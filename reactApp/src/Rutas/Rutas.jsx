@@ -10,6 +10,8 @@ import Contacto from "../Componentes/Contacto";
 import SobreNosotros from "../Paginas/SobreNosotros";
 import Ubicacion from "../Paginas/Ubicacion";
 import Carrito from "../Componentes/Carrito";
+import FormServicio from "../Componentes/FormServicio";
+import RutaPrivada from "./RutaPrivada";
 
 const router = createBrowserRouter([
     {
@@ -29,19 +31,16 @@ const router = createBrowserRouter([
 
     {
         path: "/home",
-        element: <Home/>
-
+        element: <RutaPrivada route={<Home/>}/> /*prueba de ruta privada*/
     },
 
     {
         path: "/destacado",
         element: <Destacado/>
-
     },
     {
         path: "/info",
         element: <Info/>
-
     },
 
     {
@@ -62,6 +61,11 @@ const router = createBrowserRouter([
     {
         path:"/carrito",
         element:<Carrito/>
+    },
+
+    {
+        path:'/formservicio',
+        element: <RutaPrivada route={<FormServicio/>}/>
     }
 
 ]);
