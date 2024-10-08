@@ -8,7 +8,7 @@ const Ubicacion = () => {
   return (
     <div>
       <MenuNav/>
-      <h3>NOS PUEDES ENCONTRAR EN </h3>
+      <h3 style={{fontFamily:'-moz-initial', marginTop:'50px'}}>NOS PUEDES ENCONTRAR EN </h3>
       <Maps/>
       <FormServicio/>
       <Footer/>

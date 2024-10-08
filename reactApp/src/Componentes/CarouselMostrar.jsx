@@ -48,8 +48,8 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen4.jpg"} />
         </div>
         <Carousel.Caption>
-          <h3></h3>
-          <p></p>
+        <h3>Conoce nuestros Destacados</h3>
+        <p>Descubre lo mejor que tenemos para ofrecer.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -57,8 +57,8 @@ function CarouselMostrar() {
           <Imagenes url={"/src/Imagenes/imagen5.jpg"} />
         </div>
         <Carousel.Caption>
-          <h3></h3>
-          <p></p>
+        <h3>Calidad en cada detalle</h3>
+        <p>Nos esforzamos por ofrecer el mejor servicio.</p>
         </Carousel.Caption>
       </Carousel.Item>  
     </Carousel>
