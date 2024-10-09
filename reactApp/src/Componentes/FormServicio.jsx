@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { guardarDatos } from '../JS/Fetch'
+import { guardarDatos, postPrueba } from '../JS/Fetch'
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/formServi.css'
 
@@ -15,7 +15,6 @@ const FormServicio = () => {
   const cambioArchivo = (event) => {
     const archivo = event.target.files[0];
     convertirBase64(archivo)
-
   }
   
 
@@ -37,19 +36,17 @@ const FormServicio = () => {
     } 
      
     const servicio = {
-      tipo : nombreServicio,
+      tipo : nombreServicio, 
       imagen : base64,                                // lo que esta en la bd:estado
       monto : precio,  
       descripcion:descripcion,                // estructura del servicio
-      taller : taller,
+      id_taller : taller,
     };
     // llama al post, le pasa el obj(servicio) y el endpoint
 
     try {
-      const respuesta = await guardarDatos(servicio,"api/servicio")
-      if (respuesta.success) {
-        mostrarAlerta("success","Servicio agregaddo correctamente")
-      }
+      await postPrueba(servicio)
+        mostrarAlerta("success","Servicio agregado correctamente")
     } catch (error) {
       console.error('error al enviar los servicios',error);
     }
@@ -57,24 +54,26 @@ const FormServicio = () => {
 
   }
 
-
-
   return (
     <div className='container-formServi'>
     <h1 style={{fontFamily:'fantasy', fontSize:'40px'}}>Servicios</h1>
     <form className='formServi'>
-    <label className='label-formServi'>Imagen </label>
-    <input type='file' onChange={cambioArchivo} className='input-formServi'></input>
-    <label className='label-formServi'>Nombre del taller</label>
-    <input className='input-formServi' placeholder='Nombre del taller' onChange={(e) => {setTaller(e.target.value)}}></input>
-    <label className='label-formServi'>Tipo</label>
-    <input className='input-formServi' placeholder='Nombre del servicio' onChange={(e) => {setNombreServicio(e.target.value)}}></input>
 
+    <label className='label-formServi'>Tipo</label>
+    <input value={nombreServicio} className='input-formServi' placeholder='Nombre del servicio' onChange={(e) => {setNombreServicio(e.target.value)}}></input>
+
+    <label  className='label-formServi'>Imagen </label>
+    <input type='file'   onChange={cambioArchivo} className='input-formServi'></input>
+    
     <label typeof='number' className='label-formServi'>Precio</label>
-    <input className='input-formServi' placeholder='Precio' type='number' onChange={(e) => {setPrecio(e.target.value)}}></input>
+    <input value={precio} className='input-formServi' placeholder='Precio' type='number' onChange={(e) => {setPrecio(e.target.value)}}></input>
 
     <label className='label-formServi'>Descripcion</label>
-    <input className='input-formServi' placeholder='Descripcion' onChange={(e) => {setDescripcion(e.target.value)}}></input>
+    <input value={descripcion} className='input-formServi' placeholder='Descripcion' onChange={(e) => {setDescripcion(e.target.value)}}></input>
+    
+    <label className='label-formServi'>Nombre del taller</label>
+    <input value={taller} className='input-formServi' placeholder='Nombre del taller' onChange={(e) => {setTaller(e.target.value)}}></input>
+   
 
     <button className='boton-enviar' type='submit' onClick={subirServicio}> ENVIAR</button>
     </form>

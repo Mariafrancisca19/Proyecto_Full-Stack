@@ -6,6 +6,7 @@
     max-width: 500px;
     width: 100%;
     text-align: center;
+    margin: auto;
   }
 
   .label-formServi {
@@ -65,7 +66,8 @@
     max-width: 500px;
     width: 100%;
     text-align: center;
-
+    /* margin-top:40px; */
+    margin: auto;
 
   }
 

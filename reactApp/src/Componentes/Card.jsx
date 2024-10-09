@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+// idea de como se veria el card ya cuando conecte la base de datos con react
 const Card = () => {
     return (
         <div>

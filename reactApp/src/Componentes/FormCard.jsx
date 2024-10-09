@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-function FormCard(imagen,servicio,precio,descripcion,btnEliminar,btnEditar,mostrarBotones) {
+function FormCard({imagen,servicio,precio,descripcion,btnEliminar,btnEditar,mostrarBotones}) {
  
   const [iniciar,setIniciar] = useState(false)
   const modificarTexto = () => {

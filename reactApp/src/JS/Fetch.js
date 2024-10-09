@@ -22,7 +22,6 @@ const obtenerDatos = async (enpoint) => {
 export { obtenerDatos }
 
 // metodo post para guardar datos
-
 const guardarDatos = async (obj,enpoint) => {
     try {
 
@@ -90,7 +89,15 @@ const deleteDatos = async (enpoint, id) => {
 export {deleteDatos}
 
 
+const postPrueba=async(obj)=>{
+    const peticion = await fetch('http://127.0.0.1:8000/api/servicio/',{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(obj)
+    })
+}
 
 
-
-
+export {postPrueba}
