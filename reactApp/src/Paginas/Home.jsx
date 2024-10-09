@@ -18,9 +18,7 @@ const Home = () => {
   const [estado,setEstado]=useState(false)
 
   // obtencion de los servicios del formulario
-
    // METODO DEL GET
-
 
    // FUNCION PARA RECARGAR LA PAGINA
    const recargaPag=()=>{
