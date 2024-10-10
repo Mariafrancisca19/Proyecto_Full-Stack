@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas, Row, Col } from 'react-bootstrap';
 import '../Estilos/App.css';
 import '../Estilos/navbar.css';
+import { obtenerDatos } from '../JS/Fetch';
 
 const MenuNav = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [servicio, setServicio] = useState([]);  //estado de almacenamineto
 
   const [searchTerm, setSearchTerm] = useState(''); // Estado para la búsqueda
 
@@ -18,11 +20,22 @@ const MenuNav = () => {
     console.log("Buscar:", searchTerm);
   };
 
+  // useEffect para obtener los servicios del metodo get
+  useEffect(() => {
+    const mostrarServ = async () => {
+      const data = await obtenerDatos("servicio/")
+      console.log(data)
+      setServicio(data) //Guardamos los servicios 
+    }
+    mostrarServ()
+
+  },[])
+
   return (
     <Navbar expand="lg" className="navbar-custom">
       <Container>
         <Navbar.Brand href="#home">
-        <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' onClick={()=>navigate("/home")} />
+          <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' onClick={() => navigate("/home")} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
@@ -45,8 +58,12 @@ const MenuNav = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <ul>
-                  <li>Frenos</li>
-                  <li>Aceite</li>
+                { servicio && servicio.length > 0 ? (
+                  servicio.map((servicio)=>
+                  <li>{servicio.tipo}</li>
+                   )
+                ):<li>No hay servicios disponibles</li>}
+                
                 </ul>
               </Offcanvas.Body>
             </Offcanvas>

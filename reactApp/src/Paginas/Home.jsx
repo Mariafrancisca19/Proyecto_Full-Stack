@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import MenuNav from '../Componentes/MenuNav'
 import CarouselMostrar from '../Componentes/CarouselMostrar'
 import Footer from '../Componentes/Footer'
@@ -13,42 +13,42 @@ const Home = () => {
 
 
   const [data, setData] = useState([])
-  const [id,setID]=useState()
-  const [estado,setEstado]=useState(false)
+  const [id, setID] = useState()
+  const [estado, setEstado] = useState(false)
 
   // obtencion de los servicios del formulario
-   // METODO DEL GET
+  // METODO DEL GET
 
-   // FUNCION PARA RECARGAR LA PAGINA
-   const recargaPag=()=>{
+  // FUNCION PARA RECARGAR LA PAGINA
+  const recargaPag = () => {
     setEstado(!estado)
   }
-    useEffect(()=>{
-      const servicio = async()=>{
-        const data = await obtenerDatos("servicio/")
-        console.log(data)
-        setData(data)
-      }
-      servicio()
-    },[])
-    
- 
+  useEffect(() => {
+    const servicio = async () => {
+      const data = await obtenerDatos("servicio/")
+      console.log(data)
+      setData(data)
+    }
+    servicio()
+  }, [])
+
+
   return (
     <div className='container-home'>
-      <MenuNav data={data}/>
-      <CarouselMostrar/>
+      <MenuNav data={data} />
+      <CarouselMostrar />
       <h1>SERVICIOS</h1>
       <div className='container'>
-    <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'> 
-        <ContenedorCard getServicio={data} />
-    </div>
-</div>
+        <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'>
+          <ContenedorCard getServicio={data} />
+        </div>
+      </div>
 
-      {id && 
-      <EditarFormAdmin id={id} recargaPag={recargaPag}/>
+      {id &&
+        <EditarFormAdmin id={id} recargaPag={recargaPag} />
       }
 
-      <Footer id={"#footer"}/>
+      <Footer id={"#footer"} />
     </div>
   )
 }
