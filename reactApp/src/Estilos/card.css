@@ -1,0 +1,55 @@
+
+/* Estilo para cuando no hay servicios */
+.no-servicios {
+    font-size: 1.2rem;
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo principal de la tarjeta */
+.card-container {
+    background-color: rgb(191, 200, 212);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card-container:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más intensa al hacer hover */
+}
+
+/* Estilo para la imagen */
+.card-image {
+    width: 100%; /* La imagen ocupa el ancho completo de la tarjeta */
+    height: 250px; /* Altura fija para mantener la proporción */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    padding: 20px; /* Añade espacio interior */
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Estilo para los botones */
+.card-buttons {
+    display: flex;
+    justify-content: space-around; /* Espacia los botones uniformemente */
+    margin-top: 15px;
+}

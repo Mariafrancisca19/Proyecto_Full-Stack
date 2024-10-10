@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { guardarDatos, postPrueba } from '../JS/Fetch'
+import { deleteDatos, guardarDatos, postPrueba } from '../JS/Fetch'
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/formServi.css'
 
@@ -51,6 +51,9 @@ const FormServicio = () => {
       console.error('error al enviar los servicios',error);
     }
 
+    
+      
+    //  deleteDatos("servicioDelete/<int:id>/") url de delete
 
   }
 

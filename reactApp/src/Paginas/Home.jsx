@@ -3,7 +3,6 @@ import MenuNav from '../Componentes/MenuNav'
 import CarouselMostrar from '../Componentes/CarouselMostrar'
 import Footer from '../Componentes/Footer'
 import '../Estilos/App.css'
-import Card from '../Componentes/Card'
 import { obtenerDatos } from '../JS/Fetch'
 import ContenedorCard from '../Componentes/ContenedorCard'
 import EditarFormAdmin from '../Componentes/EditarFormAdmin'
@@ -38,7 +37,7 @@ const Home = () => {
     <div className='container-home'>
       <MenuNav data={data}/>
       <CarouselMostrar/>
-      <Card/>
+      <h1>SERVICIOS</h1>
       <div className='container'>
     <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'> 
         <ContenedorCard getServicio={data} />
