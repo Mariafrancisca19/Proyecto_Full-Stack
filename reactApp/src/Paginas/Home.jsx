@@ -40,7 +40,7 @@ const Home = () => {
       <h1>SERVICIOS</h1>
       <div className='container'>
         <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'>
-          <ContenedorCard getServicio={data} />
+          <ContenedorCard getServicio={data} mostrarBotones={true} />
         </div>
       </div>
 
