@@ -13,7 +13,7 @@ function Modals(props) {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
-        className="formal-modal"  
+        className="formal-modal"
       >
         <Modal.Header closeButton className="modal-header">
           <Modal.Title id="contained-modal-title-vcenter" className="modal-title">
