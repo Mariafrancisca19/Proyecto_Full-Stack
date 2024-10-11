@@ -1,16 +1,16 @@
-import React from 'react'
 import { Button, ModalHeader } from 'react-bootstrap';
 import Modals from './Modals';
+import { useState } from 'react';
 const ModalsAPP = () => {
 
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
     return (
         <div>
 
             <>
                 <Button variant="primary" onClick={() => setModalShow(true)}>
-                    Launch vertically centered modal
+                    BOTON EDITAR 
                 </Button>
 
                 <Modals

@@ -1,0 +1,36 @@
+.formal-modal {
+    font-family: 'Georgia', serif;
+  }
+  
+  .modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .modal-title {
+    color:rgb(116, 168, 151);
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .update-button {
+    background-color:coral;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-button:hover {
+    background-color:rgb(116, 168, 151);
+  }
+  
+  .modal-footer {
+    background-color: #f1f1f1;
+  }
+  

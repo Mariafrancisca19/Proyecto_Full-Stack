@@ -4,6 +4,8 @@ import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas, Row, Col 
 import '../Estilos/App.css';
 import '../Estilos/navbar.css';
 import { obtenerDatos } from '../JS/Fetch';
+import Compras from '../Paginas/Compras';
+
 
 const MenuNav = () => {
   const navigate = useNavigate();
@@ -79,11 +81,15 @@ const MenuNav = () => {
             <Button type="submit" className="search-button">
               <i className="bi bi-search"></i>
             </Button>
-            <Button className="cart-button" variant="outline-light" onClick={() => navigate("/carrito")}>
+            <Button className="cart-button" variant="outline-light" onClick={() => navigate("/compras")}>
               <i className="bi bi-cart3"></i>
+            </Button>
+            <Button className="cart-button">
+              <i class="bi bi-person-circle" /*</Button> onClick={() => navigate("/pag_Admin")}*/></i>
             </Button>
           </Form>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );

@@ -34,6 +34,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
                         descripcion={serv.descripcion}
                         btnEliminar={()=>eliminarDato(serv.id)}
                         btnEditar={()=> handleEditarClick(serv)} 
+                        
                         />
                 ))
             ) : (
@@ -41,10 +42,8 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
             )}
              
             
-      
 
-
-            <MyVerticallyCenteredModal
+            <MyVerticallyCenteredModal 
                 show={modalShow}
                 onHide={() => setModalShow(false)
                 }

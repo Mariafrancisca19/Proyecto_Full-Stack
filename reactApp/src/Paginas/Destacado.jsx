@@ -13,7 +13,7 @@ const Destacado = () => {
     <div>
       <MenuNav/>
       {/* <Card/> */}
-      <FormServicio/>
+      {/* <FormServicio/> */}
       <Atras/>
       <Footer/>
     </div>

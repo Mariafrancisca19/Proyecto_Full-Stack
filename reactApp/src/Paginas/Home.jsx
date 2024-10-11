@@ -6,7 +6,6 @@ import '../Estilos/App.css'
 import { obtenerDatos } from '../JS/Fetch'
 import ContenedorCard from '../Componentes/ContenedorCard'
 import EditarFormAdmin from '../Componentes/EditarFormAdmin'
-import FormCard from '../Componentes/FormCard'
 
 
 const Home = () => {
@@ -37,7 +36,7 @@ const Home = () => {
     <div className='container-home'>
       <MenuNav data={data} />
       <CarouselMostrar />
-      <h1>SERVICIOS</h1>
+      <h1 style={{fontFamily:'fantasy'}}>SERVICIOS</h1>
       <div className='container'>
         <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'>
           <ContenedorCard getServicio={data} mostrarBotones={true} />

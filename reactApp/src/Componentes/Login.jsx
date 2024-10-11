@@ -29,6 +29,11 @@ const Login = () => {
   
     try {
       const respuesta = await guardarDatos(datosLogin,"login/");
+      if(nombre=="Administrador" && password==="1907"){  // valiacion para el administrador al agregar servicio
+        localStorage.setItem('admin',true)
+        navigate('pag_Admin')
+        
+      }
       if (respuesta.token){
         mostrarAlerta("success"," BIENVENIDA ")
         navigate("/home")

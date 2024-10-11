@@ -4,14 +4,14 @@ import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import AuthProvider from "./AuthProvider";
 import Home from "../Paginas/Home";
 import Destacado from "../Paginas/Destacado";
-import QuienesSomos from "../Componentes/QuienesSomos";
 import Info from "../Componentes/Info";
 import Contacto from "../Componentes/Contacto";
 import SobreNosotros from "../Paginas/SobreNosotros";
 import Ubicacion from "../Paginas/Ubicacion";
-import Carrito from "../Componentes/Carrito";
-import FormServicio from "../Componentes/FormServicio";
 import RutaPrivada from "./RutaPrivada";
+import Admin from "../Paginas/Admin";
+import Compras from "../Paginas/Compras";
+
 
 const router = createBrowserRouter([
     {
@@ -60,22 +60,20 @@ const router = createBrowserRouter([
     },
 
     {
-        path:"/carrito",
-        element:<Carrito/>
+        path:"/compras",
+        element:<Compras/>
     },
 
     {
-        path:'/formservicio',
-        element: <RutaPrivada route={<FormServicio/>}/>
+        path:'/pag_Admin',
+        element: <RutaPrivada>  <Admin/>   </RutaPrivada>
     }
 
 ]);
 const Rutas = () => {
 
     return (
-            <AuthProvider>
-                <RouterProvider router={router} />
-            </AuthProvider>
+            <RouterProvider router={router} />
     )
 
 }
