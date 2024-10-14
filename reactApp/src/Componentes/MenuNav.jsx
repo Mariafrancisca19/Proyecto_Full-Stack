@@ -61,8 +61,8 @@ const MenuNav = () => {
               <Offcanvas.Body>
                 <ul>
                 { servicio && servicio.length > 0 ? (
-                  servicio.map((servicio)=>
-                  <li>{servicio.tipo}</li>
+                  servicio.map((servicio,index)=>
+                  <li key={index}>{servicio.tipo}</li>
                    )
                 ):<li>No hay servicios disponibles</li>}
                 
@@ -85,7 +85,7 @@ const MenuNav = () => {
               <i className="bi bi-cart3"></i>
             </Button>
             <Button className="cart-button">
-              <i class="bi bi-person-circle" /*</Button> onClick={() => navigate("/pag_Admin")}*/></i>
+              <i className="bi bi-person-circle" /*</Button> onClick={() => navigate("/pag_Admin")}*/></i>
             </Button>
           </Form>
         </Navbar.Collapse>

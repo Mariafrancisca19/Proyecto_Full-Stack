@@ -46,7 +46,9 @@ const FormServicio = () => {
     // llama al post, le pasa el obj(servicio) y el endpoint
 
     try {
-      await postPrueba(servicio)
+      const response = await postPrueba(servicio)
+      console.log(response);
+      console.log(servicio);
       mostrarAlerta("success", "Servicio agregado correctamente")
     } catch (error) {
       console.error('error al enviar los servicios', error);
