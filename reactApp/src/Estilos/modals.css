@@ -1,36 +1,106 @@
-.formal-modal {
-    font-family: 'Georgia', serif;
-  }
-  
-  .modal-header {
-    background-color: #f8f9fa;
-    border-bottom: 2px solid #dee2e6;
-  }
-  
-  .modal-title {
-    color:rgb(116, 168, 151);
-    font-weight: bold;
-  }
-  
-  .modal-body {
+
+
+/* Contenedor general del formulario */
+.divgeneral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilo del formulario */
+.formeditar {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Encabezado del formulario */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+
+}
+
+/* Estilo del título */
+.titulo {
+  font-size: 24px;
+  color:rgb(116, 168, 151);
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Estilos generales para las etiquetas */
+.labelgeneral {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+
+
+
+/* Estilos generales para los inputs */
+.inputgeneral, input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 16px;
+   font-family: 'Georgia', serif;
+  color: #2c3e50;
+  transition: border-color 0.3s;
+}
+
+.inputgeneral:focus, input[type="file"]:focus {
+  border-color: #f0f0f0;
+  outline: none;
+}
+
+/* Botón de actualización */
+.btngeneral {
+  background-color:coral;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btngeneral:hover {
+  background-color:rgb(116, 168, 151);
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+  .formeditar {
     padding: 20px;
-    background-color: #fff;
   }
-  
-  .update-button {
-    background-color:coral;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+
+  .titulo {
+    font-size: 20px;
   }
-  
-  .update-button:hover {
-    background-color:rgb(116, 168, 151);
+
+  .btngeneral {
+    font-size: 14px;
   }
-  
-  .modal-footer {
-    background-color: #f1f1f1;
-  }
-  
+}
+

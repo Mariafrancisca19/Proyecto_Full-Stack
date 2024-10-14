@@ -9,7 +9,7 @@
 
 /* Estilo principal de la tarjeta */
 .card-container {
-    background-color: rgb(191, 200, 212);
+    background-color: rgb(255, 255, 255);;
     border-radius: 15px;
     overflow: hidden;
     width: 350px;

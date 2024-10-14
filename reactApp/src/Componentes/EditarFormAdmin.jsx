@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { actualizarDatos } from '../JS/Fetch'
+import '../Estilos/modals.css'
 
 
 const EditarFormAdmin = ({producto,productoSelect}) => {
@@ -24,21 +25,24 @@ const EditarFormAdmin = ({producto,productoSelect}) => {
 
 
   return (
-    <div>
-    <form>
-    <label>Imagen</label>
+    <div className='divgeneral'>
+    <form className='formeditar'>
+    <div className='header'>
+    <h2 className='titulo '>Editar Servicio</h2>
+    </div>
+    <label className='labelgeneral'>Imagen</label>
     <input type='file' onChange={(e) => { setImagen(e.target.value) }}></input>
 
-      <label>Tipo</label>
-      <input placeholder='Nombre del servicio' type='name' onChange={(e) => { setNombre(e.target.value) }}></input>
+      <label className='labelgeneral'>Tipo</label>
+      <input className='inputgeneral' placeholder='Nombre del servicio' type='name' onChange={(e) => { setNombre(e.target.value) }}></input>
 
-      <label>Precio</label>
-      <input placeholder='Precio' type='number' onChange={(e) => { setPrecio(e.target.value) }}></input>
+      <label className='labelgeneral'>Precio</label>
+      <input className='inputgeneral' placeholder='Precio' type='number' onChange={(e) => { setPrecio(e.target.value) }}></input>
 
-      <label>Descripcion</label>
-      <input type='text' placeholder='Descripcion' onChange={(e) => { setDescripcion(e.target.value) }}></input>
+      <label className='labelgeneral'>Descripcion</label>
+      <input className='inputgeneral' type='text' placeholder='Descripcion' onChange={(e) => { setDescripcion(e.target.value) }}></input>
 
-      <button type='button' onClick={actualizar}>ACTUALIZAR</button>
+      <button type='button' className='btngeneral' onClick={actualizar}>ACTUALIZAR</button>
 
     </form>
       
