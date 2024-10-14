@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+
 function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEditar, mostrarBotones, btnAgregarAlCarrito }) {
 
   const navigate = useNavigate();
@@ -9,9 +10,10 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
   const modificarTexto = () => {
     setIniciar(true)
   }
-  const eliminarDato = async (id) => {
-  }
 
+  const eliminarDato = async (id) => {
+    
+  }
 
   return (
 

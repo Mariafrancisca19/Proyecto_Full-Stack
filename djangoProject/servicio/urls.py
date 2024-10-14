@@ -1,4 +1,4 @@
-from servicio.views import ServicioDeleteView, TallerView,ServicioView,MantenimientoView
+from servicio.views import ServicioDeleteView, TallerView,ServicioView,MantenimientoView,ServicioUpdateView
 from django.urls import path
 
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path("servicio/", ServicioView.as_view(),name="servicio_view"),
     path("servicioDelete/<int:id>/", ServicioDeleteView.as_view(),name="delete"),
     path("mantenimiento/", MantenimientoView.as_view(),name="mantenimiento_view"),
+    path("servicio/<int:id>/", ServicioUpdateView.as_view(), name="servicio-update"),
 ]

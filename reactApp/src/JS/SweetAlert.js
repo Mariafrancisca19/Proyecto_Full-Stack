@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2'
 import '../Estilos/App.css'
 
+
 const Toast = Swal.mixin({
     toast: true,
     position: 'center',

@@ -45,16 +45,16 @@ export { guardarDatos }
 
 // metodo put para actualizar los datos
 
-const actualizarDatos = async (enpoint, id) => {
+const actualizarDatos = async (obj,enpoint, id) => {
     try {
 
-        const response = await fetch(`${url}${enpoint}/${id}`, {
+        const response = await fetch(`${url}${enpoint}/${id}/`, {
             method: 'PUT',
             headers: {
-                "Content-type": "application; charset=UTF-8"
+                "Content-Type": "application/json"
             },
 
-            body: JSON.stringify()
+            body: JSON.stringify(obj)
 
         });
 

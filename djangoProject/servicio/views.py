@@ -22,5 +22,8 @@ class ServicioDeleteView(generics.DestroyAPIView):
      serializer_class = ServicioSerializer
      lookup_field = "id"
 
-
-
+# actualizacion del servicio  utilizando un updateapiview
+class ServicioUpdateView(generics.UpdateAPIView):
+     queryset = Servicio.objects.all()    # todos los datos que contiene el modelo servicio
+     serializer_class = ServicioSerializer # actualizacion y trasforma los datso enviados a la solicitud
+     lookup_field = "id"  #actualizacion por el id 

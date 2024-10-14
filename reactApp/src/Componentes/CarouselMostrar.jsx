@@ -3,6 +3,7 @@ import Imagenes from './Imagenes';
 import '../Estilos/carousel.css'
 import { useNavigate } from 'react-router-dom';
 
+
 function CarouselMostrar() {
   const navigate = useNavigate()
   return (

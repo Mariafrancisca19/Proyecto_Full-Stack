@@ -3,6 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import { useNavigate } from 'react-router-dom';
 import '../Estilos/atras.css';
 
+
 const Atras = () => {
   const navigate = useNavigate();
 

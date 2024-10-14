@@ -14,7 +14,7 @@ const Home = () => {
   const [data, setData] = useState([])
   const [id, setID] = useState()
   const [estado, setEstado] = useState(false)
-
+  const [servicio,setServicio] = useState(null)
   // obtencion de los servicios del formulario
   // METODO DEL GET
 
@@ -31,6 +31,10 @@ const Home = () => {
     servicio()
   }, [])
 
+  const edicionServicio=(servicio)=>{
+    setServicio(servicio)
+  }
+
 
   return (
     <div className='container-home'>
@@ -39,13 +43,19 @@ const Home = () => {
       <h1 style={{fontFamily:'fantasy'}}>SERVICIOS</h1>
       <div className='container'>
         <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'>
-          <ContenedorCard getServicio={data} mostrarBotones={true} />
+          <ContenedorCard getServicio={data} mostrarBotones={true} btnEditar={edicionServicio} />
         </div>
       </div>
 
-      {id &&
+      {/* {id &&
         <EditarFormAdmin id={id} recargaPag={recargaPag} />
+      } */}
+      {
+        servicio && (<EditarFormAdmin
+          producto={servicio} productoSelect={setServicio}
+        />)
       }
+
 
       <Footer id={"#footer"} />
     </div>

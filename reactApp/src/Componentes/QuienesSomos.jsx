@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Estilos/quienesSomos.css'
 
+
 const QuienesSomos = () => {
   return (
       <div className='container-quienesSomos'>

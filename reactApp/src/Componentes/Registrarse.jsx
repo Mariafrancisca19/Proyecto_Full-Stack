@@ -4,6 +4,7 @@ import { mostrarAlerta } from '../JS/SweetAlert';
 import {guardarDatos} from '../JS/Fetch';
 import '../Estilos/index.css'
 
+
 const Registrarse = () => {
   const navigate = useNavigate()
 

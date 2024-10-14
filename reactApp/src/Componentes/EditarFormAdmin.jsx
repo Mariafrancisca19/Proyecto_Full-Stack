@@ -2,20 +2,24 @@ import React, { useState } from 'react'
 import { actualizarDatos } from '../JS/Fetch'
 
 
-const EditarFormAdmin = () => {
+const EditarFormAdmin = ({producto,productoSelect}) => {
 
-  const [nombre, setNombre] = useState('')
-  const [precio, setPrecio] = useState('')
-  const [descripcion, setDescripcion] = useState('')
-  const [imagen, setImagen] = useState('')
+  const [nombre, setNombre] = useState(producto.tipo)
+  const [precio, setPrecio] = useState(producto.monto)
+  const [descripcion, setDescripcion] = useState(producto.descripcion)
+  const [imagen, setImagen] = useState()
 
   const actualizar = async () => {
-   const datos = {
+   const datosActualizados = {
+    id:producto.id,
     tipo: nombre,
     monto: precio,
-    descripcion: descripcion
+    descripcion: descripcion,
+    imagen:imagen
    }
-
+   const respuesta = await  actualizarDatos(datosActualizados,'servicio',datosActualizados.id) // poner el put
+   console.log(respuesta);
+   setDescripcion(null)
   }
 
 
@@ -34,7 +38,7 @@ const EditarFormAdmin = () => {
       <label>Descripcion</label>
       <input type='text' placeholder='Descripcion' onChange={(e) => { setDescripcion(e.target.value) }}></input>
 
-      <button type='submit'>ACTUALIZAR</button>
+      <button type='button' onClick={actualizar}>ACTUALIZAR</button>
 
     </form>
       

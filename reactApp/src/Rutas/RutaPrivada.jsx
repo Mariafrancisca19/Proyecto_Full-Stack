@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { mostrarAlerta } from '../JS/SweetAlert';
 
+
 const esAdmin=()=>{
   const localAdmin = localStorage.getItem("admin")
   return localAdmin
