@@ -3,8 +3,6 @@ import FormCard from './FormCard';
 import '../Estilos/card.css';
 import { deleteDatos } from '../JS/Fetch';
 import Button from 'react-bootstrap/Button';
-import Modal from '../Componentes/Modals';
-import MyVerticallyCenteredModal from '../Componentes/ModalsAPP'
 import { mostrarAlerta } from '../JS/SweetAlert';
 
 
@@ -15,14 +13,14 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
         deleteDatos("servicioDelete", id + "/")
     };
 
-    // const p = (id) => {
-    //     let ids = JSON.parse(localStorage.getItem("ids")) || [];
-    //     ids.push(id)
-    //     localStorage.setItem("ids", JSON.stringify(ids))
-    //     setCarrito(ids)
-    //     console.log(carrito);
+    const p = (id) => {
+        let ids = JSON.parse(localStorage.getItem("ids")) || [];
+        ids.push(id)
+        localStorage.setItem("ids", JSON.stringify(ids))
+        setCarrito(ids)
+        console.log(carrito);
 
-    // };
+    };
 
 
     return (
