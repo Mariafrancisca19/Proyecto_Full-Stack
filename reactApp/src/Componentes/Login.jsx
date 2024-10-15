@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { mostrarAlerta } from '../JS/SweetAlert';
 import '../Estilos/Inicio.css'
 import { guardarDatos, obtenerDatos } from '../JS/Fetch';
+import { crearCookie } from '../cookiesJS/cookies';
 
 
 const Login = () => {
@@ -31,7 +32,8 @@ const Login = () => {
     try {
       const respuesta = await guardarDatos(datosLogin, "login/");
       if (nombre == "Administrador" && password === "1907") {  // valiacion para el administrador al agregar servicio
-        localStorage.setItem('admin', true)
+        // localStorage.setItem('admin', true)
+        crearCookie('admin',true,1)
         navigate('pag_Admin')
 
       }
@@ -55,11 +57,8 @@ const Login = () => {
     <div className='container-form'>
       <form className='form'>
         <h1>BIENVENIDOS</h1>
-        <form>
           <input className='input-login' placeholder="Username" value={nombre} type="name" onChange={(e) => setNombre(e.target.value)} /> <br />
           <input className='input-login' placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
-        </form>
-
         <button className='btn-login' onClick={inicioSesion}>INICIAR</button><br />
         <a onClick={() => { navigate("/Registrarse") }}>NO TENGO CUENTA</a>
       </form>

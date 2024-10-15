@@ -4,22 +4,23 @@ import '../Estilos/card.css';
 import { deleteDatos } from '../JS/Fetch';
 import Button from 'react-bootstrap/Button';
 import { mostrarAlerta } from '../JS/SweetAlert';
+import { crearCookie, traerCookie } from '../cookiesJS/cookies';
 
 
 function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones }) {
-
+  
+    const [carrito, setCarrito] = ([])
 
     const eliminarDato = async (id) => {
         deleteDatos("servicioDelete", id + "/")
     };
 
     const p = (id) => {
-        let ids = JSON.parse(localStorage.getItem("ids")) || [];
+        let ids = JSON.parse(traerCookie("ids")) || [];
         ids.push(id)
-        localStorage.setItem("ids", JSON.stringify(ids))
+        crearCookie("ids", JSON.stringify(ids))
         setCarrito(ids)
         console.log(carrito);
-
     };
 
 

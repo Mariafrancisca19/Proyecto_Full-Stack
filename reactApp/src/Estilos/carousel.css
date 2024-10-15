@@ -73,3 +73,7 @@
 .carousel.fade .carousel-item {
   transition: opacity 1s ease-in-out;
 }
+
+@media (max-width: 768px){
+  /* diseño responsive*/
+}

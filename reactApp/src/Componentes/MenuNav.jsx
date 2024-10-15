@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas } from 'react-bootstrap';
 import '../Estilos/App.css';
 import '../Estilos/navbar.css';
 import { obtenerDatos } from '../JS/Fetch';
-import Compras from '../Paginas/Compras';
 
 
 const MenuNav = () => {
@@ -12,26 +11,30 @@ const MenuNav = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [servicio, setServicio] = useState([]);  //estado de almacenamineto
-
+  const [servicio, setServicio] = useState([]);  // estado de almacenamiento
   const [searchTerm, setSearchTerm] = useState(''); // Estado para la búsqueda
+  const [filtrarServicios, setFiltrarServicios] = useState([]); // Estado para servicios filtrados
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    // Aquí puedes manejar la búsqueda con searchTerm
-    console.log("Buscar:", searchTerm);
-  };
-
-  // useEffect para obtener los servicios del metodo get
+  // useEffect para obtener los servicios del método get
   useEffect(() => {
     const mostrarServ = async () => {
-      const data = await obtenerDatos("servicio/")
-      console.log(data)
-      setServicio(data) //Guardamos los servicios 
+      const data = await obtenerDatos("servicio/");
+      console.log(data);
+      setServicio(data); // Guardamos los servicios
+      setFiltrarServicios(data); // inicializamos los servicios filtrados
     }
-    mostrarServ()
+    mostrarServ();
+  }, []);
 
-  },[])
+  //  búsqueda
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Filtrar los servicios según el término de búsqueda
+    const filtrarServicios = servicio.filter(serv =>
+      serv.tipo.toLowerCase().includes(searchTerm.toLowerCase()) // Filtramos por el tipo de servicio
+    );
+    setFiltrarServicios(filtrarServicios); // Actualizamos los servicios filtrados
+  };
 
   return (
     <Navbar expand="lg" className="navbar-custom">
@@ -59,37 +62,36 @@ const MenuNav = () => {
                 <Offcanvas.Title>TODOS LOS SERVICIOS</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
+                <Form onSubmit={handleSearch} className="mb-3">
+                  <Form.Control
+                    type="text"
+                    placeholder="Buscar servicio..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)} // actualiza el estado del término de búsqueda
+                  />
+                  <Button type="submit" className="mt-2">Buscar</Button>
+                </Form>
                 <ul>
-                { servicio && servicio.length > 0 ? (
-                  servicio.map((servicio,index)=>
-                  <li key={index}>{servicio.tipo}</li>
-                   )
-                ):<li>No hay servicios disponibles</li>}
-                
+                  {filtrarServicios && filtrarServicios.length > 0 ? (
+                    filtrarServicios.map((serv, index) => (
+                      <li key={index}>{serv.tipo}</li>
+                    ))
+                  ) : (
+                    <li>No hay servicios disponibles</li>
+                  )}
                 </ul>
               </Offcanvas.Body>
             </Offcanvas>
           </Nav>
-          <Form inline="true" onSubmit={handleSearch} className="d-flex search-bar">
-            <Form.Control
-              type="text"
-              placeholder="Buscar..."
-              className="search-input"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <Button type="submit" className="search-button">
-              <i className="bi bi-search"></i>
-            </Button>
+          <Form inline="true" className="d-flex search-bar">
             <Button className="cart-button" variant="outline-light" onClick={() => navigate("/compras")}>
               <i className="bi bi-cart3"></i>
             </Button>
             <Button className="cart-button">
-              <i className="bi bi-person-circle" /*</Button> onClick={() => navigate("/pag_Admin")}*/></i>
+              <i className="bi bi-person-circle"></i>
             </Button>
           </Form>
         </Navbar.Collapse>
-        
       </Container>
     </Navbar>
   );

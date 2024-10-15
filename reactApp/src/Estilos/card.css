@@ -20,7 +20,7 @@
 }
 
 .card-container:hover {
-    transform: translateY(-5px); /* Efecto de levantamiento al pasar el ratón */
+    transform: translateY(-5px); /* Efecto de levantamiento al pasar el mouse*/
     box-shadow: 0 6px 15px rgba(1, 1, 1, 0.559); /* Sombra más intensa al hacer hover */
 }
 
@@ -54,3 +54,8 @@
     justify-content: space-around; /* Espacia los botones uniformemente */
     margin-top: 15px;
 }
+
+@media (max-width: 768px){
+    /* diseño responsive*/
+  }
+  

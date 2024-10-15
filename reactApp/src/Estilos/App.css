@@ -144,3 +144,7 @@ filter: brightness(100%); /*para darle brillo a la imagen */
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 15px;
 }
+
+@media (max-width: 768px){
+  /* diseño responsive*/
+}
