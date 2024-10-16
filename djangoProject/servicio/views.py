@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Taller,Servicio,Mantenimiento
 from .serializers import TallerSerializer,ServicioSerializer,MantenimientoSerializer
-
+from rest_framework.permissions import IsAuthenticated
 # logica 
 class TallerView(generics.ListCreateAPIView):
      queryset = Taller.objects.all()
@@ -20,7 +20,11 @@ class MantenimientoView(generics.ListCreateAPIView):
 class ServicioDeleteView(generics.DestroyAPIView):
      queryset = Servicio.objects.all()
      serializer_class = ServicioSerializer
+     permission_classes = [IsAuthenticated]  # solo para usuarios autenticados
      lookup_field = "id"
+     
+     def get(self,request):
+          return({'message':'Tienes acceso porque estas autenticado!'})
 
 # actualizacion del servicio  utilizando un updateapiview
 class ServicioUpdateView(generics.UpdateAPIView):

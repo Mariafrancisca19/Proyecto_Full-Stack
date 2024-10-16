@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Calificacion,Recibo
 from .serializers import CalificacionSerializer,ReciboSerializer
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 #  view manejar múltiples tipos de solicitudes del crud
 # generics --->  herramientas poderosas que permiten a los desarrolladores 
@@ -15,6 +16,7 @@ from .serializers import CalificacionSerializer,ReciboSerializer
 class CalificacionView(generics.ListCreateAPIView):
      queryset = Calificacion.objects.all()
      serializer_class = CalificacionSerializer
+     permission_classes = [IsAuthenticated]
 
 
 class ReciboView(generics.ListCreateAPIView):

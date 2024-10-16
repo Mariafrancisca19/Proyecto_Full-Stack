@@ -35,10 +35,10 @@ const Login = () => {
         // localStorage.setItem('admin', true)
         crearCookie('admin',true,1)
         navigate('pag_Admin')
-
       }
       if (respuesta.token) {
         mostrarAlerta("success", " BIENVENIDA ")
+        crearCookie('token',respuesta.token_d_acceso,1)   // recordar el nombre que es el nombre que le puso en "cuentas -> views.py"
         navigate("/home")
       } else {
 

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 # Create your views here.
@@ -25,14 +26,16 @@ class LoginView(APIView):
     def post(self,request):
         username = request.data.get('username')
         password = request.data.get('password')
+        
         # verificacion  del correo y la contrasena
         user = authenticate(username=username, password=password)
         
         if User is not None:
-            token, created = Token.objects.get_or_create(user=user)           
-            return Response({'token':token.key}, status=status.HTTP_200_OK)
+            refresh = RefreshToken.for_user(user)  #Generar nuevos token de acceso sin que el usuario tenga auntenticacion de nuevo
+            token, created = Token.objects.get_or_create(user=user)    # busca un token para el usuario y si no existe, lo crea    
+            return Response({'token':token.key,'token_d_acceso':str(refresh.access_token),'token_d_refresco':str(refresh)}, status=status.HTTP_200_OK)  # si la autenticacion es correcta de vuelve un "http_200_ok , solicitud exitosa"
         else: 
-            return Response({'error':'Credenciales inválidas'}, status=status.HTTP_400_BAD_REQUEST)  # si las credencias son incorrectas devuelve un mensaje de error "json"
+            return Response({'error':'Credenciales inválidas'}, status=status.HTTP_400_BAD_REQUEST)  # si las credencias son incorrectas devuelve un error con los datos 
         
         
         # Nota importante : Recordar --> 

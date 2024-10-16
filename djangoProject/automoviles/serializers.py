@@ -18,14 +18,12 @@ class EspecificacionesSerializer(serializers.ModelSerializer):
         model = Especificaciones
         fields = ["marca","modelo","año","kilometraje","tipo_combustible"]
         
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+     
     
     
     

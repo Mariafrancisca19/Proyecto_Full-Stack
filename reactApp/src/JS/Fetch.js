@@ -1,7 +1,9 @@
+import { traerCookie } from "../cookiesJS/cookies";
+
 const url = "http://127.0.0.1:8000/api/"
+const token = traerCookie('token')          // variables globales 
 // CRUD
 // metodo get extraer los datos
-
 const obtenerDatos = async (enpoint) => {
     try {
 
@@ -51,7 +53,8 @@ const actualizarDatos = async (obj,enpoint, id) => {
         const response = await fetch(`${url}${enpoint}/${id}/`, {
             method: 'PUT',
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
+                'Authentication': `Bearer ${token}`
             },
 
             body: JSON.stringify(obj)
@@ -73,7 +76,8 @@ const deleteDatos = async (enpoint, id) => {
         const response = await fetch(`${url}${enpoint}/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authentication': `Bearer ${token}`
             }
         });
 
