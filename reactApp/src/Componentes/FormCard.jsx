@@ -17,7 +17,7 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
 
   return (
 
-    <div className="card-container">
+    <div className="card-container border border-warning">
       <img className="card-image" width={'400px'} height={'300px'} src={imagen} ></img>
       <div className="card-content">
         <h2>Servicio: {servicio}</h2>
@@ -27,12 +27,12 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
         {soyAdmin && (
           
           <div className="card-buttons">
-            <button className='btn btn-success ml-3' onClick={btnEliminar}>🗑️</button>
-            <button className='btn btn-success btn-editar' onClick={btnEditar}>EDITAR</button>
+            <button  className='btn btn-success ml-3' onClick={btnEliminar}>🗑️</button>
+            <button style={{backgroundColor:"rgb(116, 168, 151)"}} className='btn btn-success btn-editar' onClick={btnEditar}>EDITAR</button>
           </div>
         )}
           <div className="card-buttons" >
-            <button style={{ borderRadius: "15px" }} onClick={btnAgregarAlCarrito} > Agregar al carrito</button>
+            <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={btnAgregarAlCarrito} > Agregar al carrito</button>
           </div>
         </>
 

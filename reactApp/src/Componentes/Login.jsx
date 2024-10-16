@@ -38,7 +38,7 @@ const Login = () => {
       }
       if (respuesta.token) {
         mostrarAlerta("success", " BIENVENIDA ")
-        crearCookie('token',respuesta.token_d_acceso,1)   // recordar el nombre que es el nombre que le puso en "cuentas -> views.py"
+        crearCookie('token',respuesta.token_d_acceso,1)   // recordar que el nombre es el que tiene en la app "cuentas -> views.py"
         navigate("/home")
       } else {
 
@@ -56,11 +56,11 @@ const Login = () => {
   return (
     <div className='container-form'>
       <form className='form'>
-        <h1>BIENVENIDOS</h1>
+        <h1 className='form-title'>BIENVENIDOS</h1>
           <input className='input-login' placeholder="Username" value={nombre} type="name" onChange={(e) => setNombre(e.target.value)} /> <br />
           <input className='input-login' placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
         <button className='btn-login' onClick={inicioSesion}>INICIAR</button><br />
-        <a onClick={() => { navigate("/Registrarse") }}>NO TENGO CUENTA</a>
+        <a className='register-link' onClick={() => { navigate("/Registrarse") }}>NO TENGO CUENTA</a>
       </form>
     </div>
   )

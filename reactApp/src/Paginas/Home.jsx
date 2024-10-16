@@ -22,6 +22,7 @@ const Home = () => {
   const recargaPag = () => {
     setEstado(!estado)
   }
+  
   useEffect(() => {
     const servicio = async () => {
       const data = await obtenerDatos("servicio/")
@@ -41,12 +42,9 @@ const Home = () => {
       <MenuNav data={data} />
       <CarouselMostrar />
       <h1 style={{fontFamily:'fantasy'}}>SERVICIOS</h1>
-      <div className='container'>
-        <div className='d-flex flex-wrap w-25 mx-auto justify-content-center mt-3'>
+      <div>
           <ContenedorCard getServicio={data} mostrarBotones={true} btnEditar={edicionServicio} />
-        </div>
       </div>
-
       {/* {id &&
         <EditarFormAdmin id={id} recargaPag={recargaPag} />
       } */}
@@ -55,7 +53,7 @@ const Home = () => {
           producto={servicio} productoSelect={setServicio}
         />)
       }
-
+       
 
       <Footer id={"#footer"} />
     </div>
