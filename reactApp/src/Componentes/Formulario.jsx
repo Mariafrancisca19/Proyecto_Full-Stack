@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/contacto.css'
 
@@ -11,8 +11,9 @@ const Formulario = () => {
   const [descripcion, setDescripcion] = useState('');
   const [imagen, setImagen] = useState('');
 
-// cambiar la marca,modelo y ano por defecto en un select
+// cambiar la marca,modelo y año por defecto en un select
 // preguntar al profe de la validacion de la imagen dentro de la funcion espacios vacios
+
 
 
   // Validación de campos vacíos
@@ -35,6 +36,12 @@ const Formulario = () => {
     setDescripcion('');
     setImagen('');
   };
+
+  useEffect(() =>{
+   
+
+  })
+
 
   return (
     <div className='form-container'>
@@ -77,11 +84,11 @@ const Formulario = () => {
         <div className='form-group'>
           <label htmlFor='servicio' className='form-label'>Servicio</label>
           <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
-            <option value="">Seleccione un servicio</option>
-            <option value="mantenimiento_general">Mantenimiento General</option>
-            <option value="cambio_aceite">Cambio de Aceite</option>
-            <option value="frenos">Revisión de Frenos</option>
-            {/* Añadir más servicios según necesidad */}
+              <option value="">Seleccione un servicio</option>
+              <option value="mantenimiento_general">Mantenimiento General</option>
+              <option value="cambio_aceite">Cambio de Aceite</option>
+              <option value="frenos">Revisión de Frenos</option>
+              {/* Añadir más servicios según necesidad */}
           </select>
         </div>
 

@@ -15,7 +15,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
         deleteDatos("servicioDelete", id + "/")
     };
 
-    const p = (id) => {
+    const guardarCarrito = (id) => {
         let ids = JSON.parse(traerCookie("ids")) || [];
         ids.push(id)
         crearCookie("ids", JSON.stringify(carrito))
@@ -36,7 +36,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
                         descripcion={serv.descripcion}
                         btnEliminar={() => eliminarDato(serv.id)}
                         btnEditar={()=>btnEditar(serv)}
-                        btnAgregarAlCarrito={() => p(serv.id)}
+                        btnAgregarAlCarrito={() => guardarCarrito(serv.id)}
                         
                     />
                 ))

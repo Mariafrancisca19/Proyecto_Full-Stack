@@ -39,7 +39,7 @@ function CarouselMostrar() {
         <Carousel.Caption>
           <h3>Solicitar Mantenimiento</h3>
           <p> Saca tu cita con nosotros</p>
-          <button onClick={()=>navigate("/info")}>
+          <button onClick={()=>navigate("/servicio")}>
           Solicitar Mantenimiento
           </button>
         </Carousel.Caption>

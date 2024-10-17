@@ -2,26 +2,31 @@
 /* Estilos del sweetAlert*/
 .colored-toast.swal2-icon-success {
   background-color: #a5dc86 !important;
+  border-radius: 20px;
 }
 
 .colored-toast.swal2-icon-error {
   background-color: #f27474 !important;
+  border-radius: 20px;
 }
 
 .colored-toast.swal2-icon-warning {
   background-color: #f8bb86 !important;
+  border-radius: 20px;
 }
 
 .colored-toast.swal2-icon-info {
   background-color: #3fc3ee !important;
+  border-radius: 20px;
 }
 
 .colored-toast.swal2-icon-question {
   background-color: #87adbd !important;
+  border-radius: 20px;
 }
 
 .colored-toast .swal2-title {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .colored-toast .swal2-close {

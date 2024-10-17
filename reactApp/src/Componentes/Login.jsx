@@ -15,19 +15,22 @@ const Login = () => {
   const espaciosVacios = () => {
     if (nombre.trim() === "" || password.trim() === "") {  // validacion de espacios vacios 
       mostrarAlerta("error", "LLENE TODOS LOS CAMPOS")       // llamar a mis validaciones dentro de la funcion inicio
-      console.log("entra");
     }
   };
 
-  const formatoNombre = () =>{
+  const formatoNombre = (nombre) =>{
     const regex = /^[a-zA-Z0-9]+$/;
     if (!regex.test(nombre)){
+      console.log("nombre");
+      
       mostrarAlerta("error","El nombre de usuario no puede contener caracteres especiales");
     }
   };
 
-  const longitudPassword = () => {
+  const longitudPassword = (password) => {
     if (password.length < 4) {
+      console.log("pass");
+      
       mostrarAlerta("error", "La contraseña debe tener al menos 4 caracteres");
     }
   };
@@ -42,9 +45,15 @@ const Login = () => {
 
     };
 
-    if(espaciosVacios()) // llamar a mis validaciones
-    if(formatoNombre())
-    if(longitudPassword())
+    if(espaciosVacios()){
+      return
+    } // llamar a mis validaciones
+    if(formatoNombre(nombre)){
+      return
+    }
+    if(longitudPassword(password)){
+      return
+    }
 
     try {
       const respuesta = await guardarDatos(datosLogin, "login/");
@@ -57,15 +66,10 @@ const Login = () => {
         mostrarAlerta("success", " BIENVENIDA ")
         crearCookie('token',respuesta.token_d_acceso,1)   // recordar que el nombre es el que tiene en la app "cuentas -> views.py"
         navigate("/home")
-      } else {
-
-        mostrarAlerta("error", "Usuario no registrado");
-
-      }
-
+      } 
     } catch (error) {
+      mostrarAlerta("error", "Usuario no registrado");
       console.log(error);
-      mostrarAlerta("error", "Error al iniciar sesión, inténtelo más tarde")
     }
 
   };

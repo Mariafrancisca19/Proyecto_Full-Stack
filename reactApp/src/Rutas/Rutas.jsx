@@ -10,7 +10,7 @@ import SobreNosotros from "../Paginas/SobreNosotros";
 import Ubicacion from "../Paginas/Ubicacion";
 import RutaPrivada from "./RutaPrivada";
 import Admin from "../Paginas/Admin";
-import Compras from "../Paginas/Compras";
+import Servicio from "../Paginas/Servicio";
 
 
 const router = createBrowserRouter([
@@ -39,10 +39,6 @@ const router = createBrowserRouter([
         path: "/destacado",
         element: <Destacado/>
     },
-    {
-        path: "/info",
-        element: <Info/>
-    },
 
     {
         path: "/contacto",
@@ -60,8 +56,8 @@ const router = createBrowserRouter([
     },
 
     {
-        path:"/compras",
-        element:<Compras/>
+        path:"/servicio",
+        element:<Servicio/>   
     },
 
     {

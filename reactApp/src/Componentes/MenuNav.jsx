@@ -50,7 +50,7 @@ const MenuNav = () => {
             <NavDropdown title="NUESTRA EMPRESA" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
               <NavDropdown.Item onClick={() => navigate("/ubicacion")}>UBICACION</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/info")}>CONTACTO</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => navigate("/servicio")}>CONTACTO</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => navigate("/")}>CERRAR SESION</NavDropdown.Item>
             </NavDropdown>
@@ -84,9 +84,6 @@ const MenuNav = () => {
             </Offcanvas>
           </Nav>
           <Form inline="true" className="d-flex search-bar">
-            <Button className="cart-button" variant="outline-light" onClick={() => navigate("/compras")}>
-              <i className="bi bi-cart3"></i>
-            </Button>
             <Button className="cart-button">
               <i className="bi bi-person-circle"></i>
             </Button>

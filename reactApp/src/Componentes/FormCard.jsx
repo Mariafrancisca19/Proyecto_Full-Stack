@@ -32,7 +32,7 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
           </div>
         )}
           <div className="card-buttons" >
-            <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={btnAgregarAlCarrito} > Agregar al carrito</button>
+            <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
           </div>
         </>
 
