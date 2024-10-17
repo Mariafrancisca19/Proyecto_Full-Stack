@@ -13,11 +13,24 @@ const Login = () => {
 
 
   const espaciosVacios = () => {
-    if (nombre.trim() === "" || password.trim() === "") {
-      mostrarAlerta("error", "LLENE TODOS LOS CAMPOS")
+    if (nombre.trim() === "" || password.trim() === "") {  // validacion de espacios vacios 
+      mostrarAlerta("error", "LLENE TODOS LOS CAMPOS")       // llamar a mis validaciones dentro de la funcion inicio
+      console.log("entra");
     }
+  };
 
-  }
+  const formatoNombre = () =>{
+    const regex = /^[a-zA-Z0-9]+$/;
+    if (!regex.test(nombre)){
+      mostrarAlerta("error","El nombre de usuario no puede contener caracteres especiales");
+    }
+  };
+
+  const longitudPassword = () => {
+    if (password.length < 4) {
+      mostrarAlerta("error", "La contraseña debe tener al menos 4 caracteres");
+    }
+  };
 
 
   const inicioSesion = async (e) => {
@@ -28,6 +41,10 @@ const Login = () => {
       password: password,
 
     };
+
+    if(espaciosVacios()) // llamar a mis validaciones
+    if(formatoNombre())
+    if(longitudPassword())
 
     try {
       const respuesta = await guardarDatos(datosLogin, "login/");
@@ -48,7 +65,7 @@ const Login = () => {
 
     } catch (error) {
       console.log(error);
-
+      mostrarAlerta("error", "Error al iniciar sesión, inténtelo más tarde")
     }
 
   };
@@ -77,5 +94,3 @@ export default Login
 
 
 
-
-//    mostrarAlerta("error", "Hubo un error con la conexión al servidor");
