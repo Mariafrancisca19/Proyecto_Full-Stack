@@ -41,6 +41,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
                         btnEliminar={() => eliminarDato(serv.id)}
                         btnEditar={()=>btnEditar(serv)}
                         btnAgregarAlCarrito={() => guardarCarrito(serv.id)}
+                        mostrarBotones={mostrarBotones}
                         
                     />
                 ))

@@ -47,8 +47,7 @@ const Formulario = () => {
       const dataServicio = await obtenerDatos("servicio/")
       setSeLectServicio(dataServicio);
       setSelectTaller(dataTaller);
-      console.log(selectServicio);
-
+      console.log(selectTaller);
     }
     obtenerServicio();
   }, [])
@@ -83,10 +82,10 @@ const Formulario = () => {
         <div className='form-group'>
           <label htmlFor='imagen' className='form-label'>Taller</label>
           <select placeholder='Nombre del Taller' className='form-select' value={taller} onChange={(e) => setTaller(e.target.value)}>
-            <option value="">Seleccione un taller</option>
-            {selectTaller.map((mantenimient) => {
+            <option value="" disabled>Seleccione un taller</option>
+            {selectTaller.map((taller) => {
               return (
-                <option key={mantenimient.id}>{mantenimient.taller}</option>
+                <option key={taller.id}>{taller.nombre_taller}</option>
               )
             })
             }
@@ -113,7 +112,7 @@ const Formulario = () => {
         <div className='form-group'>
           <label htmlFor='servicio' className='form-label'>Servicio</label>
           <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
-            <option value="">Seleccione un servicio</option>
+            <option value="" disabled>Seleccione un servicio</option>
             {selectServicio.map((servicio) => {
               return (
                 <option key={servicio.id}>{servicio.tipo}</option>

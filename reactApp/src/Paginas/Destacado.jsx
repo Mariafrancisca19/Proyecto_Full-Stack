@@ -4,6 +4,8 @@ import MenuNav from '../Componentes/MenuNav'
 import Footer from '../Componentes/Footer'
 import { obtenerDatos } from '../JS/Fetch'
 import ContenedorCard from '../Componentes/ContenedorCard'
+import Citas from '../Componentes/Citas'
+
 // import { Card } from 'react-bootstrap'
 
 
@@ -30,7 +32,7 @@ const Destacado = () => {
       <div>
           <ContenedorCard getServicio={data} mostrarBotones={true}  />
       </div>
-  
+      <Citas/>
       <Atras/>
       <Footer/>
     </div>

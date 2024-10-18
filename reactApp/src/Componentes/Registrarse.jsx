@@ -20,12 +20,12 @@ const Registrarse = () => {
     if (nombre.trim() === "" || apellido.trim() === "" || bithdate.trim() === "" || correoR.trim() === "" || contrasena.trim() === "" || okContrasena.trim() === "")
     {
       mostrarAlerta("error","LLENE TODOS LOS CAMPOS");
-      return false;
+      return true;
     }
 
     if (contrasena !== okContrasena) {   
       mostrarAlerta("error","Las contraseñas no coinciden");
-      return false
+      return true
     }
   
   };
@@ -35,23 +35,23 @@ const Registrarse = () => {
     const regex = /^[a-zA-Z]+$/;
     if (!regex.test(nombre) || !regex.test(apellido)) {  //validacion del formato en el nombre y el apellido 
       mostrarAlerta("error", "El nombre y apellido solo pueden contener letras");
-      return false;
+      return true;
   }
 
   if (nombre.length < 2 || apellido.length < 2) {
     mostrarAlerta("error", "El nombre y apellido deben tener al menos 2 caracteres");
-    
+    return true
   }
 }
 
   // Validar la seguridad de la contraseña
   const validarContrasena = () => {
     const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-    if (!regex.test(contrasena)) {
+    if (regex.test(contrasena)) {
       mostrarAlerta("error", "La contraseña debe tener al menos 6 caracteres, incluir una mayúscula, un número y un carácter especial");
-      return false;
+      return true;
     }
-    return true;
+    return false;
   };
 
 
@@ -61,11 +61,14 @@ const Registrarse = () => {
     e.preventDefault();  /*evita que la pagina se recargue*/
 
     if (!espacioVacio()){  //si la contrasena o los campos estan vacios se detiene
-      if(formatoNombreApellido()){
-
-      }
+        return
     }
-    if(validarContrasena()){}
+    if(validarContrasena()){
+      return
+    }
+    if(formatoNombreApellido()){
+      return
+    } 
 
     // crear el objeto que contiene todos los datos del formulario
     const datosRegistro = {

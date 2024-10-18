@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { traerCookie } from '../cookiesJS/cookies';
 
 
 function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEditar, mostrarBotones, btnAgregarAlCarrito }) {
@@ -8,7 +9,7 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
   const [soyAdmin, setsoyAdmin] = useState(false);
 
   useEffect (() => {
-    const administrador = localStorage.getItem("admin");
+    const administrador = traerCookie("admin");
     if(administrador){
       setsoyAdmin(true)
     }
@@ -35,6 +36,10 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
               <div className="card-buttons" >
                 <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
               </div>
+              <div className="card-buttons" >
+                <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} > AGENDAR CITA</button>
+              </div>
+              
             </>
 
           </div>
