@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/contacto.css'
+import { obtenerDatos } from '../JS/Fetch';
 
 
 const Formulario = () => {
@@ -10,16 +11,16 @@ const Formulario = () => {
   const [servicio, setServicio] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [imagen, setImagen] = useState('');
+  const [taller, setTaller] = useState('');
 
-// cambiar la marca,modelo y año por defecto en un select
-// preguntar al profe de la validacion de la imagen dentro de la funcion espacios vacios
-
+const [selectServicio, setSeLectServicio] = useState([]);
+const [ selectTaller, setSelectTaller] = useState([]);
 
 
   // Validación de campos vacíos
   const espacioVacio = (e) => {
     e.preventDefault();
-    if (!marca || !modelo || !año || !servicio || !descripcion) {
+    if (!marca || !modelo || !año || !servicio || !descripcion || !taller) {
       mostrarAlerta('error', 'Campos obligatorios');
     } else {
       // Aquí podrías hacer el envío de datos, como una petición POST
@@ -35,12 +36,20 @@ const Formulario = () => {
     setServicio('');
     setDescripcion('');
     setImagen('');
+    setTaller('');
   };
 
   useEffect(() =>{
-   
-
-  })
+   const obtenerServicio = async () => {
+    const dataTaller = await obtenerDatos("taller/")
+    const dataServicio = await obtenerDatos("servicio/")
+    setSeLectServicio(dataServicio);
+    setSelectTaller(dataTaller);
+    console.log(selectServicio);
+    
+   } 
+  obtenerServicio();
+  },[])
 
 
   return (
@@ -49,46 +58,34 @@ const Formulario = () => {
         <h2 className='form-title'>Solicitud de Mantenimiento</h2>
 
         <div className='form-group'>
+          <label htmlFor='imagen' className='form-label'>Taller</label>
+          <input placeholder='name'  className='form-select' value={taller} onChange={(e) => setTaller(e.target.value)}></input>
+            
+        </div>
+
+        <div className='form-group'>
           <label htmlFor='marca' className='form-label'>Marca</label>
-          <select id='marca' className='form-select' value={marca} onChange={(e) => setMarca(e.target.value)}>
-            <option value="">Seleccione Marca</option>
-            <option value="toyota">Toyota</option>
-            <option value="honda">Honda</option>
-            <option value="ford">Ford</option>
-            {/* Añadir más marcas según necesidad */}
-          </select>
+          <input placeholder='Marca' className='form-select' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
         </div>
 
         <div className='form-group'>
           <label htmlFor='modelo' className='form-label'>Modelo</label>
-          <select id='modelo' className='form-select' value={modelo} onChange={(e) => setModelo(e.target.value)}>
-            <option value="">Seleccione Modelo</option>
-            <option value="corolla">Corolla</option>
-            <option value="rav4">RAV4</option>
-            <option value="camry">Camry</option>
-            {/* Añadir más modelos según la marca seleccionada */}
-          </select>
+          <input placeholder='Modelo' className='form-select' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
         </div>
 
         <div className='form-group'>
           <label htmlFor='año' className='form-label'>Año</label>
-          <select id='año' className='form-select' value={año} onChange={(e) => setAño(e.target.value)}>
-            <option value="">Seleccione Año</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            {/* Añadir más años según necesidad */}
-          </select>
+          <input placeholder='Año' className='form-select' value={año} onChange={(e) => setAño(e.target.value)}></input>
+            
         </div>
 
         <div className='form-group'>
           <label htmlFor='servicio' className='form-label'>Servicio</label>
           <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
               <option value="">Seleccione un servicio</option>
-              <option value="mantenimiento_general">Mantenimiento General</option>
-              <option value="cambio_aceite">Cambio de Aceite</option>
-              <option value="frenos">Revisión de Frenos</option>
-              {/* Añadir más servicios según necesidad */}
+              {selectServicio.map((servicio)=>{
+                <option key={servicio.id}>{servicio.tipo}</option>
+              })}
           </select>
         </div>
 
@@ -113,6 +110,7 @@ const Formulario = () => {
             onChange={(e) => setImagen(e.target.value)}
           />
         </div>
+
 
         <div className='form-actions'>
           <button type='submit' className='form-button' onClick={espacioVacio}>Enviar</button>
