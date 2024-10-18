@@ -3,6 +3,7 @@ import Atras from '../Componentes/Atras'
 import MenuNav from '../Componentes/MenuNav'
 import Footer from '../Componentes/Footer'
 import { obtenerDatos } from '../JS/Fetch'
+import ContenedorCard from '../Componentes/ContenedorCard'
 // import { Card } from 'react-bootstrap'
 
 
@@ -13,7 +14,7 @@ const Destacado = () => {
  // traer el home los servicios 
   useEffect(()=>{
     const servicio = async () =>{
-      const data = await obtenerDatos("/servicio")
+      const data = await obtenerDatos("servicio/")
       console.log(data)
       setData(data)
     }
@@ -25,8 +26,11 @@ const Destacado = () => {
     
     <div>
       <MenuNav/>
-    
-      {/* <FormServicio/> */}
+      
+      <div>
+          <ContenedorCard getServicio={data} mostrarBotones={true}  />
+      </div>
+  
       <Atras/>
       <Footer/>
     </div>

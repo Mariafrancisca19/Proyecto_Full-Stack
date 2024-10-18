@@ -41,7 +41,6 @@ const Home = () => {
     <div className='container-home'>
       <MenuNav data={data} />
       <CarouselMostrar />
-      <h1 style={{fontFamily:'fantasy'}}>SERVICIOS</h1>
       <div>
           <ContenedorCard getServicio={data} mostrarBotones={true} btnEditar={edicionServicio} />
       </div>

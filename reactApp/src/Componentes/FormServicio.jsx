@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { deleteDatos, guardarDatos, postPrueba } from '../JS/Fetch'
+import { deleteDatos, guardarDatos, post } from '../JS/Fetch'
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/formServi.css'
 
@@ -46,7 +46,7 @@ const FormServicio = () => {
     // llama al post, le pasa el obj(servicio) y el endpoint
 
     try {
-      const response = await postPrueba(servicio)
+      const response = await post(servicio,"servicio/")
       console.log(response);
       console.log(servicio);
       mostrarAlerta("success", "Servicio agregado correctamente")
@@ -54,9 +54,6 @@ const FormServicio = () => {
       console.error('error al enviar los servicios', error);
     }
 
-
-
-    //  deleteDatos("servicioDelete/<int:id>/") url de delete
 
   }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/contacto.css'
-import { obtenerDatos } from '../JS/Fetch';
+import { obtenerDatos, post } from '../JS/Fetch';
 
 
 const Formulario = () => {
@@ -13,8 +13,8 @@ const Formulario = () => {
   const [imagen, setImagen] = useState('');
   const [taller, setTaller] = useState('');
 
-const [selectServicio, setSeLectServicio] = useState([]);
-const [ selectTaller, setSelectTaller] = useState([]);
+  const [selectServicio, setSeLectServicio] = useState([]);
+  const [selectTaller, setSelectTaller] = useState([]);
 
 
   // Validación de campos vacíos
@@ -24,6 +24,7 @@ const [ selectTaller, setSelectTaller] = useState([]);
       mostrarAlerta('error', 'Campos obligatorios');
     } else {
       // Aquí podrías hacer el envío de datos, como una petición POST
+      subirMantenimiento()
       console.log({ marca, modelo, año, servicio, descripcion, imagen });
     }
   };
@@ -39,17 +40,39 @@ const [ selectTaller, setSelectTaller] = useState([]);
     setTaller('');
   };
 
-  useEffect(() =>{
-   const obtenerServicio = async () => {
-    const dataTaller = await obtenerDatos("taller/")
-    const dataServicio = await obtenerDatos("servicio/")
-    setSeLectServicio(dataServicio);
-    setSelectTaller(dataTaller);
-    console.log(selectServicio);
-    
-   } 
-  obtenerServicio();
-  },[])
+  // get donde me muestra mis servicios guardados 
+  useEffect(() => {
+    const obtenerServicio = async () => {
+      const dataTaller = await obtenerDatos("taller/")
+      const dataServicio = await obtenerDatos("servicio/")
+      setSeLectServicio(dataServicio);
+      setSelectTaller(dataTaller);
+      console.log(selectServicio);
+
+    }
+    obtenerServicio();
+  }, [])
+
+  const subirMantenimiento = async () => {
+    // post para guardar mi solicitud de mantenimiento
+    // base de datos | const de mi formulario
+    const mantenimiento = {
+      marca: marca,
+      modelo: modelo,
+      anio: año,
+      descripcion: descripcion,
+    };
+    // llamar a mi post, pasarle el objeto y el endpoint
+    try {
+      const response = await post(mantenimiento, 'mantenimiento/')
+      console.log(response);
+      console.log(mantenimiento)
+      mostrarAlerta("success", "Mantenimiento agregado correctamente")
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
 
 
   return (
@@ -59,33 +82,43 @@ const [ selectTaller, setSelectTaller] = useState([]);
 
         <div className='form-group'>
           <label htmlFor='imagen' className='form-label'>Taller</label>
-          <input placeholder='name'  className='form-select' value={taller} onChange={(e) => setTaller(e.target.value)}></input>
-            
+          <select placeholder='Nombre del Taller' className='form-select' value={taller} onChange={(e) => setTaller(e.target.value)}>
+            <option value="">Seleccione un taller</option>
+            {selectTaller.map((mantenimient) => {
+              return (
+                <option key={mantenimient.id}>{mantenimient.taller}</option>
+              )
+            })
+            }
+          </select>
+
         </div>
 
         <div className='form-group'>
           <label htmlFor='marca' className='form-label'>Marca</label>
-          <input placeholder='Marca' className='form-select' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
+          <input placeholder='Marca' className='form-input' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
         </div>
 
         <div className='form-group'>
           <label htmlFor='modelo' className='form-label'>Modelo</label>
-          <input placeholder='Modelo' className='form-select' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
+          <input placeholder='Modelo' className='form-input' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
         </div>
 
         <div className='form-group'>
           <label htmlFor='año' className='form-label'>Año</label>
-          <input placeholder='Año' className='form-select' value={año} onChange={(e) => setAño(e.target.value)}></input>
-            
+          <input placeholder='Año' className='form-input' value={año} onChange={(e) => setAño(e.target.value)}></input>
+
         </div>
 
         <div className='form-group'>
           <label htmlFor='servicio' className='form-label'>Servicio</label>
           <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
-              <option value="">Seleccione un servicio</option>
-              {selectServicio.map((servicio)=>{
+            <option value="">Seleccione un servicio</option>
+            {selectServicio.map((servicio) => {
+              return (
                 <option key={servicio.id}>{servicio.tipo}</option>
-              })}
+              )
+            })}
           </select>
         </div>
 

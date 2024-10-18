@@ -24,6 +24,7 @@ const obtenerDatos = async (enpoint) => {
 export { obtenerDatos }
 
 // metodo post para guardar datos
+
 const guardarDatos = async (obj,enpoint) => {
     try {
 
@@ -93,8 +94,8 @@ const deleteDatos = async (enpoint, id) => {
 export {deleteDatos}
 
 
-const postPrueba=async(obj)=>{
-    const peticion = await fetch('http://127.0.0.1:8000/api/servicio/',{
+const post=async(obj,endpoint)=>{
+    const peticion = await fetch(`http://127.0.0.1:8000/api/${endpoint}/`,{
         method:"POST",
         headers: {
             'Content-Type': 'application/json'
@@ -103,6 +104,20 @@ const postPrueba=async(obj)=>{
     })
 }
 
+export {post}
 
-export {postPrueba}
+// para hacer un post reutilizable mejor trabajar en un post general y con el enpoint 
+
+
+      // post no reutilizable
+// const postMantenimiento=async(obj)=>{
+//     const peticion = await fetch('http://127.0.0.1:8000/api/mantenimiento/',{
+//         method:"POST",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body:JSON.stringify(obj)
+//     })
+// }
+// export {postMantenimiento}
     

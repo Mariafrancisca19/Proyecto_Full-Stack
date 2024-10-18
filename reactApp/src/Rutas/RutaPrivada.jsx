@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { mostrarAlerta } from '../JS/SweetAlert';
+import { traerCookie } from '../cookiesJS/cookies';
 
 
 const esAdmin=()=>{
-  const localAdmin = localStorage.getItem("admin")
+  const localAdmin = traerCookie("admin")
   return localAdmin
 }
 const RutaPrivada = ({children}) => {

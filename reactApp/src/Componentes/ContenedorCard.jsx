@@ -25,6 +25,10 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
 
 
     return (
+        <div>
+      <div style={{fontFamily:'fantasy', textAlign:'center',marginTop:'15px'}}>
+        <h1>SERVICIOS</h1>
+      </div>
         <div className='flex-row d-flex flex-wrap justify-content-center gap-4'>
             {Array.isArray(getServicio) && getServicio.length > 0 ? (
                 getServicio.map(serv => (
@@ -44,6 +48,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
                 <p className='no-servicios'>No hay servicios disponibles.</p>
                 
             )}
+        </div>
         </div>
     );
 }
