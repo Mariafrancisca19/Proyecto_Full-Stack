@@ -8,6 +8,7 @@ const crearCookie=(nombre,valor,dias)=>{
     document.cookie = nombre + "=" + (valor || "") + expira + "; path=/";
 }
 export {crearCookie}
+
 const traerCookie=(nombre)=> {
     let nameEQ = nombre + "=";
     let cookies = document.cookie.split(';');
@@ -19,3 +20,9 @@ const traerCookie=(nombre)=> {
     return null;
 }
 export {traerCookie}
+
+const eliminarCookie=(nombre) => {
+    document.cookie = nombre + "=; expires=Thu, 1 Jan 2000 00:00:00 UTC; path=/;";
+}
+
+export {eliminarCookie}

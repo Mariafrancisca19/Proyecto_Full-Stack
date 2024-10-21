@@ -4,6 +4,7 @@ import { mostrarAlerta } from '../JS/SweetAlert';
 import '../Estilos/Inicio.css'
 import { guardarDatos, obtenerDatos } from '../JS/Fetch';
 import { crearCookie } from '../cookiesJS/cookies';
+import {motion} from 'framer-motion' // importacion framer motion para hacer un login animado
 
 
 const Login = () => {
@@ -57,7 +58,7 @@ const Login = () => {
 
     try {
       const respuesta = await guardarDatos(datosLogin, "login/");
-      if (nombre == "Administrador" && password === "1907") {  // valiacion para el administrador al agregar servicio
+      if (nombre === "Administrador" && password === "1907") {  // valiacion para el administrador al agregar servicio
         // localStorage.setItem('admin', true)
         crearCookie('admin',true,1)
         navigate('pag_Admin')

@@ -11,6 +11,7 @@ import Ubicacion from "../Paginas/Ubicacion";
 import RutaPrivada from "./RutaPrivada";
 import Admin from "../Paginas/Admin";
 import Servicio from "../Paginas/Servicio";
+import AgendarCitas from "../Paginas/AgendarCitas";
 
 
 const router = createBrowserRouter([
@@ -63,7 +64,16 @@ const router = createBrowserRouter([
     {
         path:'/pag_Admin',
         element: <RutaPrivada>  <Admin/>   </RutaPrivada>
+    },
+
+    {
+        path:'/agendar_cita',
+        element: <AgendarCitas/>
     }
+
+
+
+
 
 ]);
 const Rutas = () => {

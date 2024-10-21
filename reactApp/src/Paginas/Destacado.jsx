@@ -32,7 +32,6 @@ const Destacado = () => {
       <div>
           <ContenedorCard getServicio={data} mostrarBotones={true}  />
       </div>
-      <Citas/>
       <Atras/>
       <Footer/>
     </div>

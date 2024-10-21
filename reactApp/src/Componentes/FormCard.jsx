@@ -37,7 +37,7 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
                 <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
               </div>
               <div className="card-buttons" >
-                <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} > AGENDAR CITA</button>
+                <button style={{ borderRadius: "6px" , backgroundColor:"coral"}}  onClick={()=> navigate('/agendar_cita')}> AGENDAR CITA</button>
               </div>
               
             </>

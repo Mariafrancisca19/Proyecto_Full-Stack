@@ -1,0 +1,125 @@
+/* estilos para el calendario */
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Siete columnas para los días de la semana */
+    gap: 10px; /* Espaciado entre los días */
+    padding: 20px; 
+    background-color: #d8746f;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* estilo para los dias del calendario */
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+.day:hover {
+  background-color: #e0f7fa;
+    cursor: pointer;
+  }
+  
+.day.selected {
+    background-color: #ffeb3b; /* Color de fondo para el día seleccionado */
+  }
+  
+ 
+.day .event {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: #7c7c7c;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+.event:hover {
+    background-color: #f44336; /* Al hacer clic para eliminar */
+  }
+
+  /* estilo para los eventos  */
+
+  #event-form {
+    background-color: #9c9c9c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  #event-form h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  #event-form label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  #event-form input[type="date"],
+  #event-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  #add-event {
+    background-color: #43474c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  #add-event:hover {
+    background-color: #000000;
+  }
+
+/* responsivo */
+  @media (max-width: 768px) {
+    .calendario {
+      grid-template-columns: repeat(4, 1fr); /* Ajusta a menos columnas en pantallas pequeñas */
+    }
+  
+    .day {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .calendario {
+      grid-template-columns: repeat(2, 1fr); /* Aún menos columnas en pantallas más pequeñas */
+    }
+  
+    #event-form {
+      padding: 10px;
+    }
+  }
