@@ -21,7 +21,18 @@ class RegistroView(APIView):
         nuevo_usuario = User.objects.create_user(username=username,password=password)
         return Response({'success':'Usuario creado correctamente'},status=status.HTTP_201_CREATED)
         
+class RegistroAdminView(APIView):   # registro apara el super usuario
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
         
+        if User.objects.filter(username=username).exists():
+            return Response({'error':'El usuario ya existe, ingresar otro usuario',},status=status.HTTP_400_BAD_REQUEST)
+        
+        nuevo_usuario = User.objects.create_superuser(username=username,password=password)
+        return Response({'success':'Superusuario creado correctamente'},status=status.HTTP_201_CREATED)
+        
+
 class LoginView(APIView):
     def post(self,request):
         username = request.data.get('username')
@@ -30,7 +41,7 @@ class LoginView(APIView):
         # verificacion  del correo y la contrasena
         user = authenticate(username=username, password=password)
         
-        if User is not None:
+        if user is not None:
             refresh = RefreshToken.for_user(user)  #Generar nuevos token de acceso sin que el usuario tenga auntenticacion de nuevo
             token, created = Token.objects.get_or_create(user=user)    # busca un token para el usuario y si no existe, lo crea    
             return Response({'token':token.key,'token_d_acceso':str(refresh.access_token),'token_d_refresco':str(refresh)}, status=status.HTTP_200_OK)  # si la autenticacion es correcta de vuelve un "http_200_ok , solicitud exitosa"

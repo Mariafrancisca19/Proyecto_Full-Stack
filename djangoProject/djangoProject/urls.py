@@ -2,14 +2,16 @@
 from django.urls import path,include
 from Cuentas.views import RegistroView
 from Cuentas.views import LoginView
+from Cuentas.views import RegistroAdminView
+
 
 urlpatterns = [
     path('api/registro/', RegistroView.as_view()),
+    path('api/login/', LoginView.as_view()),
+    path('api/registro-admin/', RegistroAdminView.as_view()),
     path('api/automoviles',include('automoviles.urls')),
-    path('api/',include('servicio.urls')),
     path('api/calificacion',include('calificacion.urls')),  
-    path('api/login/', LoginView.as_view())
-      
+    path('api/',include('servicio.urls')),
 ]
 
 
