@@ -72,3 +72,10 @@
     /* diseño responsive*/
   }
   
+/* estilos para la barra de busqueda en forma decard y no una lista */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}

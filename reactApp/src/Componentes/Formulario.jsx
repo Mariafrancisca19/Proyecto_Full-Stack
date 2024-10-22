@@ -78,6 +78,7 @@ const Formulario = () => {
     <div className='form-container'>
       <form className='form'>
         <h2 className='form-title'>Solicitud de Mantenimiento</h2>
+        <div>
 
         <div className='form-group'>
           <label htmlFor='imagen' className='form-label'>Taller</label>
@@ -93,23 +94,26 @@ const Formulario = () => {
 
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='marca' className='form-label'>Marca</label>
-          <input placeholder='Marca' className='form-input' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
-        </div>
+          <div className='form-group'>
+            <label htmlFor='marca' className='form-label'>Marca</label>
+            <input placeholder='Marca' className='form-input' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
+          </div>
 
-        <div className='form-group'>
-          <label htmlFor='modelo' className='form-label'>Modelo</label>
-          <input placeholder='Modelo' className='form-input' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
-        </div>
+          <div className='form-group'>
+            <label htmlFor='modelo' className='form-label'>Modelo</label>
+            <input placeholder='Modelo' className='form-input' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
+          </div>
+          </div>
 
-        <div className='form-group'>
-          <label htmlFor='año' className='form-label'>Año</label>
-          <input placeholder='Año' className='form-input' value={año} onChange={(e) => setAño(e.target.value)}></input>
+          <div className='form-group'>
+            <label htmlFor='año' className='form-label'>Año</label>
+            <input placeholder='Año' className='form-input' value={año} onChange={(e) => setAño(e.target.value)}></input>
 
-        </div>
+          </div>
+        
 
-        <div className='form-group'>
+       <div>
+       <div className='form-group'>
           <label htmlFor='servicio' className='form-label'>Servicio</label>
           <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
             <option value="" disabled>Seleccione un servicio</option>
@@ -143,6 +147,7 @@ const Formulario = () => {
           />
         </div>
 
+       </div>
 
         <div className='form-actions'>
           <button type='submit' className='form-button' onClick={espacioVacio}>Enviar</button>

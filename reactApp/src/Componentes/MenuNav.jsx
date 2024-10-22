@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Form, Button, Container, Offcanvas, Card } from 'react-bootstrap';
 import '../Estilos/App.css';
 import '../Estilos/navbar.css';
 import { obtenerDatos } from '../JS/Fetch';
@@ -37,7 +37,7 @@ const MenuNav = () => {
   };
 
   return (
-    <Navbar expand="lg" className="navbar-custom">
+    <Navbar expand="lg" className="navbar-custom" >
       <Container>
         <Navbar.Brand href="#home">
           <img style={{ width: '55px' }} className='logo' src='/src/Imagenes/logo.webp' alt='logo' onClick={() => navigate("/home")} />
@@ -55,36 +55,40 @@ const MenuNav = () => {
               <NavDropdown.Item onClick={() => navigate("/")}>CERRAR SESION</NavDropdown.Item>
             </NavDropdown>
             <Button variant="outline-light" onClick={handleShow} className="nav-button">
-              SERVICIOS
+              SERVICIO
             </Button>
             <Offcanvas show={show} onHide={handleClose} placement="end">
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title>TODOS LOS SERVICIOS</Offcanvas.Title>
+                <Offcanvas.Title style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"25px"}}>Todos los Servicios</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Form onSubmit={handleSearch} className="mb-3">
-                  <Form.Control
+                  <Form.Control style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"15px"}}
                     type="text"
                     placeholder="Buscar servicio..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)} // actualiza el estado del término de búsqueda
                   />
-                  <Button type="submit" className="mt-2">Buscar</Button>
+                  <Button type="submit" className="mt-2" style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"18px"}}>Buscar</Button>
                 </Form>
-                <ul>
+                <div className='service-grid'>
                   {filtrarServicios && filtrarServicios.length > 0 ? (
                     filtrarServicios.map((serv, index) => (
-                      <li key={index}>{serv.tipo}</li>
+                      <Card style={{border:"1px solid #ddd", borderRadius:"8px"}} key={index} className="mb-3">
+                        <Card.Body>
+                          <Card.Title>{serv.tipo}</Card.Title>
+                        </Card.Body>
+                      </Card>
                     ))
                   ) : (
-                    <li>No hay servicios disponibles</li>
+                    <p style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"20px"}}>No hay servicios disponibles</p>
                   )}
-                </ul>
+                </div>
               </Offcanvas.Body>
             </Offcanvas>
           </Nav>
           <Form inline="true" className="d-flex search-bar">
-            <Button className="cart-button">
+            <Button onClick={() => navigate('/')} className="cart-button">
               <i className="bi bi-person-circle"></i>
             </Button>
           </Form>

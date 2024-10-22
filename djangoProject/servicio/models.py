@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 
 # Create your models here.
@@ -24,7 +25,7 @@ class Servicio(models.Model):
 class Mantenimiento(models.Model):
     marca   = models.CharField(max_length=100,blank=True,null=True)
     modelo  = models.CharField(blank=True,null=True, max_length=100)
-    anio = models.DateField(blank=True,null=True)
+    anio = models.DateField(null=True, blank=True, default=datetime.date.today)  
     id_taller = models.ForeignKey(Taller,on_delete=models.CASCADE)
     id_tipo =  models.ForeignKey("servicio.Servicio",on_delete=models.CASCADE)
     descripcion =  models.TextField(blank=False)
