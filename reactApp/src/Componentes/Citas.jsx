@@ -63,7 +63,7 @@ const Citas = () => {
   }, [eventDate]);
 
   // Función para eliminar eventos
-  const administrador = traerCookie('admin')
+  const administrador = traerCookie('superuser')
   const handleDeleteEvent = (day, eventToDelete) => {
     console.log(administrador);
     if(administrador === 'true'){
@@ -139,3 +139,4 @@ const Citas = () => {
 };
 
 export default Citas;
+

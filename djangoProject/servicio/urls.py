@@ -1,4 +1,4 @@
-from servicio.views import ServicioDeleteView, TallerView,ServicioView,MantenimientoView,ServicioUpdateView
+from servicio.views import  ServicioDeleteView, TallerView,ServicioView,MantenimientoView,ServicioUpdateView
 from django.urls import path
 
 

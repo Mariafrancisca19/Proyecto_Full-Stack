@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { deleteDatos, guardarDatos, post } from '../JS/Fetch'
+import { deleteDatos, guardarDatos, obtenerDatos, post } from '../JS/Fetch'
 import { mostrarAlerta } from '../JS/SweetAlert'
 import '../Estilos/formServi.css'
 
@@ -11,6 +11,8 @@ const FormServicio = () => {
   const [descripcion, setDescripcion] = useState('')
   const [base64, setBase64] = useState('')
   const [taller, setTaller] = useState('')
+
+  const [selectTaller , setSelectTaller] = useState([]) // almacenar todo los talleres
 
   // funcion para leer el archivo
   const cambioArchivo = (event) => {
@@ -46,16 +48,23 @@ const FormServicio = () => {
     // llama al post, le pasa el obj(servicio) y el endpoint
 
     try {
-      const response = await post(servicio,"servicio/")
+      const response = await post(servicio, "servicio")
       console.log(response);
       console.log(servicio);
       mostrarAlerta("success", "Servicio agregado correctamente")
     } catch (error) {
       console.error('error al enviar los servicios', error);
     }
-
-
+    
   }
+  useEffect(() =>{   // obtener los talleres guardados
+    const obtenerTaller = async () => {
+      const datoTaller = await obtenerDatos("taller/")
+      setSelectTaller(datoTaller);
+      console.log(selectTaller);
+    }
+    obtenerTaller();
+  },[])
 
   return (
     <div className='container-formServi'>
@@ -68,15 +77,22 @@ const FormServicio = () => {
         <label className='label-formServi'>Imagen </label>
         <input type='file' onChange={cambioArchivo} className='input-formServi'></input>
 
-        <label typeof='number' className='label-formServi'>Precio</label>
+        <label type='number' className='label-formServi'>Precio</label>
         <input value={precio} className='input-formServi' placeholder='Precio' type='number' onChange={(e) => { setPrecio(e.target.value) }}></input>
 
         <label className='label-formServi'>Descripcion</label>
         <input value={descripcion} className='input-formServi' placeholder='Descripcion' onChange={(e) => { setDescripcion(e.target.value) }}></input>
 
         <label className='label-formServi'>Nombre del taller</label>
-        <input value={taller} className='input-formServi' placeholder='Nombre del taller' onChange={(e) => { setTaller(e.target.value) }}></input>
-
+        <select value={taller} className='input-formServi' placeholder='Nombre del taller' onChange={(e) => { setTaller(e.target.value) }}>
+        <option value='' disabled>Seleccione un taller </option>
+         {selectTaller.map((taller) =>{
+          return (
+            <option key={taller.id}>{taller.nombre_taller}</option>
+          )
+         })
+         }
+        </select>
 
         <button className='boton-enviar' type='submit' onClick={subirServicio}> ENVIAR</button>
       </form>

@@ -78,7 +78,7 @@ const deleteDatos = async (enpoint, id) => {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authentication': `Bearer ${token}`
+                // 'Authentication': `Bearer ${token}`
             }
         });
 

@@ -6,15 +6,7 @@ import { traerCookie } from '../cookiesJS/cookies';
 function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEditar, mostrarBotones, btnAgregarAlCarrito }) {
 
   const navigate = useNavigate();
-  const [soyAdmin, setsoyAdmin] = useState(false);
 
-  useEffect (() => {
-    const administrador = traerCookie("admin");
-    if(administrador){
-      setsoyAdmin(true)
-    }
-  },[]);
-  
 
   return (
  
@@ -26,18 +18,17 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
             <h2>Precio:₡{precio}</h2>
             <p style={{ color: 'black', fontFamily: 'serif', fontSize: '23px' }}>Descripcion: {descripcion}</p>
             <>
-            {soyAdmin && (
-              
+            {mostrarBotones &&(
               <div className="card-buttons">
-                <button  className='btn btn-success ml-3' onClick={btnEliminar}>🗑️</button>
-                <button style={{backgroundColor:"rgb(116, 168, 151)"}} className='btn btn-success btn-editar' onClick={btnEditar}>EDITAR</button>
+                <button  className='btn btn-primary ml-3' style={{backgroundColor:'#333333', border:'none'}} onClick={btnEliminar}>🗑️</button>
+                <button style={{backgroundColor:"#4a4a4a",color:'#fff', border:'none'}} className='btn btn-success btn-editar' onClick={btnEditar}>EDITAR</button>
               </div>
             )}
               <div className="card-buttons" >
-                <button style={{ borderRadius: "6px" , backgroundColor:"coral"}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
+                <button style={{ borderRadius: "6px", border:'none' , backgroundColor:"#2e2e2e", color:'white'}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
               </div>
               <div className="card-buttons" >
-                <button style={{ borderRadius: "6px" , backgroundColor:"coral"}}  onClick={()=> navigate('/agendar_cita')}> AGENDAR CITA</button>
+                <button style={{ borderRadius: "6px", border:'none', backgroundColor:"#8e8e8e",color:"#fff"}}  onClick={()=> navigate('/agendar_cita')}> AGENDAR CITA</button>
               </div>
               
             </>

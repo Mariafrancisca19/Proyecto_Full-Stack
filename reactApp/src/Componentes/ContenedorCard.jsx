@@ -23,7 +23,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
         console.log(carrito);
     };
 
-
+    const administrador = traerCookie('superuser')
     return (
         <div>
       <div style={{fontFamily:'fantasy', textAlign:'center',marginTop:'15px'}}>

@@ -40,7 +40,9 @@ const Home = () => {
   return (
     <div className='container-home'>
       <MenuNav data={data} />
-      <CarouselMostrar />
+      <CarouselMostrar /> 
+      <hr className='animado'/>
+
       <div>
           <ContenedorCard getServicio={data} mostrarBotones={true} btnEditar={edicionServicio} />
       </div>
