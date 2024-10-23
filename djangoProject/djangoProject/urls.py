@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/automoviles',include('automoviles.urls')),
     path('api/calificacion',include('calificacion.urls')),  
     path('api/',include('servicio.urls')),
+    path('api/',include('Citas.url')),
 ]
 
 

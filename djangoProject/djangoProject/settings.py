@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'automoviles',
     'servicio',
     'calificacion',
+    'Citas',
     'rest_framework_simplejwt'
 ]
 

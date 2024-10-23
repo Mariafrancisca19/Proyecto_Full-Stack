@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../Estilos/agendarCita.css';
 import { crearCookie, traerCookie } from '../cookiesJS/cookies';
 import { mostrarAlerta } from '../JS/SweetAlert';
+import { post } from '../JS/Fetch';
 
 
 // Función para obtener el número de días en un mes dado
@@ -14,7 +15,9 @@ const Citas = () => {
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [eventDate, setEventDate] = useState('');
   const [eventName, setEventName] = useState('');
-
+  const [usuarioCita, setUsuarioCita] = useState('')
+  const [servicio, setServicio] = useState('')
+  
   const [nombre, setNombre] = useState('');
   const [password, setPassword] = useState(''); // administrador
 
@@ -77,6 +80,23 @@ const Citas = () => {
       mostrarAlerta('error','No tienes permiso para eliminar eventos.');
     }
   };
+
+  // post para guardar los datos de mi citas 
+ const postCita=async()=>{
+   const agendarCita = {
+     username: usuarioCita,
+     id: servicio,
+     fecha: eventDate,
+     descripcion: eventName
+    };
+    try {
+      const response = await post(agendarCita, "Agendar_Cita/")
+      console.log(response);
+      mostrarAlerta("success","Cita agregada correctamente")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div style={{ fontFamily: 'initial', marginTop: '30px', textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)', fontWeight: 'bold' }}>
