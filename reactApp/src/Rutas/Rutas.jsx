@@ -65,7 +65,10 @@ const router = createBrowserRouter([
         path:'/pag_Admin',
         element: <RutaPrivada>  <Admin/>   </RutaPrivada>
     },
-
+    {
+        path:'/admin',
+        element: <RutaPrivada>  <Admin/>   </RutaPrivada>
+    },
     {
         path:'/agendar_cita',
         element: <AgendarCitas/>

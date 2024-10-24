@@ -5,23 +5,21 @@ import { mostrarAlerta } from '../JS/SweetAlert';
 import { post } from '../JS/Fetch';
 
 
-// Función para obtener el número de días en un mes dado
+// Función para calcular cuantos dias tiene un mes dado
 const getDaysInMonth = (month, year) => {
   return new Date(year, month + 1, 0).getDate(); // Devuelve el último día del mes
 };
 
 const Citas = () => {
-  const [currentDate, setCurrentDate] = useState(new Date()); // Fecha actual
-  const [daysInMonth, setDaysInMonth] = useState([]);
+  const [currentDate, setCurrentDate] = useState(new Date()); // Fecha actual del mes y año en el calendario
+  const [daysInMonth, setDaysInMonth] = useState([]);  
   const [eventDate, setEventDate] = useState('');
   const [eventName, setEventName] = useState('');
-  const [usuarioCita, setUsuarioCita] = useState('')
-  const [servicio, setServicio] = useState('')
-  
+ 
   const [nombre, setNombre] = useState('');
   const [password, setPassword] = useState(''); // administrador
 
-  const [infoEvent, setInfoEvent] = useState(() => {
+  const [infoEvent, setInfoEvent] = useState(() => { // guardar lista almacenada en el localstorage 
     const savedEvents = localStorage.getItem('eventos');
     return savedEvents ? JSON.parse(savedEvents) : [];
   });
@@ -47,7 +45,7 @@ const Citas = () => {
   };
 
   // Agregar eventos
-  const handleAddEvent = () => {
+  const handleAddEvent = () => {   // validar el ingreso de fecha y nombre , lo guarda los eventos localstorage 
     const date = new Date(eventDate);
     const day = date.getDate();
     if (day && eventName) {
@@ -83,7 +81,7 @@ const Citas = () => {
     }
   };
 
-  // post para guardar los datos de mi citas 
+  // post para guardar o enviar  los datos de mi citas al servidor 
  const postCita = async () => {
    const agendarCita = {
     servicio: traerCookie('servicioID'),

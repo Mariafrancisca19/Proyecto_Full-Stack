@@ -55,7 +55,7 @@ const actualizarDatos = async (obj,enpoint, id) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authentication': `Bearer ${token}`
+                // 'Authentication': `Bearer ${token}`
             },
 
             body: JSON.stringify(obj)

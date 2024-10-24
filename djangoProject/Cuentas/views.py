@@ -21,7 +21,7 @@ class RegistroView(APIView):
             return Response({'error':'El usuario ya existe, ingresar otro usuario',},status=status.HTTP_400_BAD_REQUEST)
         
         nuevo_usuario = User.objects.create_user(username=username,password=password)
-        Usuario.objects.create(user=nuevo_usuario)
+        Usuario.objects.create(user=nuevo_usuario) 
         return Response({'success':'Usuario creado correctamente'},status=status.HTTP_201_CREATED)
         
 class RegistroAdminView(APIView):   # registro para el super usuario
@@ -33,7 +33,7 @@ class RegistroAdminView(APIView):   # registro para el super usuario
             return Response({'error':'El usuario ya existe, ingresar otro usuario',},status=status.HTTP_400_BAD_REQUEST)
         else:
             nuevo_usuario = User.objects.create_superuser(username=username,password=password)
-            Usuario.objects.create(user=nuevo_usuario)
+            Usuario.objects.create(user=nuevo_usuario) # relacion de los usuarios
             return Response({'success':'Superusuario creado correctamente'},status=status.HTTP_201_CREATED)
         
     

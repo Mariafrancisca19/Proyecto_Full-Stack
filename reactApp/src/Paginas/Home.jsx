@@ -6,6 +6,7 @@ import '../Estilos/App.css'
 import { obtenerDatos } from '../JS/Fetch'
 import ContenedorCard from '../Componentes/ContenedorCard'
 import EditarFormAdmin from '../Componentes/EditarFormAdmin'
+import Administrador from '../Componentes/Administrador'
 
 
 const Home = () => {
@@ -54,6 +55,8 @@ const Home = () => {
           producto={servicio} productoSelect={setServicio}
         />)
       }
+
+     
        
 
       <Footer id={"#footer"} />
