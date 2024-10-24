@@ -44,7 +44,7 @@ const guardarDatos = async (obj,enpoint) => {
 
 }
 
-export { guardarDatos }
+export { guardarDatos}
 
 // metodo put para actualizar los datos
 
@@ -95,13 +95,27 @@ export {deleteDatos}
 
 
 const post=async(obj,endpoint)=>{
-    const peticion = await fetch(`http://127.0.0.1:8000/api/${endpoint}/`,{
-        method:"POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body:JSON.stringify(obj)
-    })
+  try {
+      const peticion = await fetch(`http://127.0.0.1:8000/api/${endpoint}/`,{
+          method:"POST",
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body:JSON.stringify(obj)
+      })
+      console.log(peticion);
+
+      if (!peticion.ok) {
+        const errorText = await peticion.text(); // Get the response body as text
+        console.error(`Error: ${peticion.status} ${errorText}`);
+        throw new Error(`HTTP error! status: ${peticion.status}, message: ${errorText}`);
+    }
+    
+      return peticion
+  } catch (error) {
+    console.error(error);
+    
+  }
 }
 
 export {post}

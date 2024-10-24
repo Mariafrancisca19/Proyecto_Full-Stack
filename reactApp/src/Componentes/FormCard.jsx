@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { traerCookie } from '../cookiesJS/cookies';
 
 
-function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEditar, mostrarBotones, btnAgregarAlCarrito }) {
+function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEditar, mostrarBotones,btnAgendarCita}) {
 
   const navigate = useNavigate();
 
+  
 
   return (
  
@@ -28,7 +29,7 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
                 <button style={{ borderRadius: "6px", border:'none' , backgroundColor:"#2e2e2e", color:'white'}} onClick={()=> navigate("/servicio")} > Solicitud Mantenimiento</button>
               </div>
               <div className="card-buttons" >
-                <button style={{ borderRadius: "6px", border:'none', backgroundColor:"#8e8e8e",color:"#fff"}}  onClick={()=> navigate('/agendar_cita')}> AGENDAR CITA</button>
+                <button style={{ borderRadius: "6px", border:'none', backgroundColor:"#8e8e8e",color:"#fff"}}  onClick={btnAgendarCita}> AGENDAR CITA</button>
               </div>
               
             </>

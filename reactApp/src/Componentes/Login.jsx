@@ -68,6 +68,7 @@ const Login = () => {
       if (respuesta.token) {
         mostrarAlerta("success", " BIENVENIDA ")
         crearCookie('token',respuesta.token_d_acceso,1)   // recordar que el nombre es el que tiene en la app "cuentas -> views.py"
+        crearCookie('usuarioID',respuesta.id_usuario,1)   // recordar que el nombre es el que tiene en la app "cuentas -> views.py"
 
         if (respuesta.superuser){   // nombre que le puse en db de cuentas --> loginView
           crearCookie('superuser', true, 1)

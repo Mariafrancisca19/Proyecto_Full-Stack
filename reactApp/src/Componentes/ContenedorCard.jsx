@@ -5,10 +5,11 @@ import { deleteDatos } from '../JS/Fetch';
 import Button from 'react-bootstrap/Button';
 import { mostrarAlerta } from '../JS/SweetAlert';
 import { crearCookie, traerCookie } from '../cookiesJS/cookies';
+import { useNavigate } from 'react-router-dom';
 
 
 function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones }) {
-  
+    const navigate = useNavigate()
     const [carrito, setCarrito] = useState(JSON.parse(traerCookie("ids")) || [])
 
     const eliminarDato = async (id) => {
@@ -22,7 +23,10 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
         setCarrito(ids)
         console.log(carrito);
     };
-
+    const guardarIdServicio = (idServicio)=>{
+        crearCookie('servicioID',idServicio,1)
+        navigate('/Agendar_Cita')
+    }
     const administrador = traerCookie('superuser')
     return (
         <div>
@@ -42,6 +46,7 @@ function ContenedorCard({ getServicio, btnEliminar, btnEditar, mostrarBotones })
                         btnEditar={()=>btnEditar(serv)}
                         btnAgregarAlCarrito={() => guardarCarrito(serv.id)}
                         mostrarBotones={mostrarBotones}
+                        btnAgendarCita={()=>guardarIdServicio(serv.id)}
                         
                     />
                 ))

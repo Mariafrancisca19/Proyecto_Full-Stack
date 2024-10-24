@@ -36,8 +36,10 @@ const Citas = () => {
   // Guardar eventos en localStorage
   const guardarDatosEventos = () => {
     const eventos = {
-      fechaE: eventDate,
-      nombreE: eventName,
+      servicio: traerCookie('servicioID'),
+      usuario: traerCookie('usuarioID'),
+      descripcion_cita:eventName,
+      fecha: eventDate,
     };
     const updatedEvents = [...infoEvent, eventos];
     setInfoEvent(updatedEvents);
@@ -51,7 +53,7 @@ const Citas = () => {
     if (day && eventName) {
       guardarDatosEventos();
       setEventDate('');
-      setEventName('');
+      setEventName
     } else {
       mostrarAlerta('error','Por favor, ingrese una fecha y un nombre de evento válidos.');
     }
@@ -82,20 +84,24 @@ const Citas = () => {
   };
 
   // post para guardar los datos de mi citas 
- const postCita=async()=>{
+ const postCita = async () => {
    const agendarCita = {
-     username: usuarioCita,
-     id: servicio,
-     fecha: eventDate,
-     descripcion: eventName
+    servicio: traerCookie('servicioID'),
+    usuario: traerCookie('usuarioID'),
+    descripcion_cita:eventName,
+    fecha: eventDate,
     };
     try {
-      const response = await post(agendarCita, "Agendar_Cita/")
-      console.log(response);
+      const response = await post(agendarCita, "Agendar_Cita")
+      if(response){
       mostrarAlerta("success","Cita agregada correctamente")
+    }else{
+      mostrarAlerta("error","Intenta de nuevo")
+    }
     } catch (error) {
       console.log(error)
     }
+
   }
 
   return (
@@ -150,7 +156,7 @@ const Citas = () => {
           onChange={(e) => setEventName(e.target.value)}
         />
         <br />
-        <button id="add-event" onClick={handleAddEvent}>
+        <button id="add-event" onClick={postCita}>
           Agregar Cita
         </button>
       </div>
