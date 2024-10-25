@@ -100,4 +100,4 @@ const FormServicio = () => {
   )
 }
 
-export default FormServicio
+export default FormServicio;

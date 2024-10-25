@@ -3,6 +3,10 @@ import { obtenerDatos } from '../JS/Fetch'
 import { Card, Container } from 'react-bootstrap';
 import ContenedorCard from './ContenedorCard';
 import ContenedorCardAdmin from './ContenedorCardAdmin';
+import ContenedorCardMantenimiento from './ContenedorCardMantenimiento';
+import ContenedorCardTaller from './ContenedorCardTaller';
+
+
 // obtener todos los servicios,talleres,citas --> resumen de toda la pagina al admin donde pueda eliminar , editar todos los servicios  
 const Administrador = () => {
 
@@ -24,9 +28,6 @@ const Administrador = () => {
     }
     obtenerAdmin();
  },[])
-
-
-
 
   return (
     <div>
@@ -83,12 +84,13 @@ const Administrador = () => {
     
     <div>
     <h2>Solicitud de Mantenimiento</h2>
+    <ContenedorCardMantenimiento getMantenimiento={selecsolicitudMantenimiento}/>
     {selecsolicitudMantenimiento && selecsolicitudMantenimiento.length > 0 ? (
      selecsolicitudMantenimiento.map((mantenimiento) => {
         <Card>
             <Card.Body>
                 <Card.Title>
-                {mantenimiento.id_taller}
+                {mantenimiento.nombre_taller}
                 {mantenimiento.marca}
                 {mantenimiento.modelo}
                 {mantenimiento.anio}
@@ -108,15 +110,16 @@ const Administrador = () => {
     
     <div>
     <h2>Talleres</h2>
+    <ContenedorCardTaller getTaller={selectTaller}/>
     {selectTaller && selectTaller.length > 0 ? (
-     selectTaller.map((taller) => {
+     selectTaller.map((tallerr) => {
         <Card>
             <Card.Body>
                 <Card.Title>
-                {taller.id}
-                {taller.nombre_taller}
-                {taller.direccion}
-                {taller.telefono}
+                {tallerr.id}
+                {tallerr.nombre_taller}
+                {tallerr.direccion}
+                {tallerr.telefono}
                 </Card.Title>
             </Card.Body>
         </Card>

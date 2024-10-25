@@ -1,18 +1,16 @@
 import React from 'react'
 
 
-function AdminCard({usuario,servicio,fecha,descripcion}) {
+function AdminCard({ usuario, servicio, fecha, descripcion,btnEliminar }) {
   return (
-    <div>
-      
-    <h2>Usuario:{usuario}</h2>
-    <h2>Servicio:{servicio}</h2>
-    <h2>Fecha:{fecha}</h2>
-    <p>Descripcion:{descripcion}</p>
-      
-    
+    <div className="admin-card">
+    <h2 className="titulo-admin">Usuario: <span>{usuario}</span></h2>
+    <h2 className="titulo-admin">Servicio: <span>{servicio}</span></h2>
+    <h2 className="titulo-admin">Fecha: <span>{fecha}</span></h2>
+    <p className='titulo-admin'>Descripcion: {descripcion}</p>
+    <button onClick={btnEliminar}>Eliminar</button>
     </div>
   )
 }
 
-export default AdminCard
+export default AdminCard;

@@ -31,7 +31,7 @@ const Home = () => {
       setData(data)
     }
     servicio()
-  }, [])
+  }, [data])
 
   const edicionServicio=(servicio)=>{
     setServicio(servicio)

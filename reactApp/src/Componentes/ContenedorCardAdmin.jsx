@@ -4,23 +4,21 @@ import AdminCard from './AdminCard'
 
 const ContenedorCardAdmin = ({getAdmin}) => {
 
-
-
   return (
-    <div className='flex-row d-flex flex-wrap justify-content-center gap-4'>
+    <div className="contenedor-admin-cards">
       {Array.isArray(getAdmin) && getAdmin.length > 0 ? (
                 getAdmin.map(muestraAdmin => (
                     <AdminCard
                         key={muestraAdmin.id}
-                        usuario ={muestraAdmin.usuario}
-                        servicio={muestraAdmin.servicio}
+                        usuario ={muestraAdmin.usuario_nombre} // nombre de mi serializers para mostrar el nombre usuario
+                        servicio={muestraAdmin.servicio_nombre} // nombre de mi serializers para mostrar el nombre servicio
                         fecha={muestraAdmin.fecha}
-                        descripcion={muestraAdmin.descripcion}
-
+                        descripcion={muestraAdmin.descripcion_cita}
+                        // btnEliminar={()=>} recordar hacerle la funcion a cada btn en los contenedores
                     />
                 ))
             ) : (
-                <p className='no-servicios'>No hay servicios disponibles.</p>
+                <p>No hay servicios disponibles.</p>
                 
             )}
 
@@ -29,4 +27,4 @@ const ContenedorCardAdmin = ({getAdmin}) => {
   )
 }
 
-export default ContenedorCardAdmin
+export default ContenedorCardAdmin;
