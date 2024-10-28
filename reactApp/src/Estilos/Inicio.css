@@ -1,46 +1,125 @@
 
 
-.container-form{
+@media (max-width: 768px){
+  /* diseño responsive*/
+}
+
+
+/* Contenedor principal */
+.container-form {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 200px;
+  background-color:#DCDCDC;
+  overflow: hidden;
 }
 
 
-.form{
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  padding: 20px;
-  background-color: rgb(198, 191, 254);
-  margin-top: 200px;
-  color: white;
+/* Contenedor de la imagen */
+.container-imagen img {
+  width: 180px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+
 }
-.input-login{
-  border-radius: 20px;
-  border: transparent;
-  padding: 5px;
+
+.container-imagen img:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Formulario */
+.form {
   width: 100%;
-  margin: 10px 0;
-  background-color: rgb(155, 155, 235);
+  max-width: 400px;
+  padding: 60px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+}
+
+.form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Título animado */
+.form-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(90deg, #ff6b6b, #4a90e2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycle 6s infinite linear;
+}
+
+/* Ciclo de color en el título */
+@keyframes colorCycle {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Campos de entrada */
+.input-login {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.6rem 0;
+  border: 1px solid transparent;
+  border-radius: 17px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  background-color: rgb(158, 158, 176);
   color: white;
 
+
 }
 
-.btn-login{
-  border-radius: 25px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #ffffff;
-  color: rgb(6, 5, 5);
-  cursor: pointer;
-  margin-top: 10px;
+.input-login:focus {
+
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+  transform: scale(1.03);
 }
+
+/* Botón de inicio de sesión */
+.btn-login {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #9a9b9c, #423e3e);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, #383a57, #111c28);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 
 .form2{
   border: 1px solid rgb(255, 255, 255);
   border-radius: 20px;
   padding: 30px;
-  background-color: rgb(198, 191, 254);
+  background-color: rgb(46, 26, 198);
   margin-top: 10px;
   color: white;
 
@@ -61,8 +140,4 @@
   border-radius: 10px;
   padding: 5px;
 
-}
-
-@media (max-width: 768px){
-  /* diseño responsive*/
 }

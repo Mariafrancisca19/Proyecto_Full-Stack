@@ -49,7 +49,6 @@ const MenuNav = () => {
             <Nav.Link onClick={() => navigate("/destacado")}>DESTACADO</Nav.Link>
             <NavDropdown title="NUESTRA EMPRESA" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={() => navigate("/sobrenosotros")}>MISION</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => navigate("/ubicacion")}>UBICACION</NavDropdown.Item>
               <NavDropdown.Item onClick={() => navigate("/servicio")}>CONTACTO</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => navigate("/")}>CERRAR SESION</NavDropdown.Item>
@@ -63,19 +62,19 @@ const MenuNav = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Form onSubmit={handleSearch} className="mb-3">
-                  <Form.Control style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"15px"}}
+                  <Form.Control style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"15px", padding:'10px',borderRadius:'10px' }}
                     type="text"
                     placeholder="Buscar servicio..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)} // actualiza el estado del término de búsqueda
                   />
-                  <Button type="submit" className="mt-2" style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"18px"}}>Buscar</Button>
+                  <Button type="submit" className="mt-2" style={{fontFamily:'inherit', fontWeight:'bold', fontSize:"18px",background:'#BDB76B', border:'transparent'}}>Buscar</Button>
                 </Form>
                 <div className='service-grid'>
                   {filtrarServicios && filtrarServicios.length > 0 ? (
                     filtrarServicios.map((serv, index) => (
-                      <Card style={{border:"1px solid #ddd", borderRadius:"8px"}} key={index} className="mb-3">
-                        <Card.Body>
+                      <Card style={{border:"1px solid #ddd", borderRadius:"40px"}} key={index} className="mb-3">
+                        <Card.Body style={{background:'#EEE8AA',borderRadius:"40px",padding:'6px'}}>
                           <Card.Title>{serv.tipo}</Card.Title>
                         </Card.Body>
                       </Card>
@@ -87,11 +86,6 @@ const MenuNav = () => {
               </Offcanvas.Body>
             </Offcanvas>
           </Nav>
-          <Form inline="true" className="d-flex search-bar">
-            <Button onClick={() => navigate('/')} className="cart-button">
-              <i className="bi bi-person-circle"></i>
-            </Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

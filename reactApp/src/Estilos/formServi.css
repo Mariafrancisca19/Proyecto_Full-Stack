@@ -1,5 +1,5 @@
 .container-formServi {
-    background-color: rgb(234, 132, 132);
+    background-color: #c5c0be;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -7,6 +7,7 @@
     width: 100%;
     text-align: center;
     margin: auto;
+    margin-top: 25px;
   }
 
   .label-formServi {
@@ -24,7 +25,7 @@
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 12px;
     font-size: 16px;
     box-sizing: border-box;
     transition: border-color 0.3s;
@@ -36,24 +37,27 @@
     outline: none;
   }
 
-  /* boton enviar formulario */
-  .boton-enviar{
-    width: 100%;
-    padding: 12px;
-    background-color: hsl(53, 92%, 71%);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-  }
+  /* Botón de envío */
+.boton-enviar {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #5db7cb, #fffd9e);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-  /* Efecto hover en el botón */
 .boton-enviar:hover {
-    background-color: #bdd1e6;
-  }
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
   /* formulario de contacto de emailjs  */
   
@@ -103,4 +107,14 @@
   @media (max-width: 768px){
     /* diseño responsive*/
   }
+
+  /* Select */
+select.input-formServi {
+  appearance: none; /* Remueve la flecha predeterminada */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%234b5563" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1.2em;
+  cursor: pointer;
+}
   

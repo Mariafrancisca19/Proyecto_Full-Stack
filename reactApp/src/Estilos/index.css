@@ -8,10 +8,116 @@ div {
     text-align: center; /* Centra todo el texto en el contenedor */
     
   }
-  
-
-  
+/*   
   button:hover {
-    background-color: #758495;
-  }
+    background-color: #e34a0e;
+  } */
+
+  /* Contenedor de registro */
+.container-registro {
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background: rgba(220, 21, 21, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #e6e6fa;
+  overflow: hidden;
+}
+
+.container-registro:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Título */
+.formulario h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #42a5f5, #1976d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Etiquetas */
+.formulario label {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Campos de entrada */
+.input-registro {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.input-registro:focus {
+  
+  box-shadow: 0 4px 8px rgba(66, 165, 245, 0.3);
+  transform: scale(1.02);
+}
+
+/* Botón de registro */
+.btn-registro {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #54523f, hsl(212, 6%, 54%));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 1.5rem;
+}
+
+.btn-registro:hover {
+  background: linear-gradient(135deg, #3e6380, #15c062);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón de regresar */
+.btn-inicio {
+  display: inline-block;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-inicio:hover {
+  background-color: #bdbdbd;
+  color: #000;
+}
+
+/* Espacio entre campos */
+.formulario input + input {
+  margin-top: 1rem;
+}
   

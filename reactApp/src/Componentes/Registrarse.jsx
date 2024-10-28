@@ -98,27 +98,27 @@ const Registrarse = () => {
 
 
   return (
-    <div className='container-form'>
-      <form className='form2'onSubmit={handleSubmit}>
+    <div className='container-registro'>
+      <form className='formumario'onSubmit={handleSubmit}>
       <h1>REGISTER</h1>
       <label>Name </label>
-      <input  className='input-login' placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
+      <input  className='input-registro' placeholder="First Name" value={nombre} type="name" onChange={(e)=>setNombre(e.target.value)}/><br/>
       <label>Last Name </label><br/>
-      <input  className='input-login' placeholder="Last Name" value={apellido} type="last_name" onChange={(e)=>setApellido(e.target.value)}/>
+      <input  className='input-registro' placeholder="Last Name" value={apellido} type="last_name" onChange={(e)=>setApellido(e.target.value)}/>
       <br/>
       <label>Birthdate </label><br/>
-      <input  className='input-login' placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
+      <input  className='input-registro' placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
 
       <label>Email </label><br/>
-      <input  className='input-login' placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
+      <input  className='input-registro' placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
 
       <label>Password </label><br/>
-      <input  className='input-login' placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
+      <input  className='input-registro' placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
 
       <label>Password confirmation </label><br/>
       <input  className='input-login' placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
-      <button className='btn-login' type='submit' onClick={espacioVacio}>Sign Up</button><br/>
-      <button className='btn-login' onClick={()=>navigate('/')}>Back</button> 
+      <button className='btn-registro' type='submit' onClick={espacioVacio}>Sign Up</button><br/>
+      <button className='btn-inicio' onClick={()=>navigate('/')}>Back</button> 
       </form>
     </div>
   )

@@ -18,11 +18,11 @@
   }
   
   .navbar-custom .nav-link:hover {
-    color: #1abc9c;
+    color: #aeaeae;
   }
   
   .navbar-custom .nav-button {
-    border: 1px solid #fff;
+    border: 1px solid transparent;
     color: #000000;
     margin-left: 10px;
     font-weight: bold;
@@ -30,8 +30,8 @@
   }
   
   .navbar-custom .nav-button:hover {
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    background-color: #BDB76B;
+    border-color: transparent;
   }
   
   .search-bar {
@@ -62,6 +62,7 @@
     border: none;
     background-color: transparent;
     color: #fff;
+  
   }
   
   .cart-button i {

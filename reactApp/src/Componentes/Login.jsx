@@ -87,6 +87,9 @@ const Login = () => {
 
   return (
     <div className='container-form'>
+    <div className='container-imagen' alt='Logo'>
+      <img src='reactApp\src\Imagenes\login.png'/>
+    </div>
       <form className='form'>
         <h1 className='form-title'>BIENVENIDOS</h1>
           <input className='input-login' placeholder="Username" value={nombre} type="name" onChange={(e) => setNombre(e.target.value)} /> <br />

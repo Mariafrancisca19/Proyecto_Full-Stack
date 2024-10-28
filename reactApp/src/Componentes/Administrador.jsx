@@ -57,7 +57,7 @@ const Administrador = () => {
     <hr/>
 
     <div>
-    <h2>Agendar Citas</h2>
+    <h2 className='titulo-animado'>Agendar Citas</h2>
     <ContenedorCardAdmin getAdmin={selectCita}/>
     {selectCita && selectCita.length > 0 ? (
      selectCita.map((cita) => {
@@ -83,7 +83,7 @@ const Administrador = () => {
 
     
     <div>
-    <h2>Solicitud de Mantenimiento</h2>
+    <h2 className='titulo-animado'>Solicitud de Mantenimiento</h2>
     <ContenedorCardMantenimiento getMantenimiento={selecsolicitudMantenimiento}/>
     {selecsolicitudMantenimiento && selecsolicitudMantenimiento.length > 0 ? (
      selecsolicitudMantenimiento.map((mantenimiento) => {
@@ -109,7 +109,7 @@ const Administrador = () => {
 
     
     <div>
-    <h2>Talleres</h2>
+    <h2 className='titulo-animado'>Talleres</h2>
     <ContenedorCardTaller getTaller={selectTaller}/>
     {selectTaller && selectTaller.length > 0 ? (
      selectTaller.map((tallerr) => {
