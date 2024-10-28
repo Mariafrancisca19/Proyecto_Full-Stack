@@ -7,6 +7,7 @@ function ContenedorCardAdmin ({getAdmin,btnEliminar,btnEditar}) {
  const eliminarCita = async (id) =>{
   deleteDatos("cita_delete", id + "/")
  }
+ 
   return (
     <div className="contenedor-admin-cards">
       {Array.isArray(getAdmin) && getAdmin.length > 0 ? (

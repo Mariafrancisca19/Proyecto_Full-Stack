@@ -5,6 +5,7 @@ import ContenedorCard from './ContenedorCard';
 import ContenedorCardAdmin from './ContenedorCardAdmin';
 import ContenedorCardMantenimiento from './ContenedorCardMantenimiento';
 import ContenedorCardTaller from './ContenedorCardTaller';
+import EditarGeneralAdmin from './EditarGeneralAdmin';
 
 
 // obtener todos los servicios,talleres,citas --> resumen de toda la pagina al admin donde pueda eliminar , editar todos los servicios  
@@ -14,6 +15,11 @@ const Administrador = () => {
     const [selectCita, setSelectCita] = useState([]);
     const [selecsolicitudMantenimiento, setSelectSolicitudMantenimiento] = useState([]);
     const [selectTaller, setSelectTaller] = useState([]);
+    const [mantenimiento,setMantenimiento] = useState(null)
+    
+    const edicionMantenimiento=(mantenimiento)=>{
+        setMantenimiento(mantenimiento)
+      }
 
  useEffect(() => {
     const obtenerAdmin = async () => {
@@ -84,7 +90,7 @@ const Administrador = () => {
     
     <div>
     <h2 className='titulo-animado'>Solicitud de Mantenimiento</h2>
-    <ContenedorCardMantenimiento getMantenimiento={selecsolicitudMantenimiento}/>
+    <ContenedorCardMantenimiento getMantenimiento={selecsolicitudMantenimiento} btnEditar={edicionMantenimiento}/>
     {selecsolicitudMantenimiento && selecsolicitudMantenimiento.length > 0 ? (
      selecsolicitudMantenimiento.map((mantenimiento) => {
         <Card>
@@ -104,7 +110,9 @@ const Administrador = () => {
         <p>No hay Citas Agendadas</p>
     )}
     </div>
- 
+    {mantenimiento &&(
+        <EditarGeneralAdmin mantenimiento={mantenimiento}/>
+    )}
     <hr/>
 
     

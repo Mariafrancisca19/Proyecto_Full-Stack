@@ -1,8 +1,14 @@
 import React from 'react'
 import MantenimientoCard from './MantenimientoCard'
+import { deleteDatos } from '../JS/Fetch'
 
 
-const ContenedorCardMantenimiento = ({getMantenimiento}) => {
+function ContenedorCardMantenimiento ({getMantenimiento,btnEditar,btnEliminar}) {
+
+  const eliminarMantenimiento = async (id) =>{
+    deleteDatos("mantenimiento_delete", id + "/")
+   }
+
   return (
     <div className='contenedor-mantenimiento '>
      {Array.isArray(getMantenimiento) && getMantenimiento.length > 0 ? (
@@ -14,6 +20,8 @@ const ContenedorCardMantenimiento = ({getMantenimiento}) => {
             modelo={muestraMantenimiento.modelo}
             anio={muestraMantenimiento.anio}
             nombre_servicio={muestraMantenimiento.nombre_servicio}
+            btnEditar={()=>btnEditar(muestraMantenimiento)}
+            btnEliminar={()=>eliminarMantenimiento(muestraMantenimiento.id)} 
         />
         ))
      ): (
