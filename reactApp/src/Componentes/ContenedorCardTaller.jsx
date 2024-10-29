@@ -3,7 +3,7 @@ import TallerCard from './TallerCard'
 import { deleteDatos } from '../JS/Fetch'
 
 
-function ContenedorCardTaller ({ getTaller }) {
+function ContenedorCardTaller ({getTaller,btnEditar,btnEliminar}) {
 
  const eliminarTaller = async (id) =>{
   deleteDatos("taller_delete", id + "/")

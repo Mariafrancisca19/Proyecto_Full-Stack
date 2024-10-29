@@ -30,6 +30,7 @@ class MantenimientoView(generics.ListCreateAPIView):
 class MantenimientoUpdateView(generics.UpdateAPIView):
      queryset = Mantenimiento.objects.all()
      serializer_class = MantenimientoSerializer
+     lookup_field = 'id'
      
 class MantenimientoDeleteView(generics.DestroyAPIView):
      queryset = Mantenimiento.objects.all()
@@ -45,6 +46,8 @@ class TallerView(generics.ListCreateAPIView):
 class TallerUpdateView(generics.UpdateAPIView):
      queryset = Taller.objects.all()
      serializer_class = TallerSerializer
+     lookup_field = "id"
+     
      
 class TallerDeleteView(generics.DestroyAPIView):
      queryset = Taller.objects.all()

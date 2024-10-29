@@ -52,7 +52,7 @@ const actualizarDatos = async (obj,enpoint, id) => {
     try {
 
         const response = await fetch(`${url}${enpoint}/${id}/`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 // 'Authentication': `Bearer ${token}`

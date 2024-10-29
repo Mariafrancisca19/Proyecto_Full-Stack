@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Estilos/card.css'
+import { obtenerDatos } from '../JS/Fetch'
 
 
 function MantenimientoCard ({nombre_taller,marca,modelo,anio,nombre_servicio,btnEditar,btnEliminar}) {
+
+
   return (
   
     <div className="mantenimiento-card" >

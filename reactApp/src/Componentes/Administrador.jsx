@@ -6,6 +6,9 @@ import ContenedorCardAdmin from './ContenedorCardAdmin';
 import ContenedorCardMantenimiento from './ContenedorCardMantenimiento';
 import ContenedorCardTaller from './ContenedorCardTaller';
 import EditarGeneralAdmin from './EditarGeneralAdmin';
+import EditarTaller from './EditarTaller';
+import EditarFormAdmin from './EditarFormAdmin';
+import EditarCitas from './EditarCitas';
 
 
 // obtener todos los servicios,talleres,citas --> resumen de toda la pagina al admin donde pueda eliminar , editar todos los servicios  
@@ -15,11 +18,26 @@ const Administrador = () => {
     const [selectCita, setSelectCita] = useState([]);
     const [selecsolicitudMantenimiento, setSelectSolicitudMantenimiento] = useState([]);
     const [selectTaller, setSelectTaller] = useState([]);
-    const [mantenimiento,setMantenimiento] = useState(null)
     
+    const [mantenimiento,setMantenimiento] = useState(null)
+    const [taller,setTaller] = useState(null)
+    const [mostrarServicio, setMostrarServicio] = useState(null)
+    const [cita, setCita] = useState(null)
+
     const edicionMantenimiento=(mantenimiento)=>{
         setMantenimiento(mantenimiento)
       }
+
+    const edicionTaller=(taller)=>{
+      setTaller(taller)
+    }
+
+    const edicionCita=(cita)=>{
+        setCita(cita)
+      }
+  
+
+
 
  useEffect(() => {
     const obtenerAdmin = async () => {
@@ -33,13 +51,13 @@ const Administrador = () => {
         setSelectTaller(datoTaller)
     }
     obtenerAdmin();
- },[])
+ },[selectTaller])
 
   return (
     <div>
 
     <div>
-    <ContenedorCard getServicio={selectServicio}/>
+    <ContenedorCard getServicio={selectServicio} />
     {selectServicio && selectServicio.length > 0 ? (
      selectServicio.map((servicio) => {
         <Card>
@@ -59,12 +77,14 @@ const Administrador = () => {
         <p>No hay servicios disponibles</p>
     )}
     </div>
-
+    {mostrarServicio && (
+        <EditarFormAdmin mostrarServicio={mostrarServicio}/>
+    )}
     <hr/>
 
     <div>
     <h2 className='titulo-animado'>Agendar Citas</h2>
-    <ContenedorCardAdmin getAdmin={selectCita}/>
+    <ContenedorCardAdmin getAdmin={selectCita} btnEditar={edicionCita}/>
     {selectCita && selectCita.length > 0 ? (
      selectCita.map((cita) => {
         <Card>
@@ -84,7 +104,9 @@ const Administrador = () => {
         <p>No hay Citas Agendadas</p>
     )}
     </div>
-
+    {mantenimiento &&(
+        <EditarGeneralAdmin mantenimiento={mantenimiento}/>
+    )}
     <hr/>
 
     
@@ -110,15 +132,15 @@ const Administrador = () => {
         <p>No hay Citas Agendadas</p>
     )}
     </div>
-    {mantenimiento &&(
-        <EditarGeneralAdmin mantenimiento={mantenimiento}/>
+    {cita &&(
+        <EditarCitas cita={cita}/>
     )}
     <hr/>
 
     
     <div>
     <h2 className='titulo-animado'>Talleres</h2>
-    <ContenedorCardTaller getTaller={selectTaller}/>
+    <ContenedorCardTaller getTaller={selectTaller} btnEditar={edicionTaller}/>
     {selectTaller && selectTaller.length > 0 ? (
      selectTaller.map((tallerr) => {
         <Card>
@@ -137,6 +159,9 @@ const Administrador = () => {
     )}
 
     </div>
+    {taller && (
+        <EditarTaller taller={taller}/>
+    )}
     
 </div>
   )}

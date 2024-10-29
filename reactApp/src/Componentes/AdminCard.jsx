@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 function AdminCard({ usuario, servicio, fecha, descripcion,btnEliminar,btnEditar}) {
+
   return (
     <div className="admin-card">
     <h2 className="titulo-admin">Usuario: <span>{usuario}</span></h2>
