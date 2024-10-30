@@ -219,3 +219,71 @@
     margin-top: 20px;
     text-align: center;
 }
+
+
+/* estilos para los formularios editar de la pagina del administrador */
+
+/* formulario para editar los mantenimientos */
+
+/* EditarTaller.css */
+
+.editar-taller-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px; /* Espaciado más pequeño */
+  max-width: 300px; /* Ancho máximo reducido */
+  margin: 20px auto;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.titulo-taller {
+  text-align: center;
+  color: #333;
+  font-size: 1.3em; /* Tamaño reducido */
+  margin-bottom: 15px;
+}
+
+.label-taller {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+  color: #555;
+  font-size: 0.85em; /* Tamaño reducido */
+}
+
+.input-taller {
+  width: 100%;
+  padding: 8px; /* Espaciado reducido */
+  margin-top: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.input-taller:focus {
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 0 4px rgba(12, 16, 20, 0.4);
+}
+
+.btn-taller {
+  background-color: #fae282;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.btn-taller:hover {
+  background-color: #ff50a2;
+}

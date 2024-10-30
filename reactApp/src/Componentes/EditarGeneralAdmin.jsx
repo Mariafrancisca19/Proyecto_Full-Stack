@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import { actualizarDatos } from '../JS/Fetch'
+import React, { useEffect, useState } from 'react'
+import { actualizarDatos, obtenerDatos } from '../JS/Fetch'
+import '../Estilos/card.css'
+
 
 function EditarGeneralAdmin({ mantenimiento }) {
 
@@ -8,6 +10,9 @@ function EditarGeneralAdmin({ mantenimiento }) {
   const [modelo, setModelo] = useState(mantenimiento.modelo)
   const [anio, setAnio] = useState(mantenimiento.anio)
   const [servicio, setServicio] = useState(mantenimiento.nombre_servicio)
+
+  const [selectMantenimiento, setSelectMantenimiento] = useState([])
+  const [servicioMantenimiento, setServicioMantenimiento] = useState([])
 
   const actualizarMantenimiento = async () => {
     const actMantenimiento = {
@@ -23,27 +28,53 @@ function EditarGeneralAdmin({ mantenimiento }) {
     // setDescripcion(null)
   }
 
+  // traer los talleres, servicios
+  useEffect(() => {
+    const obtenerMantenimiento = async () => {
+      const mostrarMantenimiento = await obtenerDatos('taller/')
+      setSelectMantenimiento(mostrarMantenimiento)
+      const mostrarServicio = await obtenerDatos('servicio/')
+      setServicioMantenimiento(mostrarServicio)
+    }
+    obtenerMantenimiento()
+  }, [])
+
 
 
   return (
     <div>
-      <div className="mantenimiento-card" >
-        <label>Taller: </label>
-        <input onChange={(e) => { setTaller(e.target.value) }}></input>
+      <div className="edit-mantenimiento-card" >
+        <label className='label-mantenimiento'>Taller: </label>
+        <select className='select-mantenimiento' onChange={(e) => { setTaller(e.target.value) }}>
+          <option className='option-mantenimiento' value='' disabled>Seleccionar Taller </option>
+          {selectMantenimiento.map((mantenimiento) => {
+            return (
+              <option className='option-mantenimiento' key={mantenimiento.id}>{mantenimiento.nombre_taller}</option>
+            )
+          })
+          }
+        </select>
 
-        <label>Marca: </label>
-        <input onChange={(e) => { setMarca(e.target.value) }}></input>
 
-        <label>Modelo: </label>
-        <input onChange={(e) => { setModelo(e.target.value) }}></input>
+        <label className='label-mantenimiento'>Marca: </label>
+        <input className='input-mantenimiento' onChange={(e) => { setMarca(e.target.value) }}></input>
 
-        <label>Año: </label>
-        <input type='date' onChange={(e) => { setAnio(e.target.value) }}></input>
+        <label className='label-mantenimiento'>Modelo: </label>
+        <input className='input-mantenimiento' onChange={(e) => { setModelo(e.target.value) }}></input>
 
-        <label>Servicio: </label>
-        <input onChange={(e) => { setServicio(e.target.value) }}></input>
+        <label className='label-mantenimiento'>Año: </label>
+        <input className='input-mantenimiento' type='date' onChange={(e) => { setAnio(e.target.value) }}></input>
 
-        <button onClick={actualizarMantenimiento}>Actualizar</button>
+        <label className='label-mantenimiento'>Servicio: </label>
+        <select className='select-mantenimiento' onChange={(e) => { setServicio(e.target.value) }}>
+        <option className='option-mantenimiento' value='' disabled>Seleccionar Servicio </option>
+        {servicioMantenimiento.map((servicio) => {
+          return (
+            <option className='option-mantenimiento' key={servicio.id}>{servicio.tipo}</option>
+          )
+        })}
+</select>
+        <button className='button-mantenimiento' onClick={actualizarMantenimiento}>Actualizar</button>
 
       </div>
 

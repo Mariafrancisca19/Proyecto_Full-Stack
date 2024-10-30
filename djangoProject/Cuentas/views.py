@@ -6,13 +6,14 @@ from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
-
+from rest_framework.permissions import AllowAny
 from Cuentas.models import Usuario
 
 
 # Create your views here.
 
 class RegistroView(APIView):
+    permission_classes = [AllowAny]
     def post(self,request):
         username = request.data.get('username')
         password = request.data.get('password')
@@ -23,7 +24,13 @@ class RegistroView(APIView):
         nuevo_usuario = User.objects.create_user(username=username,password=password)
         Usuario.objects.create(user=nuevo_usuario) 
         return Response({'success':'Usuario creado correctamente'},status=status.HTTP_201_CREATED)
-        
+    
+    #obtener todos los usuarios
+    def get(self, request):
+        usuarios = User.objects.all()
+        data = [{'id':usuario.id, 'username': usuario.username} for usuario in usuarios]
+        return Response(data,status=status.HTTP_200_OK)
+    
 class RegistroAdminView(APIView):   # registro para el super usuario
     def post(self, request):
         username = request.data.get('username')
@@ -38,6 +45,7 @@ class RegistroAdminView(APIView):   # registro para el super usuario
         
     
 class LoginView(APIView):
+    permission_classes = [AllowAny]
     def post(self,request):
         username = request.data.get('username')
         password = request.data.get('password')

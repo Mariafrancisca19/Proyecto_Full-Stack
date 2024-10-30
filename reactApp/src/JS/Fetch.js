@@ -1,8 +1,10 @@
 import { traerCookie } from "../cookiesJS/cookies";
 
 const url = "http://127.0.0.1:8000/api/"
+
 const token = traerCookie('token')          // variables globales 
 // CRUD
+
 // metodo get extraer los datos
 const obtenerDatos = async (enpoint) => {
     try {
@@ -32,6 +34,7 @@ const guardarDatos = async (obj,enpoint) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+
             },
             body: JSON.stringify(obj)
         });
@@ -46,6 +49,9 @@ const guardarDatos = async (obj,enpoint) => {
 
 export { guardarDatos}
 
+
+
+
 // metodo put para actualizar los datos
 
 const actualizarDatos = async (obj,enpoint, id) => {
@@ -55,13 +61,13 @@ const actualizarDatos = async (obj,enpoint, id) => {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authentication': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`
             },
 
             body: JSON.stringify(obj)
 
         });
-
+        console.log(token);
         return await response.json();
     } catch (error) {
         console.log(error)
@@ -78,7 +84,8 @@ const deleteDatos = async (enpoint, id) => {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                // 'Authentication': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`
+                
             }
         });
 
@@ -99,7 +106,9 @@ const post=async(obj,endpoint)=>{
       const peticion = await fetch(`http://127.0.0.1:8000/api/${endpoint}/`,{
           method:"POST",
           headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+              
           },
           body:JSON.stringify(obj)
       })

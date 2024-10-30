@@ -1,6 +1,7 @@
 import React from 'react'
 import { actualizarDatos } from '../JS/Fetch'
 import { useState } from 'react'
+import '../Estilos/card.css'
 
 function EditarTaller({taller}) {
 
@@ -21,18 +22,18 @@ function EditarTaller({taller}) {
 
     return (
 
-        <div className="mantenimiento-card" >
-            <label>Taller: </label>
-            <input onChange={(e) => { setActTaller(e.target.value) }}></input>
+        <div className="edit-taller-card" style={{width:'250px'}} >
+            <label className='label-taller'>Taller: </label>
+            <input className='input-taller' onChange={(e) => { setActTaller(e.target.value) }}></input>
 
-            <label>Dirección: </label>
-            <input onChange={(e) => { setDireccion(e.target.value) }}></input>
+            <label className='label-taller'>Dirección: </label>
+            <input className='input-taller' onChange={(e) => { setDireccion(e.target.value) }}></input>
 
-            <label>Teléfono: </label>
-            <input onChange={(e) => { setTelefono(e.target.value) }}></input>
+            <label className='label-taller'>Teléfono: </label>
+            <input className='input-taller' onChange={(e) => { setTelefono(e.target.value) }}></input>
 
 
-            <button onClick={actualizarTaller}>Actualizar</button>
+            <button className='btn-taller' onClick={actualizarTaller}>Actualizar</button>
 
 
 
