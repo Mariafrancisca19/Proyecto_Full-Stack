@@ -16,7 +16,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -33,8 +32,10 @@ INSTALLED_APPS = [
     'automoviles',
     'servicio',
     'calificacion',
+    'django_jsonfield_backport',
     'Citas',
-    'rest_framework_simplejwt'
+    'rest_framework_simplejwt',
+    'notifications',
 ]
 
 SIMPLE_JWT = {
