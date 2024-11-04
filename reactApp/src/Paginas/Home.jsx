@@ -45,7 +45,7 @@ const Home = () => {
       <hr className='animado'/>
 
       <div>
-          <ContenedorCard getServicio={data} mostrarBotones={true} btnEditar={edicionServicio} />
+          <ContenedorCard getServicio={data}  btnEditar={edicionServicio} />
       </div>
       {/* {id &&
         <EditarFormAdmin id={id} recargaPag={recargaPag} />

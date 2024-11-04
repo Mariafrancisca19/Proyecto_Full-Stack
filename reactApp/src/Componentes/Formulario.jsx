@@ -75,14 +75,14 @@ const Formulario = () => {
 
 
   return (
-    <div className='form-container'>
-      <form className='form'>
-        <h2 className='form-title'>Solicitud de Mantenimiento</h2>
+    <div className='div-container-solicitud'>
+      <form className='form-solicitud'>
+        <h2 className='form-title-solicitud'>Solicitud de Mantenimiento</h2>
         <div>
 
-        <div className='form-group'>
-          <label htmlFor='imagen' className='form-label'>Taller</label>
-          <select placeholder='Nombre del Taller' className='form-select' value={taller} onChange={(e) => setTaller(e.target.value)}>
+        <div className='form-group-solicitud'>
+          <label htmlFor='imagen' className='form-label-solicitud'>Taller</label>
+          <select placeholder='Nombre del Taller' className='form-select-solicitud' value={taller} onChange={(e) => setTaller(e.target.value)}>
             <option value="" disabled>Seleccione un taller</option>
             {selectTaller.map((taller) => {
               return (
@@ -94,28 +94,28 @@ const Formulario = () => {
 
         </div>
 
-          <div className='form-group'>
-            <label htmlFor='marca' className='form-label'>Marca</label>
-            <input placeholder='Marca' className='form-input' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
+          <div className='form-group-solicitud'>
+            <label htmlFor='marca' className='form-label-solicitud'>Marca</label>
+            <input placeholder='Marca' className='form-input-solicitud' value={marca} onChange={(e) => setMarca(e.target.value)}></input>
           </div>
 
-          <div className='form-group'>
-            <label htmlFor='modelo' className='form-label'>Modelo</label>
-            <input placeholder='Modelo' className='form-input' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
+          <div className='form-group-solicitud'>
+            <label htmlFor='modelo' className='form-label-solicitud'>Modelo</label>
+            <input placeholder='Modelo' className='form-input-solicitud' value={modelo} onChange={(e) => setModelo(e.target.value)}></input>
           </div>
           </div>
 
-          <div className='form-group'>
-            <label htmlFor='año' className='form-label'>Año</label>
-            <input placeholder='Año' className='form-input' value={año} onChange={(e) => setAño(e.target.value)}></input>
+          <div className='form-group-solicitud'>
+            <label htmlFor='año' className='form-label-solicitud'>Año</label>
+            <input placeholder='Año' className='form-input-solicitud' value={año} onChange={(e) => setAño(e.target.value)}></input>
 
           </div>
         
 
        <div>
-       <div className='form-group'>
-          <label htmlFor='servicio' className='form-label'>Servicio</label>
-          <select id='servicio' className='form-select' value={servicio} onChange={(e) => setServicio(e.target.value)}>
+       <div className='form-group-solicitud'>
+          <label htmlFor='servicio' className='form-label-solicitud'>Servicio</label>
+          <select id='servicio' className='form-select-solicitud' value={servicio} onChange={(e) => setServicio(e.target.value)}>
             <option value="" disabled>Seleccione un servicio</option>
             {selectServicio.map((servicio) => {
               return (
@@ -125,33 +125,33 @@ const Formulario = () => {
           </select>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='descripcion' className='form-label'>Descripción</label>
+        <div className='form-group-solicitid'>
+          <label htmlFor='descripcion' className='form-label-solicitud'>Descripción</label>
           <input
             type='text'
             id='descripcion'
-            className='form-input'
+            className='form-input-solicitid'
             placeholder='Descripción del servicio'
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
           />
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='imagen' className='form-label'>Imagen</label>
+        <div className='form-group-solicitud'>
+          <label htmlFor='imagen' className='form-label-solicitud'>Imagen</label>
           <input
             type='file'
             id='imagen'
-            className='form-input'
+            className='form-input-solicitud'
             onChange={(e) => setImagen(e.target.value)}
           />
         </div>
 
        </div>
 
-        <div className='form-actions'>
-          <button type='submit' className='form-button' onClick={espacioVacio}>Enviar</button>
+        <div className='form-actions-solicitud'>
           <button type='button' className='form-button reset' onClick={reiniciarFormulario}>Reiniciar</button>
+          <button type='submit' className='form-button-solicitud' onClick={espacioVacio}>Enviar</button>
         </div>
       </form>
     </div>

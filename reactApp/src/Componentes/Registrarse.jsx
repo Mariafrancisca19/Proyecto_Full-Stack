@@ -46,9 +46,9 @@ const Registrarse = () => {
 
   // Validar la seguridad de la contraseña
   const validarContrasena = () => {
-    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/;
     if (regex.test(contrasena)) {
-      mostrarAlerta("error", "La contraseña debe tener al menos 6 caracteres, incluir una mayúscula, un número y un carácter especial");
+      mostrarAlerta("error", "La contraseña debe tener al menos 4 caracteres, incluir una mayúscula, un número y un carácter especial");
       return true;
     }
     return false;
@@ -59,7 +59,8 @@ const Registrarse = () => {
   // enviar los datos al servidor usando mi guardarDatos 
   const handleSubmit = async (e) => {
     e.preventDefault();  /*evita que la pagina se recargue*/
-
+    console.log("entra");
+    
     if (!espacioVacio()){  //si la contrasena o los campos estan vacios se detiene
         return
     }
@@ -110,14 +111,14 @@ const Registrarse = () => {
       <input  className='input-registro' placeholder="Insert Date" value={bithdate} type="date" onChange={(e)=>setBithdate(e.target.value)}/> <br/>
 
       <label>Email </label><br/>
-      <input  className='input-registro' placeholder="Email Address" value={correoR} type="email" required onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
+      <input  className='input-registro' placeholder="Email Address" value={correoR} type="email" onChange={(e)=>setCorreoR(e.target.value)}/> <br/>
 
       <label>Password </label><br/>
       <input  className='input-registro' placeholder="Password" value={contrasena} type="password" onChange={(e)=>setContrasena(e.target.value)}/> <br/>
 
       <label>Password confirmation </label><br/>
       <input  className='input-login' placeholder="Password confirmation" value={okContrasena} type="password" onChange={(e)=>setOkContrasena(e.target.value)}/> <br/>
-      <button className='btn-registro' type='submit' onClick={espacioVacio}>Sign Up</button><br/>
+      <button className='btn-registro' type='submit' onClick={handleSubmit}>Sign Up</button><br/>
       <button className='btn-inicio' onClick={()=>navigate('/')}>Back</button> 
       </form>
     </div>

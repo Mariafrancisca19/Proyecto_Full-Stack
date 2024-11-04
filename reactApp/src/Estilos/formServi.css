@@ -1,5 +1,5 @@
 .container-formServi {
-    background-color: #c5c0be;
+    background-color: #dbd8d8;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -62,59 +62,92 @@
   /* formulario de contacto de emailjs  */
   
 
-  .form-contacto{
-    background-color: rgb(234, 132, 132);
-    padding: 70px;
-    border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    /* margin-top:40px; */
-    margin: auto;
+ /* Contenedor principal del formulario */
+.form-contacto-email {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color:#ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.518);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-  }
-
-
-  .label-contacto{
-    display: block;
-    text-align: left;
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #02070a;
-    font-weight: 500;
-
-  }
-
-.input-contacto{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-
-}
-
- /* Efecto al interactuar con los inputs */
- .input-contacto:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-
-  @media (max-width: 768px){
-    /* diseño responsive*/
-  }
-
-  /* Select */
-select.input-formServi {
-  appearance: none; /* Remueve la flecha predeterminada */
-  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%234b5563" d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 1.2em;
-  cursor: pointer;
-}
   
+}
+
+/* Título del formulario */
+.label-contacto-email:first-of-type {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Etiquetas de los campos */
+.label-contacto-email {
+  display: block;
+  font-size: 14px;
+  color: #34495e;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Campos de entrada */
+.input-contacto-email, 
+.text-contacto-email {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #e3dcdc;
+  border-radius: 10px;
+  background-color: #f7f9fc;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Estilos específicos para textarea */
+.text-contacto-email {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Efecto de enfoque en los campos */
+.input-contacto-email:focus, 
+.text-contacto-email:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+/* Botón de envío */
+.input-sutmit-email {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #c7a77d;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover y active en el botón */
+.input-sutmit-email:hover {
+  background-color:#f18282;
+}
+
+.input-sutmit-email:active {
+  transform: scale(0.98);
+}
+
+/* Efectos de transición y sombras */
+.input-contacto-email:hover, 
+.text-contacto-email:hover {
+  background-color: #f0f4f8;
+}

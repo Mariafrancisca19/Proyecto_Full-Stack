@@ -17,11 +17,11 @@ function FormCard({ imagen, servicio, precio, descripcion, btnEliminar, btnEdita
           <div className="card-content">
             <h2>Servicio: {servicio}</h2>
             <h2>Precio:₡{precio}</h2>
-            <p style={{ color: 'black', fontFamily: 'serif', fontSize: '23px' }}>Descripcion: {descripcion}</p>
+            <p style={{ color:'black',  fontSize: '20px' }}>Descripcion: {descripcion}</p>
             <>
-            {mostrarBotones &&(
+            {traerCookie("superuser") === 'true' && (
               <div className="card-buttons">
-                <button  className='btn btn-primary ml-3' style={{backgroundColor:'#333333', border:'none'}} onClick={btnEliminar}>🗑️</button>
+                <button  className='btn btn-primary ml-3' style={{backgroundColor:'#4a4a4a', border:'none'}} onClick={btnEliminar}>🗑️</button>
                 <button style={{backgroundColor:"#4a4a4a",color:'#fff', border:'none'}} className='btn btn-success btn-editar' onClick={btnEditar}>EDITAR</button>
               </div>
             )}

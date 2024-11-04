@@ -32,6 +32,7 @@ class RegistroView(APIView):
         return Response(data,status=status.HTTP_200_OK)
     
 class RegistroAdminView(APIView):   # registro para el super usuario
+#    permission_classes = [AllowAny] da todos los permisos para poder hacer el post (crear el admin)
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')

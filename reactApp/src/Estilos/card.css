@@ -15,8 +15,8 @@
     width: 330px;
     box-shadow: 0 4px 10px rgba(229, 5, 5, 0.1); /* Sombra para resaltar la tarjeta */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-    /* font-family:Georgia, 'Times New Roman', Times, serif; */
+    margin-bottom: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .card-container:hover {
