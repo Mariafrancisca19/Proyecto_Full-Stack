@@ -8,14 +8,14 @@ function MantenimientoCard ({nombre_taller,marca,modelo,anio,nombre_servicio,btn
 
   return (
   
-    <div className="mantenimiento-card" >
+    <div className="mantenimiento-card"  >
       <h2 className='titulo-span'>Taller: <span>{nombre_taller}</span></h2>
       <h2 className='titulo-span'>Marca: <span>{marca}</span></h2>
       <h2 className='titulo-span'>Modelo: <span>{modelo}</span></h2>
       <h2 className='titulo-span'>Año: <span>{anio}</span></h2>
       <h2 className='titulo-span'>Servicio: <span>{nombre_servicio}</span></h2>
-      <button onClick={btnEditar}>Editar</button>
-      <button onClick={btnEliminar}>Eliminar</button>
+      <button className='botones-margin' onClick={btnEditar}>Editar</button>
+      <button className='botones-margin' onClick={btnEliminar}>Eliminar</button>
     </div>
   )
 }

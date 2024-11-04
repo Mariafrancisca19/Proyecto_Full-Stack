@@ -36,9 +36,9 @@ function EditarCitas({ citas }) {
 
   return (
 
-    <div className="admin-card">
-      <h2 className="">Usuario: <span></span></h2>
-      <select onChange={(e) => setUsuario(e.target.value)} placeholder=' Nombre de usuario' value={usuario} >
+    <div className="editar-contenedor-agendarcita">
+      <h2 className="editar-h2-agendarcita">Usuario: <span></span></h2>
+      <select className='editar-select-agendarcita' onChange={(e) => setUsuario(e.target.value)} placeholder=' Nombre de usuario' value={usuario} >
         <option value='' disabled>Seleccionar Usuario </option>
         {selectCitaAgendada.map((cita) => {
           return (
@@ -49,8 +49,8 @@ function EditarCitas({ citas }) {
       </select>
 
 
-      <h2 className="">Servicio: <span></span></h2>
-      <select placeholder='Nombre del servicio' onChange={(e) => { setServicio(e.target.value) }}>
+      <h2 className="editar-h2-agendarcita">Servicio: <span></span></h2>
+      <select className='editar-select-agendarcita' placeholder='Nombre del servicio' onChange={(e) => { setServicio(e.target.value) }}>
         <option value='' disabled>Seleccionar Servicio </option>
         {selectServicio.map((servicio) => {
           return (
@@ -60,13 +60,13 @@ function EditarCitas({ citas }) {
 
       </select>
 
-      <h2 className="">Fecha: <span></span></h2>
-      <input type='date' onChange={(e) => { setFecha(e.target.value) }}></input>
+      <h2 className="editar-h2-agendarcita">Fecha: <span></span></h2>
+      <input className='editar-input-agendarcita' type='date' onChange={(e) => { setFecha(e.target.value) }}></input>
 
-      <p className=''>Descripcion: </p>
-      <input onChange={(e) => { setDescripcion(e.target.value) }}></input>
+      <p className='editar-p-agendarcita'>Descripcion: </p>
+      <input  className='editar-input-agendarcita' onChange={(e) => { setDescripcion(e.target.value) }}></input>
 
-      <button onClick={actualizarCitas}>Actualizar</button>
+      <button className='editar-boton-agendarcita' onClick={actualizarCitas}>Actualizar</button>
 
     </div>
 

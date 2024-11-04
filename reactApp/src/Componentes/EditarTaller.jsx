@@ -22,7 +22,7 @@ function EditarTaller({taller}) {
 
     return (
 
-        <div className="edit-taller-card" style={{width:'250px'}} >
+        <div className="edit-taller-card" style={{width:'250px',marginBottom:'20px',}} >
             <label className='label-taller'>Taller: </label>
             <input className='input-taller' onChange={(e) => { setActTaller(e.target.value) }}></input>
 

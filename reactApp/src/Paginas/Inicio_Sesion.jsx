@@ -1,4 +1,6 @@
 import React from 'react'
+import Login from '../Componentes/Login'
+
 
 
 const Inicio_Sesion = () => {
@@ -7,7 +9,7 @@ const Inicio_Sesion = () => {
 
   return (
     <div>
-      
+    <Login/>
     </div>
   )
 }
