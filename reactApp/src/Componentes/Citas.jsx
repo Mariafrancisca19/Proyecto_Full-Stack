@@ -46,15 +46,26 @@ const Citas = () => {
 
   // Agregar eventos
   const handleAddEvent = () => {   // validar el ingreso de fecha y nombre , lo guarda los eventos localstorage 
+    if (!eventDate ||  !eventName) {
+      mostrarAlerta('error', 'Por favor, ingrese todos los campos')
+      return;
+
+    }  
+    
     const date = new Date(eventDate);
     const day = date.getDate();
+    
     if (day && eventName) {
       guardarDatosEventos();
-      setEventDate('');
-      setEventName
+      setEventDate('');   //
+      setEventName('');  // limmpiar el campo de nombre del evento
+      mostrarAlerta('success', 'Cita agregada correctamente')
+      
     } else {
+      
       mostrarAlerta('error','Por favor, ingrese una fecha y un nombre de evento válidos.');
     }
+    
   };
 
   // Cambiar el mes en el calendario cuando se selecciona una fecha
@@ -71,7 +82,7 @@ const Citas = () => {
     console.log(administrador);
     if(administrador === 'true'){
       const updatedEvents = infoEvent.filter(
-        (ev) => !(new Date(ev.fechaE).getDate() === day && ev.nombreE === eventToDelete)
+        (ev) => !(new Date(ev.fecha).getDate() === day && ev.descripcion_cita === eventToDelete)
       );
       setInfoEvent(updatedEvents);
       localStorage.setItem('eventos', JSON.stringify(updatedEvents));
@@ -91,10 +102,10 @@ const Citas = () => {
     };
     try {
       const response = await post(agendarCita, "Agendar_Cita")
-      if(response){
+      if (response){
       mostrarAlerta("success","Cita agregada correctamente")
     }else{
-      mostrarAlerta("error","Intenta de nuevo")
+      mostrarAlerta("error","Hubo un error al intentar agregar la cita.")
     }
     } catch (error) {
       console.log(error)
@@ -111,7 +122,7 @@ const Citas = () => {
       <div id="calendario" className="calendario">
         {daysInMonth.map((day) => {
           const eventosDelDia = infoEvent.filter(
-            (ev) => new Date(ev.fechaE).getDate() === day && new Date(ev.fechaE).getMonth() === currentDate.getMonth()
+            (ev) => new Date(ev.fecha).getDate() === day && new Date(ev.fecha).getMonth() === currentDate.getMonth()
           );
           const isSelected =
             new Date(eventDate).getDate() === day &&
@@ -124,9 +135,9 @@ const Citas = () => {
                 <div
                   key={index}
                   className="event"
-                  onClick={() => handleDeleteEvent(day, evento.nombreE)} // Se elimina el evento específico
+                  onClick={() => handleDeleteEvent(day, evento.descripcion_cita)} // Se elimina el evento específico
                 >
-                  {evento.nombreE}
+                  {evento.descripcion_cita}
                 </div>
               ))}
             </div>

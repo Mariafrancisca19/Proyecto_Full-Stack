@@ -56,6 +56,8 @@ const Formulario = () => {
     // post para guardar mi solicitud de mantenimiento
     // base de datos | const de mi formulario
     const mantenimiento = {
+      id_taller:taller,
+      id_tipo:servicio,
       marca: marca,
       modelo: modelo,
       anio: año,
@@ -63,7 +65,7 @@ const Formulario = () => {
     };
     // llamar a mi post, pasarle el objeto y el endpoint
     try {
-      const response = await post(mantenimiento, 'mantenimiento/')
+      const response = await post(mantenimiento, 'mantenimiento')
       console.log(response);
       console.log(mantenimiento)
       mostrarAlerta("success", "Mantenimiento agregado correctamente")
@@ -86,7 +88,7 @@ const Formulario = () => {
             <option value="" disabled>Seleccione un taller</option>
             {selectTaller.map((taller) => {
               return (
-                <option key={taller.id}>{taller.nombre_taller}</option>
+                <option key={taller.id} value={taller.id}>{taller.nombre_taller}</option>
               )
             })
             }
@@ -107,7 +109,7 @@ const Formulario = () => {
 
           <div className='form-group-solicitud'>
             <label htmlFor='año' className='form-label-solicitud'>Año</label>
-            <input placeholder='Año' className='form-input-solicitud' value={año} onChange={(e) => setAño(e.target.value)}></input>
+            <input type='date' placeholder='Año' className='form-input-solicitud' value={año} onChange={(e) => setAño(e.target.value)}></input>
 
           </div>
         
@@ -119,7 +121,7 @@ const Formulario = () => {
             <option value="" disabled>Seleccione un servicio</option>
             {selectServicio.map((servicio) => {
               return (
-                <option key={servicio.id}>{servicio.tipo}</option>
+                <option value={servicio.id} key={servicio.id}>{servicio.tipo}</option>
               )
             })}
           </select>

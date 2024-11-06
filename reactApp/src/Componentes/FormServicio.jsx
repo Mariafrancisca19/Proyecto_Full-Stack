@@ -88,7 +88,7 @@ const FormServicio = () => {
         <option value='' disabled>Seleccione un taller </option>
          {selectTaller.map((taller) =>{
           return (
-            <option key={taller.id}>{taller.nombre_taller}</option>
+            <option key={taller.id} value={taller.id} >{taller.nombre_taller}</option>
           )
          })
          }

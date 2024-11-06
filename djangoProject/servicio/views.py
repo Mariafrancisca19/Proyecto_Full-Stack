@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .models import Taller,Servicio,Mantenimiento
 from .serializers import TallerSerializer,ServicioSerializer,MantenimientoSerializer
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,AllowAny
 # logica
 
 class ServicioView(generics.ListCreateAPIView):
@@ -40,6 +40,7 @@ class MantenimientoDeleteView(generics.DestroyAPIView):
      
      
 class TallerView(generics.ListCreateAPIView):
+     permission_classes = [AllowAny]
      queryset = Taller.objects.all()
      serializer_class = TallerSerializer
      

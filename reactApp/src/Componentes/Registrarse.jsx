@@ -17,15 +17,10 @@ const Registrarse = () => {
 
   // funcion para validar que no hayan espacios vacios
   const espacioVacio=()=>{
-    if (nombre.trim() === "" || apellido.trim() === "" || bithdate.trim() === "" || correoR.trim() === "" || contrasena.trim() === "" || okContrasena.trim() === "")
+    if (nombre.trim() === "" || apellido.trim() === "" || bithdate.trim() === "" || correoR.trim() === "" || contrasena.trim() === '')
     {
       mostrarAlerta("error","LLENE TODOS LOS CAMPOS");
       return true;
-    }
-
-    if (contrasena !== okContrasena) {   
-      mostrarAlerta("error","Las contraseñas no coinciden");
-      return true
     }
   
   };
@@ -60,16 +55,15 @@ const Registrarse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();  /*evita que la pagina se recargue*/
     console.log("entra");
-    
-    if (!espacioVacio()){  //si la contrasena o los campos estan vacios se detiene
+    if (espacioVacio()){  //si la contrasena o los campos estan vacios se detiene
         return
     }
-    if(validarContrasena()){
-      return
-    }
-    if(formatoNombreApellido()){
-      return
-    } 
+    // if(validarContrasena()){
+    //   return
+    // }
+    // if(formatoNombreApellido()){
+    //   return
+    // } 
 
     // crear el objeto que contiene todos los datos del formulario
     const datosRegistro = {
